@@ -311,15 +311,37 @@ h6 {
   }
 }
 
+.call {
+  display: flex;
+  align-items: center;
+  background-color: #960601; /* Red background for the button */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 30px; /* Rounded corners */
+  text-decoration: none;
+  color: white; /* Text color white */
+  font-size: 1rem; /* Adjust text size */
+  transition: background-color 0.3s ease;
+}
+
+.call:hover {
+  background-color: #c93d39; /* Darker red on hover */
+}
+
+.mobile-icon {
+  width: 20px; /* Adjust icon size */
+  height: 20px; /* Adjust icon size */
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.call-text {
+  font-size: 1.1rem; /* Text size for "Call" */
+}
+
+
 /* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: var(--nav-color);
-    font-size: 28px;
-    line-height: 0;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: color 0.3s;
+    display: none; /* Hides the navigation toggle icon on mobile */
   }
 
   .navmenu {
@@ -415,13 +437,7 @@ h6 {
   }
 
   .mobile-nav-active .mobile-nav-toggle {
-    color: #fff;
-    position: absolute;
-    font-size: 32px;
-    top: 15px;
-    right: 15px;
-    margin-right: 0;
-    z-index: 9999;
+    display: none; /* Ensure it stays hidden when active */
   }
 
   .mobile-nav-active .navmenu {
@@ -567,6 +583,116 @@ h6 {
   margin-top: 8px;
   font-size: 13px;
 }
+
+/* Responsive Footer Styles */
+@media (max-width: 992px) {
+  .footer .footer-top {
+    padding-top: 30px;
+  }
+
+  .footer .footer-about p,
+  .footer .footer-contact p {
+    font-size: 13px;
+  }
+
+  .footer .footer-about .logo span {
+    font-size: 22px;
+  }
+
+  .footer .social-links a {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  .footer .footer-links ul li {
+    padding: 8px 0;
+  }
+
+  .footer .footer-links ul a {
+    font-size: 14px;
+  }
+
+  .footer .footer-blog ul .blog-meta {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer .container {
+    text-align: center;
+  }
+
+  .footer .footer-about,
+  .footer .footer-links,
+  .footer .footer-blog {
+    margin-bottom: 30px;
+  }
+
+  .footer .footer-about .logo {
+    justify-content: center;
+  }
+
+  .footer .footer-about .logo span {
+    text-align: center;
+  }
+
+  .footer .footer-contact p {
+    font-size: 12px;
+  }
+
+  .footer .social-links {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .footer .footer-links ul {
+    padding: 0;
+    text-align: center;
+  }
+
+  .footer .footer-blog ul li {
+    margin-bottom: 20px;
+  }
+
+  .footer .footer-blog ul h5 {
+    font-size: 15px;
+  }
+
+  .footer .footer-blog ul .blog-meta {
+    font-size: 11px;
+  }
+
+  .footer .copyright p,
+  .footer .credits {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer .footer-about,
+  .footer .footer-links,
+  .footer .footer-blog {
+    margin-bottom: 20px;
+  }
+
+  .footer .footer-links ul li {
+    padding: 6px 0;
+    justify-content: center;
+  }
+
+  .footer .social-links a {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .footer .footer-blog ul h5 {
+    font-size: 14px;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Preloader
@@ -1530,81 +1656,7 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Recent Blog Posts Section
---------------------------------------------------------------*/
-.recent-blog-posts .post-item {
-  background: var(--surface-color);
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-}
 
-.recent-blog-posts .post-item .post-img img {
-  transition: 0.5s;
-}
-
-.recent-blog-posts .post-item .post-date {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  text-transform: uppercase;
-  font-size: 13px;
-  padding: 6px 12px;
-  font-weight: 500;
-}
-
-.recent-blog-posts .post-item .post-content {
-  padding: 30px;
-}
-
-.recent-blog-posts .post-item .post-title {
-  color: var(--heading-color);
-  font-size: 20px;
-  font-weight: 700;
-  transition: 0.3s;
-  margin-bottom: 15px;
-}
-
-.recent-blog-posts .post-item .meta i {
-  font-size: 16px;
-  color: var(--accent-color);
-}
-
-.recent-blog-posts .post-item .meta span {
-  font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-}
-
-.recent-blog-posts .post-item hr {
-  color: color-mix(in srgb, var(--default-color), transparent 80%);
-  margin: 20px 0;
-}
-
-.recent-blog-posts .post-item .readmore {
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  line-height: 1;
-  transition: 0.3s;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
-
-.recent-blog-posts .post-item .readmore i {
-  line-height: 0;
-  margin-left: 6px;
-  font-size: 16px;
-}
-
-.recent-blog-posts .post-item:hover .post-title,
-.recent-blog-posts .post-item:hover .readmore {
-  color: var(--accent-color);
-}
-
-.recent-blog-posts .post-item:hover .post-img img {
-  transform: scale(1.1);
-}
 
 /*--------------------------------------------------------------
 # About Section
@@ -2133,377 +2185,7 @@ section,
   padding: 0;
 }
 
-/*--------------------------------------------------------------
-# Blog Posts Section
---------------------------------------------------------------*/
-.blog-posts article {
-  background-color: var(--surface-color);
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-}
 
-.blog-posts .post-img img {
-  transition: 0.5s;
-}
-
-.blog-posts .post-date {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  text-transform: uppercase;
-  font-size: 13px;
-  padding: 6px 12px;
-  font-weight: 500;
-}
-
-.blog-posts .post-content {
-  padding: 30px;
-}
-
-.blog-posts .post-title {
-  font-size: 20px;
-  color: var(--heading-color);
-  font-weight: 700;
-  transition: 0.3s;
-  margin-bottom: 15px;
-}
-
-.blog-posts .meta i {
-  font-size: 16px;
-  color: var(--accent-color);
-}
-
-.blog-posts .meta span {
-  font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
-
-.blog-posts p {
-  margin-top: 20px;
-}
-
-.blog-posts hr {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-  margin-bottom: 15px;
-}
-
-.blog-posts .readmore {
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  line-height: 1;
-  transition: 0.3s;
-  color: color-mix(in srgb, var(--heading-color), transparent 20%);
-}
-
-.blog-posts .readmore i {
-  line-height: 0;
-  margin-left: 6px;
-  font-size: 16px;
-}
-
-.blog-posts article:hover .post-title,
-.blog-posts article:hover .readmore {
-  color: var(--accent-color);
-}
-
-.blog-posts article:hover .post-img img {
-  transform: scale(1.1);
-}
-
-/*--------------------------------------------------------------
-# Blog Pagination Section
---------------------------------------------------------------*/
-.blog-pagination {
-  padding-top: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
-
-.blog-pagination ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.blog-pagination li {
-  margin: 0 5px;
-  transition: 0.3s;
-}
-
-.blog-pagination li a {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  padding: 7px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.blog-pagination li a.active,
-.blog-pagination li a:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.blog-pagination li a.active a,
-.blog-pagination li a:hover a {
-  color: var(--contrast-color);
-}
-
-/*--------------------------------------------------------------
-# Blog Details Section
---------------------------------------------------------------*/
-.blog-details {
-  padding-bottom: 30px;
-}
-
-.blog-details .article {
-  background-color: var(--surface-color);
-  padding: 30px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.blog-details .post-img {
-  margin: -30px -30px 20px -30px;
-  overflow: hidden;
-}
-
-.blog-details .title {
-  color: var(--heading-color);
-  font-size: 28px;
-  font-weight: 700;
-  padding: 0;
-  margin: 30px 0;
-}
-
-.blog-details .content {
-  margin-top: 20px;
-}
-
-.blog-details .content h3 {
-  font-size: 22px;
-  margin-top: 30px;
-  font-weight: bold;
-}
-
-.blog-details .content blockquote {
-  overflow: hidden;
-  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
-  padding: 60px;
-  position: relative;
-  text-align: center;
-  margin: 20px 0;
-}
-
-.blog-details .content blockquote p {
-  color: var(--default-color);
-  line-height: 1.6;
-  margin-bottom: 0;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 22px;
-}
-
-.blog-details .content blockquote:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background-color: var(--accent-color);
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.blog-details .meta-top {
-  margin-top: 20px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
-
-.blog-details .meta-top ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-}
-
-.blog-details .meta-top ul li+li {
-  padding-left: 20px;
-}
-
-.blog-details .meta-top i {
-  font-size: 16px;
-  margin-right: 8px;
-  line-height: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
-
-.blog-details .meta-top a {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: 14px;
-  display: inline-block;
-  line-height: 1;
-}
-
-.blog-details .meta-bottom {
-  padding-top: 10px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.blog-details .meta-bottom i {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  display: inline;
-}
-
-.blog-details .meta-bottom a {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  transition: 0.3s;
-}
-
-.blog-details .meta-bottom a:hover {
-  color: var(--accent-color);
-}
-
-.blog-details .meta-bottom .cats {
-  list-style: none;
-  display: inline;
-  padding: 0 20px 0 0;
-  font-size: 14px;
-}
-
-.blog-details .meta-bottom .cats li {
-  display: inline-block;
-}
-
-.blog-details .meta-bottom .tags {
-  list-style: none;
-  display: inline;
-  padding: 0;
-  font-size: 14px;
-}
-
-.blog-details .meta-bottom .tags li {
-  display: inline-block;
-}
-
-.blog-details .meta-bottom .tags li+li::before {
-  padding-right: 6px;
-  color: var(--default-color);
-  content: ",";
-}
-
-.blog-details .meta-bottom .share {
-  font-size: 16px;
-}
-
-.blog-details .meta-bottom .share i {
-  padding-left: 5px;
-}
-
-/*--------------------------------------------------------------
-# Blog Author Section
---------------------------------------------------------------*/
-.blog-author {
-  padding: 10px 0 40px 0;
-}
-
-.blog-author .author-container {
-  background-color: var(--surface-color);
-  padding: 20px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.blog-author img {
-  max-width: 120px;
-  margin-right: 20px;
-}
-
-.blog-author h4 {
-  font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 0px;
-  padding: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-}
-
-.blog-author .social-links {
-  margin: 0 10px 10px 0;
-}
-
-.blog-author .social-links a {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-  margin-right: 5px;
-}
-
-.blog-author p {
-  font-style: italic;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  margin-bottom: 0;
-}
-
-/*--------------------------------------------------------------
-# Blog Comments Section
---------------------------------------------------------------*/
-.blog-comments {
-  padding: 10px 0;
-}
-
-.blog-comments .comments-count {
-  font-weight: bold;
-}
-
-.blog-comments .comment {
-  margin-top: 30px;
-  position: relative;
-}
-
-.blog-comments .comment .comment-img {
-  margin-right: 14px;
-}
-
-.blog-comments .comment .comment-img img {
-  width: 60px;
-}
-
-.blog-comments .comment h5 {
-  font-size: 16px;
-  margin-bottom: 2px;
-}
-
-.blog-comments .comment h5 a {
-  font-weight: bold;
-  color: var(--default-color);
-  transition: 0.3s;
-}
-
-.blog-comments .comment h5 a:hover {
-  color: var(--accent-color);
-}
-
-.blog-comments .comment h5 .reply {
-  padding-left: 10px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-}
-
-.blog-comments .comment h5 .reply i {
-  font-size: 20px;
-}
-
-.blog-comments .comment time {
-  display: block;
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  margin-bottom: 5px;
-}
-
-.blog-comments .comment.comment-reply {
-  padding-left: 40px;
-}
 
 /*--------------------------------------------------------------
 # Comment Form Section
@@ -2940,12 +2622,15 @@ section,
 }
 
 .form-container {
-  flex: 1;
+  flex: 0.5; /* Reduced from 1 to 0.6 to make the form container narrower */
   min-width: 170px;
-  padding: 25px;
+  padding: 35px;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-height: 610px;
+  margin-top:50px;
+  max-width: 530px;
 }
 
 .form-container h2 {
@@ -2956,15 +2641,16 @@ section,
 .form-container form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .form-container input,
 .form-container select {
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1rem;
+  max-width: 500px;
 }
 
 .phone-input {
@@ -2986,18 +2672,19 @@ section,
 }
 
 .form-container button {
-  background-color: #d9534f;
+  background-color: #c20701;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 10px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
+  max-width: 500px;
 }
 
 .form-container button:hover {
-  background-color: #c9302c;
+  background-color: #e41f19;
 }
 
 .form-container p {
@@ -3015,13 +2702,15 @@ section,
 }
 
 .image-container {
-  flex: 1;
+  flex: 1; /* Increased from 1 to 0.8 to make the image container wider */
   min-width: 300px;
+  padding:15px;
 }
 
 .image-container img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
+  height:90%;
 }
 
 /* Responsive Design */
@@ -3051,5 +2740,10 @@ section,
 
   .form-container h2 {
     font-size: 1.2rem;
+  }
+
+  .contact-section {
+   
+    padding: 10px;
   }
 }
