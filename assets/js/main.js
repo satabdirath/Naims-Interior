@@ -1,8 +1,6 @@
-
 (function() {
   "use strict";
 
-  
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
@@ -22,7 +20,6 @@
   }
   mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
 
-
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
       if (document.querySelector('.mobile-nav-active')) {
@@ -31,7 +28,6 @@
     });
 
   });
-
 
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
     navmenu.addEventListener('click', function(e) {
@@ -42,7 +38,6 @@
     });
   });
 
-  
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
@@ -50,26 +45,6 @@
     });
   }
 
- 
-  let scrollTop = document.querySelector('.scroll-top');
-
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-    }
-  }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
-
- 
   function aosInit() {
     AOS.init({
       duration: 600,
@@ -80,12 +55,10 @@
   }
   window.addEventListener('load', aosInit);
 
-
   const glightbox = GLightbox({
     selector: '.glightbox'
   });
 
- 
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
@@ -116,7 +89,6 @@
 
   });
 
-  
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
@@ -133,7 +105,6 @@
 
   window.addEventListener("load", initSwiper);
 
- 
   new PureCounter();
 
 })();
