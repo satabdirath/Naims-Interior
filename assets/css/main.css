@@ -16,7 +16,6 @@
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: rgba(255, 255, 255, 0.55);  /* The default color of the main navmenu links */
   --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
@@ -26,7 +25,6 @@
   --nav-dropdown-hover-color: #fe0000; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
   --background-color: #f4f7f6;
@@ -1651,27 +1649,74 @@ section,
   text-decoration: none;
 }
 
+
+.icon.mobile-icon {
+  position: fixed;
+  bottom: 80px; 
+  right: 10px;
+  background: rgb(165, 1, 1); 
+  color: white; 
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 9999; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.icon.mobile-icon:hover {
+  background: rgb(196, 0, 0); 
+  text-decoration: none;
+}
+
+
 #whatsapp-icon {
   position: fixed;
-  bottom: 20px; /* Position the WhatsApp icon below the scroll-top button */
+  bottom: 20px; 
   right: 20px;
-  background: #25D366;
+  background: rgb(165, 1, 1); 
   color: #fff;
   font-size: 24px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  z-index: 9998; /* Slightly lower z-index than scroll-top button */
+  z-index: 9998; 
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 #whatsapp-icon:hover {
-  background: #20b958;
+  background: rgb(196, 0, 0); 
   text-decoration: none;
 }
+
+
+@media (max-width: 768px) {
+  .icon.mobile-icon,
+  #whatsapp-icon {
+    font-size: 20px; 
+    width: 40px; 
+    height: 40px;
+    bottom: 15px; 
+    gap:3px;
+    
+  }
+  .icon.mobile-icon {
+    margin-right:10px;
+  }
+
+  .icon.mobile-icon {
+    bottom: 60px; 
+  }
+}
+
 
 
 .associate-partners-section {
@@ -1727,7 +1772,7 @@ section,
 }
 
 .form-container {
-  flex: 0.5; /* Reduced from 1 to 0.6 to make the form container narrower */
+  flex: 0.5; 
   min-width: 170px;
   padding: 35px;
   background-color: white;
@@ -1750,7 +1795,8 @@ section,
 }
 
 .form-container input,
-.form-container select {
+.form-container select
+ {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -1758,16 +1804,15 @@ section,
   max-width: 500px;
 }
 
-.phone-input {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+.form-container input[type="tel"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  max-width: 500px;
 }
 
-.phone-input img {
-  width: 24px;
-  height: 16px;
-}
+
 
 .form-container label {
   display: flex;
@@ -1807,7 +1852,7 @@ section,
 }
 
 .image-container {
-  flex: 1; /* Increased from 1 to 0.8 to make the image container wider */
+  flex: 1; 
   min-width: 300px;
   padding:15px;
 }
@@ -1817,8 +1862,25 @@ section,
   border-radius: 12px;
   height:100%;
 }
+@media (min-width: 1635px) and (max-width: 2000px) {
+  .image-container img {
+    width: 100%;
+    border-radius: 12px;
+    height:90%;
+    max-height:800px;
+  }
+}
 
-/* Responsive Design */
+@media (min-width: 2000px) and (max-width: 2500px) {
+  .image-container img {
+    width: 100%;
+    border-radius: 12px;
+    margin-right:20px;
+    height:90%;
+    max-height:800px;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-section {
     flex-direction: column;
@@ -1852,3 +1914,316 @@ section,
     padding: 10px;
   }
 }
+
+.tel-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+
+.tel-container input {
+  width: 100%;
+  padding-left: 50px; 
+  box-sizing: border-box; 
+}
+
+
+.iti {
+  width: 100%;
+}
+
+.iti__flag-container {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.iti input {
+  padding-left: 50px; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .tel-container input {
+    font-size: 0.9rem;
+  }
+}
+
+.review-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+
+.section-subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #7c0000;
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.section-description {
+  font-size: 1rem;
+  margin: 20px auto;
+  max-width: 600px;
+  color: #3e6eac;
+  margin-top:-20px;
+}
+
+/* Review Cards */
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.review-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  max-width: 300px;
+  padding: 20px;
+  color: #000000;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease; 
+  margin-top:10px;
+}
+
+.review-card:hover {
+  transform: translateY(-30px); 
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+}
+
+
+.review-header {
+  margin-top: -50px;
+}
+
+.user-image {
+  width: 60px;
+  height: 60px; 
+  border-radius: 50%; 
+  border: 3px solid rgb(126, 0, 0); 
+  object-fit: cover; 
+  display: block; 
+  margin: 0 auto; 
+}
+
+
+.review-author {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.review-role {
+  font-size: 0.9rem;
+  color: #777777;
+  margin-bottom: 15px;
+}
+
+.quote-icon {
+  display: inline-block;
+  font-size: 2rem;
+  color: #940000;
+  margin-bottom: 15px;
+}
+
+.review-text {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #555555;
+  margin: 15px 0;
+}
+
+.review-rating {
+  margin-top: 10px;
+}
+
+.review-rating .bi {
+  color: #f5c518;
+  font-size: 1rem;
+}
+
+.review-rating .bi-star {
+  color: #cccccc;
+}
+
+/* Responsive Design */
+@media (min-width: 400px) and (max-width: 700px) {
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0 auto; 
+  }
+}
+
+  @media (max-width: 500px) {
+    .reviews {
+      
+      gap: 40px;
+    }
+    .review-card {
+      margin-top: 22px;
+    }
+}
+
+
+
+
+.features-section {
+  background-color: #f8f9fa; 
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+
+.section-header h4 {
+  font-size: 34px;
+  font-weight: 700;
+  text-align: center;
+  color: #96041f;
+  margin-bottom: 30px;
+}
+
+
+.feature-card {
+  background-color: #fff;
+  text-align: center;
+  padding: 30px 25px;
+  box-shadow: 0 0px 25px rgba(0, 0, 0, 0.07);
+  border-radius: 20px;
+  border: 5px solid rgba(0, 0, 0, 0.07);
+  transition: all 0.5s ease;
+  margin-bottom: 30px; 
+}
+
+
+.feature-card:hover {
+  background-color: #97011c;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover .feature-icon,
+.feature-card:hover h6,
+.feature-card:hover p {
+  color: #fff;
+}
+
+
+.feature-icon {
+  font-size: 40px;
+  margin-bottom: 25px;
+  color: #91001b;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; 
+  background-color: rgba(249, 25, 66, 0.15);
+  transition: all 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+
+.feature-card:hover .feature-icon {
+  background-color: #fff;
+  color: #970d26;
+}
+
+
+.feature-card h6 {
+  color: #2f2f2f;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.5s ease;
+}
+
+
+.feature-card p {
+  font-size: 15px;
+  line-height: 26px;
+  color: #818181;
+  transition: color 0.5s ease;
+}
+
+.feature-card:hover h6 {
+  color: #fff;
+}
+
+.feature-card:hover p {
+  color: #fff;
+}
+
+
+@media (max-width: 1024px) {
+  .feature-card {
+    max-width: 45%; 
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-card {
+    max-width: 100%; 
+    margin-bottom: 30px;
+    padding: 20px; 
+  }
+
+  .feature-icon {
+    font-size: 35px; 
+    width: 50px;
+    height: 50px;
+  }
+
+  .section-header h4 {
+    font-size: 28px; 
+  }
+}
+
+
+@media (max-width: 480px) {
+  .section-header h4 {
+    font-size: 24px; 
+  }
+
+  .feature-card {
+    padding: 15px; 
+  }
+
+  .feature-icon {
+    font-size: 30px; 
+    width: 45px;
+    height: 45px;
+  }
+
+  .feature-card h6 {
+    font-size: 16px; 
+  }
+
+  .feature-card p {
+    font-size: 14px; 
+  }
+}
+
