@@ -122,254 +122,153 @@
     <section class="contact-section">
       <div class="form-container">
         <h2>Budget-friendly design, Get in touch!</h2>
-        <form>
+        <form id="contact-form">
           <!-- Name Input -->
-          <input type="text" placeholder="Enter your name" required>
-          
+          <input type="text" id="name" placeholder="Enter your name" required />
+    
           <!-- Email Input -->
-          <input type="email" placeholder="Enter your email" required>
-          
+          <input type="email" id="email" placeholder="Enter your email" required />
+    
           <!-- Telephone Input with Country Code -->
           <div class="tel-container">
-            <input id="phone" type="tel" placeholder="Enter your phone number" name="phone" required/>
+            <input
+              id="phone"
+              type="tel"
+              placeholder="Enter your phone number"
+              name="phone"
+              required
+            />
           </div>
-          
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    
+          <!-- Include intl-tel-input CSS & JS -->
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+          />
           <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-          
           <script>
             const phoneInputField = document.querySelector("#phone");
             const phoneInput = window.intlTelInput(phoneInputField, {
-              initialCountry: "in", // Set India as the default country
-              utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-            });
-          
-            // Automatically format the number according to India's country code
-            phoneInputField.addEventListener("input", function () {
-              const phoneNumber = phoneInput.getNumber(); // Get phone number in E.164 format
-              phoneInputField.value = phoneNumber; // Update the input field with the formatted number
+              initialCountry: "in", // Default to India
+              utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
             });
           </script>
-          
-          
+    
           <!-- Property Name Input -->
-          <input type="text" placeholder="Enter your property name">
-          
+          <input type="text" id="property-name" placeholder="Enter your property name" />
+    
           <!-- Pincode Input -->
-          <input 
-            type="number" 
-            placeholder="Enter Pincode" 
-            maxlength="6" 
-            pattern="\d{6}" 
+          <input
+            id="pincode"
+            type="text"
+            placeholder="Enter Pincode"
+            maxlength="6"
+            pattern="\d{6}"
+            title="Pincode should be exactly 6 digits."
             required
-          >
-          
+          />
+    
           <!-- WhatsApp Checkbox -->
           <label>
-            <input type="checkbox" name="whatsapp-updates" checked> Send me updates on WhatsApp
+            <input type="checkbox" id="whatsapp-updates" name="whatsapp-updates" checked />
+            Send me updates on WhatsApp
           </label>
-          
+    
           <!-- Home Type Dropdown -->
-          <select required>
+          <select id="home-type" required>
             <option value="">Please Select Your Home Type</option>
             <option value="apartment">Apartment</option>
             <option value="villa">Villa</option>
             <option value="independent-house">Independent House</option>
           </select>
-          
+    
           <!-- Submit Button -->
           <button type="submit">Quote</button>
-          
+    
           <!-- Privacy Policy -->
           <p>
-            By submitting this form, you agree to the 
+            By submitting this form, you agree to the
             <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a>.
           </p>
         </form>
+    
+        <script>
+          document
+            .getElementById("contact-form")
+            .addEventListener("submit", async function (event) {
+              event.preventDefault();
+    
+              // Collect form data
+              const name = document.getElementById("name").value.trim();
+              const email = document.getElementById("email").value.trim();
+              const phone = phoneInput.getNumber(); // Get full number with country code
+              const pincode = document.getElementById("pincode").value.trim();
+              const homeType = document.getElementById("home-type").value;
+              const whatsappUpdates = document.getElementById("whatsapp-updates").checked;
+    
+              // Validate inputs
+              if (!phoneInput.isValidNumber()) {
+                alert("Please enter a valid phone number.");
+                return;
+              }
+              if (!pincode.match(/^\d{6}$/)) {
+                alert("Please enter a valid 6-digit pincode.");
+                return;
+              }
+    
+              if (!whatsappUpdates) {
+                alert("Please check the box to receive updates on WhatsApp.");
+                return;
+              }
+    
+              // WhatsApp API parameters
+              const apiToken = "7428%7C2f1PQOaINhAiqFrRPnQQCx4gKLhT9cQUZvPpKZ2V";
+              const phone_number_id = "339128885942421";
+              const template_id = "130298";
+              const template_header_media_url =
+                "https://bot-data.s3.ap-southeast-1.wasabisys.com/upload/2025/1/flowbuilder/flowbuilder-65163-1737126333.pdf";
+              const template_quick_reply_button_values = JSON.stringify([
+                "EXTERNAL_ECOMMERCE_CANCEL_ORDER",
+                "EXTERNAL_ECOMMERCE_CANCEL_ORDER",
+              ]);
+    
+              try {
+                const response = await fetch(
+                  "https://botsailor.com/api/v1/whatsapp/send/template",
+                  {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams({
+                      apiToken,
+                      phone_number_id,
+                      template_id,
+                      template_header_media_url,
+                      template_quick_reply_button_values,
+                      phone_number: phone, // Full international number
+                    }),
+                  }
+                );
+    
+                const result = await response.json();
+    
+                if (result.status === "1") {
+                  alert("Message sent successfully.");
+                } else {
+                  alert(`Error: ${result.message}`);
+                }
+              } catch (error) {
+                console.error("Error sending message:", error);
+                alert("Failed to send the message. Please try again.");
+              }
+            });
+        </script>
       </div>
       <div class="image-container">
-        <img src="assets/img/contact1.jpg" alt="Kitchen Design">
+        <img src="assets/img/contact1.jpg" alt="Kitchen Design" />
       </div>
     </section>
     
-    
-    <section class="features-section bg-light pt-5 pb-5">
-      <div class="container">
-        <div class="row">
-          <div class="section-header col-sm-12">
-            <h4><span>Why Choose</span> Us?</h4>
-           
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="feature-card">
-              <span class="feature-icon feature-box-col-one"><i class="fa fa-globe"></i></span>
-              <h6>Modern Design</h6>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="feature-card">
-              <span class="feature-icon feature-box-col-two"><i class="fa fa-anchor"></i></span>
-              <h6>Creative Design</h6>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="feature-card">
-              <span class="feature-icon feature-box-col-three"><i class="fa fa-hourglass-half"></i></span>
-              <h6>24 x 7 User Support</h6>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="feature-card">
-              <span class="feature-icon feature-box-col-four"><i class="fa fa-database"></i></span>
-              <h6>Business Growth</h6>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    
-
-    <!-- 
-    <section id="testimonials" class="testimonials section">
-
-  
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 20
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section> ---->
     <section class="review-section">
       <div class="container">
         <h3 class="section-subtitle">TESTIMONIALS</h3>
@@ -588,7 +487,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   
-  
+ 
 
 </body>
 
