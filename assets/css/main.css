@@ -2227,3 +2227,16 @@ section,
   }
 }
 
+/* ------------------------mobile mode footer----------------- */
+
+.font-size {
+  font-size: calc(2.375rem + 4.5vw) !important;
+}
+.logo-icon {
+  width: 179px;
+  margin-left: 84px;
+  margin-bottom: 27px;
+
+}
+
+
