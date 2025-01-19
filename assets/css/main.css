@@ -1744,7 +1744,7 @@ section,
 
 .partner-logos img {
   height: 80px;
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
   transition: filter 0.3s ease-in-out;
 }
 
@@ -2230,13 +2230,18 @@ section,
 /* ------------------------mobile mode footer----------------- */
 
 .font-size {
-  font-size: calc(2.375rem + 4.5vw) !important;
+  /* font-size: calc(2.375rem + 4.5vw) !important; */
+  width: 40px;
 }
 .logo-icon {
-  width: 179px;
-  margin-left: 84px;
-  margin-bottom: 27px;
+  width: 100%;
+  /* margin-left: 84px; */
+  margin-bottom: 23px;
 
+}
+
+.patner-m {
+  margin-bottom: 6rem;
 }
 
 

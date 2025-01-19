@@ -15,15 +15,17 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!--  CSS Files -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/swiper@8.4.6/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@8.4.6/swiper-bundle.min.css" rel="stylesheet">
 
 
 
@@ -38,8 +40,8 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo1.png" alt=""> 
-       
+        <img src="assets/img/logo1.png" alt="">
+
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -55,13 +57,13 @@
       </nav>
 
 
-<a href="tel:+91XXXXXXXXXX" class="call d-flex align-items-center">
-  <i class="bi bi-telephone mobile-icon"></i>
-  <span class="call-text">Call</span>
-</a>
+      <a href="tel:+91XXXXXXXXXX" class="call d-flex align-items-center">
+        <i class="bi bi-telephone mobile-icon"></i>
+        <span class="call-text">Call</span>
+      </a>
 
-      
-      
+
+
 
     </div>
   </header>
@@ -76,7 +78,9 @@
           <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-6 text-center">
               <h2>Welcome to Naims Interior</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
               <a href="#get-started" class="btn-get-started">Get Started</a>
             </div>
           </div>
@@ -117,7 +121,7 @@
 
     </section>
 
-  
+
 
     <section class="contact-section">
       <div class="form-container">
@@ -125,50 +129,45 @@
         <form>
           <!-- Name Input -->
           <input type="text" placeholder="Enter your name" required>
-          
+
           <!-- Email Input -->
           <input type="email" placeholder="Enter your email" required>
-          
+
           <!-- Telephone Input with Country Code -->
           <div class="tel-container">
-            <input id="phone" type="tel" placeholder="Enter your phone number" name="phone" required/>
+            <input id="phone" type="tel" placeholder="Enter your phone number" name="phone" required />
           </div>
-          
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+
+          <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
           <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-          
+
           <script>
             const phoneInputField = document.querySelector("#phone");
             const phoneInput = window.intlTelInput(phoneInputField, {
               initialCountry: "in", // Set India as the default country
               utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
             });
-          
+
             // Automatically format the number according to India's country code
             phoneInputField.addEventListener("input", function () {
               const phoneNumber = phoneInput.getNumber(); // Get phone number in E.164 format
               phoneInputField.value = phoneNumber; // Update the input field with the formatted number
             });
           </script>
-          
-          
+
+
           <!-- Property Name Input -->
           <input type="text" placeholder="Enter your property name">
-          
+
           <!-- Pincode Input -->
-          <input 
-            type="number" 
-            placeholder="Enter Pincode" 
-            maxlength="6" 
-            pattern="\d{6}" 
-            required
-          >
-          
+          <input type="number" placeholder="Enter Pincode" maxlength="6" pattern="\d{6}" required>
+
           <!-- WhatsApp Checkbox -->
           <label>
             <input type="checkbox" name="whatsapp-updates" checked> Send me updates on WhatsApp
           </label>
-          
+
           <!-- Home Type Dropdown -->
           <select required>
             <option value="">Please Select Your Home Type</option>
@@ -176,13 +175,13 @@
             <option value="villa">Villa</option>
             <option value="independent-house">Independent House</option>
           </select>
-          
+
           <!-- Submit Button -->
           <button type="submit">Quote</button>
-          
+
           <!-- Privacy Policy -->
           <p>
-            By submitting this form, you agree to the 
+            By submitting this form, you agree to the
             <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a>.
           </p>
         </form>
@@ -191,14 +190,14 @@
         <img src="assets/img/contact1.jpg" alt="Kitchen Design">
       </div>
     </section>
-    
-    
+
+
     <section class="features-section bg-light pt-5 pb-5">
       <div class="container">
         <div class="row">
           <div class="section-header col-sm-12">
             <h4><span>Why Choose</span> Us?</h4>
-           
+
           </div>
           <div class="col-lg-3 col-sm-6">
             <div class="feature-card">
@@ -231,8 +230,8 @@
         </div>
       </div>
     </section>
-    
-    
+
+
 
     <!-- 
     <section id="testimonials" class="testimonials section">
@@ -375,7 +374,8 @@
         <h3 class="section-subtitle">TESTIMONIALS</h3>
         <h2 class="section-title">Our Customers Review</h2>
         <p class="section-description">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s.
         </p>
         <div class="reviews">
           <!-- Review 1 -->
@@ -389,7 +389,8 @@
               <i class="bi bi-quote"></i>
             </div>
             <p class="review-text">
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text."
             </p>
             <div class="review-rating">
               <i class="bi bi-star-fill"></i>
@@ -400,7 +401,7 @@
             </div>
           </div>
 
-           <div class="review-card">
+          <div class="review-card">
             <div class="review-header">
               <img src="assets/img/user1.jpg" alt="Daniel Kim" class="user-image">
             </div>
@@ -410,7 +411,8 @@
               <i class="bi bi-quote"></i>
             </div>
             <p class="review-text">
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text."
             </p>
             <div class="review-rating">
               <i class="bi bi-star-fill"></i>
@@ -420,7 +422,7 @@
               <i class="bi bi-star"></i>
             </div>
           </div>
-    
+
           <!-- Repeat similar cards for other reviews -->
           <div class="review-card">
             <div class="review-header">
@@ -432,7 +434,8 @@
               <i class="bi bi-quote"></i>
             </div>
             <p class="review-text">
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text."
             </p>
             <div class="review-rating">
               <i class="bi bi-star-fill"></i>
@@ -446,41 +449,93 @@
       </div>
     </section>
 
-  
-    <section id="associate-partners" class="associate-partners-section">
+
+    <section id="associate-partners" class="associate-partners-section patner-m">
       <div class="container text-center">
         <h4 class="section-title">Our Associate Partners</h4>
         <div class="partner-logos-wrapper">
           <div class="partner-logos">
-            <img src="path-to-logo1.png" alt="Partner 1" />
-            <img src="path-to-logo2.png" alt="Partner 2" />
-            <img src="path-to-logo3.png" alt="Partner 3" />
-            <img src="path-to-logo4.png" alt="Partner 4" />
-            <img src="path-to-logo5.png" alt="Partner 5" />
-            <img src="path-to-logo6.png" alt="Partner 6" />
-            <img src="path-to-logo7.png" alt="Partner 7" />
-            <img src="path-to-logo8.png" alt="Partner 8" />
-            <img src="path-to-logo9.png" alt="Partner 9" />
-            <img src="path-to-logo10.png" alt="Partner 10" />
+            <img src="/Naims-Interior/assets/img/patner-img-1.jpg" alt="Partner 1" />
+            <img src="/Naims-Interior/assets/img/patner-img-2.jpg" alt="Partner 2" />
+            <img src="/Naims-Interior/assets/img/patner-img-3.jpg" alt="Partner 3" />
+            <img src="/Naims-Interior/assets/img/patner-img-4.jpg" alt="Partner 4" />
+            <img src="/Naims-Interior/assets/img/patner-img-5.jpg" alt="Partner 5" />
+            <img src="/Naims-Interior/assets/img/patner-img-1.jpg" alt="Partner 6" />
+            <img src="/Naims-Interior/assets/img/patner-img-1.jpg" alt="Partner 7" />
+            <img src="/Naims-Interior/assets/img/patner-img-1.jpg" alt="Partner 8" />
+            <img src="/Naims-Interior/assets/img/patner-img-1.jpg" alt="Partner 9" />
+            <img src="/Naims-Interior/assets/img/patner-img-1.jpg" alt="Partner 10" />
           </div>
         </div>
       </div>
     </section>
-    
-    
+
+
   </main>
 
-  <div class="position-fixed position-relative  bottom-0  d-md-none d-block container-fluid">
-    <div class="logo-icon z-1 position-absolute  bottom-0 d-flex justify-content-center">
-      <img src="/Naims-Interior/assets/img/update-logo2.png" class="img-fluid">
+  <div class="position-fixed position-relative container-fluid  bottom-0 p-0 m-0  d-md-none d-block container-fluid">
+    <div class="logo-icon z-1 position-absolute container bottom-0 d-flex justify-content-center">
+      <div class="w-50">
+        <img src="/Naims-Interior/assets/img/update-logo2.png" class="img-fluid">
+      </div>
     </div>
-    <div class="container-fluid bg-white d-flex justify-content-between px-1 align-items-center border-top border-5 ">
+    <div
+      class="container-fluid bg-white d-flex justify-content-between px-3 align-items-center shadow-lg  border-bottom border-top border-5 ">
       <div>
-        <i class="font-size fa-regular fa-id-badge"></i>
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40px" viewBox="0 0 500.000000 500.000000"
+          preserveAspectRatio="xMidYMid meet">
+
+          <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)" fill="#960601" stroke="none">
+            <path d="M2300 4914 c-360 -42 -584 -105 -865 -244 -493 -243 -860 -610 -1105
+-1105 -117 -235 -184 -449 -227 -717 -25 -159 -25 -537 0 -696 43 -267 110
+-480 227 -717 124 -251 262 -446 450 -636 196 -197 398 -342 655 -469 235
+-117 449 -184 717 -227 158 -25 537 -25 695 0 269 43 497 115 728 232 493 248
+853 609 1095 1100 117 237 184 450 227 717 25 158 25 537 0 695 -43 269 -115
+497 -232 728 -129 258 -264 446 -460 640 -365 364 -831 598 -1350 680 -95 15
+-476 28 -555 19z m380 -114 c380 -32 711 -140 1025 -335 524 -324 894 -832
+1039 -1426 82 -337 82 -741 0 -1078 -225 -923 -987 -1613 -1929 -1747 -163
+-23 -468 -23 -630 0 -539 77 -1026 334 -1389 734 -630 694 -781 1684 -385
+2530 199 426 514 767 946 1026 369 221 876 334 1323 296z" />
+            <path d="M1131 3836 c-49 -18 -111 -74 -132 -120 -17 -37 -19 -70 -19 -333 l0
+-293 1520 0 1520 0 0 293 c0 326 -3 339 -71 404 -71 67 17 63 -1453 62 -1019
+0 -1339 -3 -1365 -13z m2020 -215 c59 -37 94 -112 84 -177 -7 -51 -53 -117
+-97 -141 -49 -26 -134 -23 -181 6 -98 60 -117 201 -39 285 60 64 158 75 233
+27z m544 6 c94 -53 122 -169 62 -258 -84 -124 -255 -110 -318 26 -56 122 30
+255 166 255 33 0 63 -8 90 -23z" />
+            <path d="M2983 3581 c-110 -69 -64 -241 64 -241 83 0 133 51 133 134 0 38 -6
+52 -33 82 -28 31 -41 37 -83 41 -37 3 -57 -1 -81 -16z" />
+            <path d="M3545 3586 c-88 -39 -96 -175 -13 -226 73 -45 170 -12 197 67 13 36
+13 45 -3 86 -9 25 -29 53 -43 63 -35 22 -101 28 -138 10z" />
+            <path d="M980 2180 c0 -806 1 -857 19 -895 23 -51 89 -111 138 -124 56 -16
+2672 -15 2724 1 52 15 117 73 140 122 18 39 19 87 19 896 l0 855 -1520 0
+-1520 0 0 -855z m1250 655 c70 -36 94 -131 48 -190 -42 -53 -56 -55 -458 -55
+-401 0 -416 2 -458 54 -47 60 -31 138 37 183 34 23 36 23 418 23 319 0 389 -2
+413 -15z m1411 -424 c23 -18 24 -26 24 -131 0 -105 -1 -113 -24 -131 -23 -18
+-55 -19 -1141 -19 -1086 0 -1118 1 -1141 19 -23 18 -24 26 -24 131 0 105 1
+113 24 131 23 18 55 19 1141 19 1086 0 1118 -1 1141 -19z m-16 -457 c39 -16
+45 -53 45 -303 0 -132 -4 -251 -10 -265 -5 -14 -19 -30 -31 -37 -32 -17 -2226
+-16 -2258 0 -12 7 -26 23 -31 37 -6 14 -10 133 -10 265 0 246 6 288 42 302 19
+8 2233 8 2253 1z" />
+            <path d="M1443 2793 c-51 -10 -71 -93 -32 -129 20 -18 43 -19 398 -22 289 -1
+382 1 401 11 30 15 45 54 36 91 -13 53 -39 56 -428 55 -194 -1 -363 -4 -375
+-6z" />
+            <path d="M1390 2280 l0 -100 1110 0 1110 0 0 100 0 100 -1110 0 -1110 0 0
+-100z" />
+            <path d="M1397 1903 c-4 -3 -7 -120 -7 -260 l0 -253 1110 0 1110 0 -2 258 -3
+257 -1101 3 c-605 1 -1104 -1 -1107 -5z" />
+          </g>
+        </svg>
       </div>
       <div>
-        <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-icon">
-          <i class="fa-brands fa-whatsapp font-size"></i>
+        <a href="https://wa.me/1234567890" target="_blank" class="">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="40px" viewBox="0 0 500.000000 500.000000" preserveAspectRatio="xMidYMid meet">
+            <path
+              d="M0 0 C1.80963226 -0.00855011 1.80963226 -0.00855011 3.65582275 -0.01727295 C6.2075514 -0.02669439 8.75929205 -0.03324554 11.31103516 -0.03710938 C15.14898993 -0.04673917 18.98639112 -0.07775948 22.82421875 -0.109375 C36.98760777 -0.17065108 50.54636719 0.45742841 64.453125 3.203125 C65.48743652 3.39664551 66.52174805 3.59016602 67.58740234 3.78955078 C69.99730291 4.26990411 72.37927989 4.80532915 74.765625 5.390625 C75.61697021 5.5978418 76.46831543 5.80505859 77.34545898 6.01855469 C103.12714754 12.55244685 126.74058133 23.54705948 149.453125 37.203125 C150.12069824 37.59999512 150.78827148 37.99686523 151.47607422 38.40576172 C167.42268342 47.9484486 181.13099283 60.34310429 194.453125 73.203125 C195.2678125 73.98816406 196.0825 74.77320312 196.921875 75.58203125 C210.17148385 88.60231995 220.63961561 103.51913245 230.453125 119.203125 C231.05471436 120.15058594 231.05471436 120.15058594 231.66845703 121.1171875 C253.00878416 154.78887444 266.49595114 195.216208 266.65625 235.21875 C266.66195007 236.35101013 266.66765015 237.48327026 266.67352295 238.64984131 C266.68292474 241.03998903 266.68948762 243.43014943 266.69335938 245.8203125 C266.70298565 249.40128524 266.73402357 252.98166344 266.765625 256.5625 C266.86540878 278.13633193 264.43524723 298.46596263 258.453125 319.203125 C258.24349121 319.9338623 258.03385742 320.66459961 257.81787109 321.41748047 C250.40277721 346.63108299 238.45996649 370.67667722 223.453125 392.203125 C222.72222656 393.28207031 221.99132812 394.36101562 221.23828125 395.47265625 C215.24689965 404.29861479 209.06664131 412.70840114 201.453125 420.203125 C200.21619232 421.44927578 198.98062583 422.69678346 197.74609375 423.9453125 C196.3776568 425.32296895 195.00916603 426.70057194 193.640625 428.078125 C192.96708984 428.76003906 192.29355469 429.44195312 191.59960938 430.14453125 C187.05363377 434.71225794 182.35488289 439.02104717 177.453125 443.203125 C176.89874756 443.68539551 176.34437012 444.16766602 175.77319336 444.66455078 C165.64818905 453.41159593 154.64844229 460.16423193 143.02294922 466.73828125 C140.77335669 468.02058746 138.5489025 469.33413641 136.33203125 470.671875 C105.84972058 488.85602812 68.43741128 500.27411268 32.90625 500.40625 C31.69982849 500.41195007 30.49340698 500.41765015 29.25042725 500.42352295 C26.6986986 500.43294439 24.14695795 500.43949554 21.59521484 500.44335938 C17.75726007 500.45298917 13.91985888 500.48400948 10.08203125 500.515625 C-4.07161393 500.57732429 -17.65562719 500.00213939 -31.546875 497.203125 C-32.67931641 496.97866699 -33.81175781 496.75420898 -34.97851562 496.52294922 C-37.8126115 495.91412634 -40.61539565 495.24039328 -43.421875 494.515625 C-44.4130835 494.26288818 -45.40429199 494.01015137 -46.42553711 493.74975586 C-67.84653098 488.09763066 -87.44076336 479.05990275 -106.94140625 468.73046875 C-107.66027008 468.35958633 -108.37913391 467.98870392 -109.11978149 467.60658264 C-111.546875 466.203125 -111.546875 466.203125 -113.60295105 464.48725891 C-117.50998452 461.42993777 -120.14086656 460.06193644 -125.17170715 460.56712341 C-129.5774445 461.61301203 -133.81736324 463.13866946 -138.078125 464.65625 C-139.67858971 465.19219428 -141.28030516 465.72441636 -142.88317871 466.25311279 C-147.09790612 467.65432696 -151.29393061 469.10495138 -155.48791504 470.56689453 C-159.69805709 472.02496977 -163.9236974 473.43646954 -168.1484375 474.8515625 C-174.39754977 476.95031999 -180.63740933 479.07384889 -186.86914062 481.22363281 C-189.01447792 481.96101721 -191.16010374 482.69755213 -193.30593872 483.43348694 C-194.86942637 483.97045875 -196.43235133 484.50907051 -197.99484253 485.04893494 C-200.46002502 485.89904386 -202.927909 486.74085637 -205.39648438 487.58105469 C-206.15359962 487.84389881 -206.91071487 488.10674294 -207.69077301 488.37755203 C-211.19127474 489.56094823 -213.81087244 490.203125 -217.546875 490.203125 C-216.98473 485.56974732 -216.09780914 481.38334981 -214.58496094 476.97094727 C-214.18073914 475.78183243 -213.77651733 474.59271759 -213.36004639 473.36756897 C-212.91717803 472.08486771 -212.47424417 470.80218906 -212.03125 469.51953125 C-211.57323301 468.17801509 -211.11582659 466.83629034 -210.65899658 465.49436951 C-209.45625989 461.96582712 -208.24650351 458.43973493 -207.03485107 454.91424561 C-205.11199327 449.31583661 -203.19898997 443.71404654 -201.28672791 438.11201096 C-200.82559942 436.76120099 -200.36422541 435.41047483 -199.90260315 434.05983353 C-196.9677026 425.46872521 -194.09983055 416.86564262 -191.45800781 408.17944336 C-190.546875 405.203125 -190.546875 405.203125 -189.36230469 402.17797852 C-188.16323243 397.8035188 -188.74046607 394.75463782 -190.81860352 390.75634766 C-191.34897217 389.9679248 -191.87934082 389.17950195 -192.42578125 388.3671875 C-193.01367432 387.47555908 -193.60156738 386.58393066 -194.20727539 385.6652832 C-194.83496826 384.729021 -195.46266113 383.79275879 -196.109375 382.828125 C-201.96280442 373.87412031 -207.06723457 364.90718715 -211.546875 355.203125 C-212.22943359 353.76839844 -212.22943359 353.76839844 -212.92578125 352.3046875 C-214.18035367 349.62249819 -215.37358933 346.92180636 -216.546875 344.203125 C-217.01738281 343.13578125 -217.48789063 342.0684375 -217.97265625 340.96875 C-228.00295725 317.22777915 -233.64961747 290.7943561 -233.75 265.03125 C-233.75570007 263.8730072 -233.76140015 262.7147644 -233.76727295 261.52142334 C-233.77668428 259.07402446 -233.78324147 256.62661313 -233.78710938 254.17919922 C-233.79673656 250.50594755 -233.82776553 246.8332751 -233.859375 243.16015625 C-233.95614006 221.74357714 -231.44468847 201.78814998 -225.546875 181.203125 C-225.33724121 180.4709375 -225.12760742 179.73875 -224.91162109 178.984375 C-217.4292496 153.54776799 -205.19795701 130.16118892 -190.546875 108.203125 C-190.14678223 107.59903809 -189.74668945 106.99495117 -189.33447266 106.37255859 C-183.95795439 98.28136942 -178.26489298 90.25132912 -171.546875 83.203125 C-170.886875 83.203125 -170.226875 83.203125 -169.546875 83.203125 C-169.28277832 82.61378174 -169.01868164 82.02443848 -168.74658203 81.41723633 C-167.50110448 79.11865351 -166.20135286 77.61372983 -164.3515625 75.77734375 C-163.7225 75.14932861 -163.0934375 74.52131348 -162.4453125 73.87426758 C-161.77757812 73.21966553 -161.10984375 72.56506348 -160.421875 71.890625 C-159.73609375 71.21346436 -159.0503125 70.53630371 -158.34375 69.83862305 C-153.8807879 65.45467489 -149.39087506 61.16639777 -144.546875 57.203125 C-143.78286377 56.56044678 -143.78286377 56.56044678 -143.00341797 55.90478516 C-134.59233168 48.8377749 -126.03658331 42.67691749 -116.46484375 37.28417969 C-114.50498749 36.17951529 -112.55680812 35.05608742 -110.609375 33.9296875 C-76.99827992 14.60454293 -39.21652966 0.14584288 0 0 Z M-106.47265625 126.87109375 C-114.06771297 135.41016882 -119.90066667 145.38927521 -123.546875 156.203125 C-124.13275391 157.80414063 -124.13275391 157.80414063 -124.73046875 159.4375 C-133.94218738 188.12451302 -123.80666091 215.49304688 -110.734375 240.953125 C-106.45564505 249.06446925 -101.40235236 256.35423874 -95.78710938 263.58642578 C-94.01793107 265.89262631 -92.3501454 268.2677763 -90.671875 270.640625 C-83.21381383 280.90120197 -75.08453735 290.72429967 -66.50390625 300.0625 C-64.74094994 301.99084343 -63.04733551 303.9594049 -61.359375 305.953125 C-52.61849464 315.95139418 -43.02551579 325.05601491 -32.546875 333.203125 C-31.17230146 334.30489804 -29.79867883 335.40785803 -28.42578125 336.51171875 C-19.53425297 343.60852921 -10.50764747 350.15980434 -0.70019531 355.93457031 C0.93232403 356.896313 2.55655328 357.87214516 4.17675781 358.85449219 C11.07469102 362.98427919 18.0376733 366.4794158 25.453125 369.578125 C26.56034912 370.0429126 27.66757324 370.5077002 28.80834961 370.98657227 C57.92073657 382.9452302 93.60207597 396.88123985 124.62207031 384.32519531 C129.37573521 382.20837949 133.94104384 379.790994 138.453125 377.203125 C139.33871094 376.69652344 140.22429687 376.18992187 141.13671875 375.66796875 C153.57656983 367.92809607 160.75734019 357.62651919 164.28759766 343.49658203 C167.34772823 331.03809996 167.34772823 331.03809996 165.44140625 318.69921875 C162.60263517 315.13541773 159.24114057 313.57843637 155.203125 311.578125 C154.37337158 311.15499023 153.54361816 310.73185547 152.6887207 310.29589844 C149.95306969 308.91148939 147.20565851 307.55363844 144.453125 306.203125 C143.49003418 305.7297168 142.52694336 305.25630859 141.53466797 304.76855469 C130.3138523 299.27936794 119.05498339 293.84701676 107.453125 289.203125 C106.59589844 288.85378906 105.73867188 288.50445312 104.85546875 288.14453125 C100.04580683 286.33789697 96.50135784 285.55097607 91.453125 287.203125 C82.19998036 292.75905246 76.03758443 303.78431079 69.88500977 312.39868164 C69.36994873 313.10758545 68.8548877 313.81648926 68.32421875 314.546875 C67.63477173 315.5069043 67.63477173 315.5069043 66.93139648 316.48632812 C63.86242082 320.05049606 60.13598705 321.84827752 55.50390625 322.4609375 C47.40409213 322.18322959 39.6214144 317.67093996 32.453125 314.203125 C31.82067871 313.89987305 31.18823242 313.59662109 30.53662109 313.28417969 C19.72808603 308.02658924 10.09468274 301.34145042 0.453125 294.203125 C-0.16401367 293.75114746 -0.78115234 293.29916992 -1.41699219 292.83349609 C-12.16345075 284.94036686 -20.94493345 276.24985434 -29.23681641 265.82519531 C-30.6850336 264.03206169 -32.16612304 262.26956089 -33.65234375 260.5078125 C-39.26197439 253.81918361 -44.60355802 247.03115091 -49.359375 239.703125 C-49.78597412 239.06930908 -50.21257324 238.43549316 -50.65209961 237.7824707 C-53.6113632 233.05348186 -54.27675998 229.77476608 -53.546875 224.203125 C-51.11987067 219.6396732 -47.70392834 216.0035118 -44.171875 212.265625 C-43.19467472 211.21283121 -42.21810758 210.15944937 -41.2421875 209.10546875 C-40.35273438 208.14769531 -39.46328125 207.18992187 -38.546875 206.203125 C-33.24163036 200.41849078 -29.14750824 195.69780053 -29.29638672 187.40112305 C-29.74519434 183.46290182 -31.38400953 180.1414603 -33.046875 176.578125 C-33.86733899 174.74993212 -34.68477767 172.92037999 -35.5 171.08984375 C-35.97115234 170.03716309 -36.44230469 168.98448242 -36.92773438 167.89990234 C-38.8652893 163.51581242 -40.6956383 159.08766022 -42.53125 154.66015625 C-42.88074707 153.81940552 -43.23024414 152.97865479 -43.59033203 152.11242676 C-45.01161734 148.69325102 -46.432845 145.27410042 -47.84350586 141.8505249 C-48.84742398 139.4170888 -49.86036845 136.98757881 -50.875 134.55859375 C-51.17065857 133.83525345 -51.46631714 133.11191315 -51.77093506 132.36665344 C-55.21166917 123.58609317 -55.21166917 123.58609317 -61.50128174 117.00822449 C-76.22543191 111.21313023 -95.25831313 116.4301536 -106.47265625 126.87109375 Z "
+              fill="#960601" transform="translate(233.546875,-0.203125)" />
+            <path
+              d="M0 0 C0 0.99 0 1.98 0 3 C-1.39322978 4.39322978 -2.78786939 5.78505054 -4.18359375 7.17578125 C-6.26978436 9.2677588 -8.34367912 11.36920551 -10.41015625 13.48046875 C-11.62752552 14.71622332 -12.84497477 15.9518991 -14.0625 17.1875 C-14.97999023 18.13012695 -14.97999023 18.13012695 -15.91601562 19.09179688 C-16.51220703 19.69443359 -17.10839844 20.29707031 -17.72265625 20.91796875 C-18.25640869 21.46219482 -18.79016113 22.0064209 -19.34008789 22.56713867 C-21.11821549 24.1020454 -22.86469234 25.03964879 -25 26 C-24.34 24.68 -23.68 23.36 -23 22 C-22.34 22 -21.68 22 -21 22 C-20.73880371 21.41355713 -20.47760742 20.82711426 -20.20849609 20.22290039 C-18.92861996 17.86870398 -17.56108685 16.31746223 -15.6640625 14.43359375 C-15.01179688 13.78326172 -14.35953125 13.13292969 -13.6875 12.46289062 C-13.006875 11.79451172 -12.32625 11.12613281 -11.625 10.4375 C-10.95210937 9.76525391 -10.27921875 9.09300781 -9.5859375 8.40039062 C-6.51698212 5.35862088 -3.50589922 2.53900405 0 0 Z "
+              fill="#3F3E3F" transform="translate(85,61)" />
+          </svg>
         </a>
       </div>
     </div>
@@ -497,7 +552,8 @@
             <span class="sitename">Naims Interior</span>
           </a>
           <p class="footer-description mt-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
           </p>
           <div class="footer-contact pt-3">
             <p><strong>Address:</strong> A108 Adam Street, New York, NY 535022</p>
@@ -511,7 +567,7 @@
             <a href="#" class="social-link"><i class="bi bi-pinterest"></i></a>
           </div>
         </div>
-  
+
         <!-- Quick Links -->
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Quick Links</h4>
@@ -523,7 +579,7 @@
             <li><a href="#">FAQs</a></li>
           </ul>
         </div>
-  
+
         <!-- Our Services -->
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
@@ -535,7 +591,7 @@
             <li><a href="#">Lighting Design</a></li>
           </ul>
         </div>
-  
+
         <!-- Blog Highlights Section -->
         <div class="col-lg-4 col-md-6 footer-blog">
           <h4>From Our Blog</h4>
@@ -562,7 +618,7 @@
         </div>
       </div>
     </div>
-  
+
     <div class="container text-center mt-4">
       <p>© <span>Copyright</span> <strong class="sitename">Naims Interior</strong> <span>All Rights Reserved</span></p>
       <!--<div class="credits">
@@ -570,29 +626,32 @@
       </div>--->
     </div>
   </footer>
-  
-  
 
 
 
- 
+
+
+
   <!-- Scroll Top -->
 
-  <a href="tel:+918449446389" target="_blank" class="d-none d-md-block icon mobile-icon d-flex align-items-center justify-content-center">
+  <a href="tel:+918449446389" target="_blank"
+    class="d-none d-md-block icon mobile-icon d-flex align-items-center justify-content-center">
     <i class="bi bi-telephone-fill"></i>
   </a>
-  
-  <a href="https://wa.me/918449446389?text=Hello%20NAIMS%20INTERIOR%20Team%2C%20I%20need%20assistance%20regarding%20your%20services%20Ref%3A%20%23INQ-7845" target="_blank" id="whatsapp-icon" class="whatsapp-icon d-flex align-items-center justify-content-center">
+
+  <a href="https://wa.me/918449446389?text=Hello%20NAIMS%20INTERIOR%20Team%2C%20I%20need%20assistance%20regarding%20your%20services%20Ref%3A%20%23INQ-7845"
+    target="_blank" id="whatsapp-icon"
+    class="whatsapp-icon d-flex align-items-center d-none d-md-block justify-content-center">
     <i class="bi bi-whatsapp d-none d-md-block"></i>
   </a>
-  
- 
-  
-</div>
+
+
+
+  </div>
   <!-- Preloader -->
   <div id="preloader"></div>
 
- 
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js"></script>
@@ -600,12 +659,12 @@
   <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8.4.6/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.1.0/dist/purecounter_vanilla.js"></script>
-  
+
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  
-  
+
+
 
 </body>
 
