@@ -11,7 +11,7 @@
   --background-color: #ffffff; 
   --default-color: #364d59; 
   --heading-color: #52565e; 
-  --accent-color: #ff0800; 
+  --accent-color: #a80802; 
   --surface-color: #ffffff; 
   --contrast-color: #ffffff; 
 }
@@ -22,7 +22,7 @@
   --nav-mobile-background-color: #ffffff; 
   --nav-dropdown-background-color: #ffffff; 
   --nav-dropdown-color: #212529; 
-  --nav-dropdown-hover-color: #fe0000; 
+  --nav-dropdown-hover-color: #aa0404; 
 }
 
 
@@ -272,6 +272,7 @@ h6 {
 
 .call:hover {
   background-color: #c93d39; 
+  color:white;
 }
 
 .mobile-icon {
@@ -2204,7 +2205,7 @@ section,
 
 .years-badge {
   position: absolute;
-  background: #ff0000;
+  background: #910000;
   color: #fff;
   width: 80px;
   height: 80px;
@@ -2225,14 +2226,14 @@ section,
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Right Content Section */
+
 .about-us-content {
   flex: 1;
   max-width: 48%;
 }
 
 .about-tagline {
-  color: #ff0000;
+  color: #910303;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
@@ -2264,7 +2265,7 @@ section,
   display: inline-block;
   text-decoration: none;
   color: #fff;
-  background-color: #ff0000;
+  background-color: #960404;
   padding: 10px 20px;
   border-radius: 5px;
   font-weight: bold;
