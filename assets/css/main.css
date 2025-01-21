@@ -1827,7 +1827,7 @@ section,
 
 @media (max-width: 1024px) {
   .feature-card {
-    max-width: 45%; 
+    max-width: 90%; 
     margin-bottom: 30px;
   }
 }
