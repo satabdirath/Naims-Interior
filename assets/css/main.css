@@ -1918,7 +1918,6 @@ section,
   z-index: 1;
   position: absolute;
   bottom: 0;
-  top:-20px;
   left: 0;
   right: 0;
   display: flex;
@@ -1934,6 +1933,7 @@ section,
 .logo-icon img {
   max-width: 100%;
   height: auto;
+  margin-top: -27px;
 }
 
 /* Main container style with background */
