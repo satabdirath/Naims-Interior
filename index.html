@@ -83,122 +83,104 @@
           </div>
         </div>
       </div>
-    
+
       <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-item">
           <img src="assets/img/hero-carousel/hero-carousel-1.png" alt="">
         </div>
-    
+
         <div class="carousel-item active">
           <img src="assets/img/hero-carousel/hero-carousel-2.png" alt="">
         </div>
-    
+
         <div class="carousel-item">
           <img src="assets/img/hero-carousel/hero-carousel-3.png" alt="">
         </div>
       </div>
-<!-- Contact Form Section -->
-<form id="contact-form" class="contact-form">
-  <h2>Budget-friendly design, Get in touch!</h2>
-  
-  <div id="step-1" class="form-step active">
-    <!-- Name Input -->
-    <input type="text" placeholder="Enter your name" id="name" required />
-    <input type="email" placeholder="Enter your email" id="email" required />
-    <br>
-  
-    
-    <!-- Telephone Input -->
-    <div class="tel-container">
-      <input 
-        id="phone" 
-        type="text" 
-        placeholder="Enter your phone number" 
-        name="phone" 
-        required 
-        maxlength="15" 
-        oninput="validatePhone(this)" 
-        onkeydown="validatePhonesKeyDown(event)" 
-      />
-    </div>
-    <label class="whatsapp-label">
-      <input type="checkbox" id="whatsapp-updates" name="whatsapp-updates" class="checkboxclass" checked />
-      Send me updates on WhatsApp
-    </label>
-   
-    
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-    
-    <script>
-      // Initialize intl-tel-input
-      const phoneInputField = document.querySelector("#phone");
-      const phoneInput = window.intlTelInput(phoneInputField, {
-        initialCountry: "in", // Set India as the default country
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-      });
-    
-      // Format phone number after entering 10 digits
-      phoneInputField.addEventListener("input", () => {
-        const currentValue = phoneInputField.value.replace(/\D/g, ""); // Strip non-digits
-        if (currentValue.length === 10) {
-          // Use intl-tel-input's setNumber to format
-          const formattedNumber = phoneInput.getNumber(
-            intlTelInputUtils.numberFormat.INTERNATIONAL
-          );
-          phoneInputField.value = formattedNumber; // Set formatted value
-        }
-      });
-    
-      // Ensure only numeric values are allowed
-      function validatePhone(input) {
-        input.value = input.value.replace(/\D/g, "").slice(0, 10); // Limit to 10 digits
-      }
-    
-      // Prevent invalid keys after 10 digits
-      function validatePhonesKeyDown(e) {
-        const value = e.target.value.replace(/\D/g, ""); // Remove non-digits
-        if (value.length >= 10 && !e.key.match(/[0-9]/)) {
-          e.preventDefault(); // Prevent non-numeric key
-        }
-      }
-    </script>
+      <!-- Contact Form Section -->
+      <form id="contact-form" class="contact-form">
+        <h2>Budget-friendly design, Get in touch!</h2>
 
-    <button  class="hero_button" type="button" id="next-1">Qoute</button>
+        <div id="step-1" class="form-step active">
+          <!-- Name Input -->
+          <input type="text" placeholder="Enter your name" id="name" required />
+          <input type="email" placeholder="Enter your email" id="email" required />
+          <br>
+
+
+          <!-- Telephone Input -->
+          <div class="tel-container">
+            <input id="phone" type="text" placeholder="Enter your phone number" name="phone" required maxlength="15"
+              oninput="validatePhone(this)" onkeydown="validatePhonesKeyDown(event)" />
+          </div>
+          <label class="whatsapp-label">
+            <input type="checkbox" id="whatsapp-updates" name="whatsapp-updates" class="checkboxclass" checked />
+            Send me updates on WhatsApp
+          </label>
+
+
+          <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+          <script>
+            // Initialize intl-tel-input
+            const phoneInputField = document.querySelector("#phone");
+            const phoneInput = window.intlTelInput(phoneInputField, {
+              initialCountry: "in", // Set India as the default country
+              utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            });
+
+            // Format phone number after entering 10 digits
+            phoneInputField.addEventListener("input", () => {
+              const currentValue = phoneInputField.value.replace(/\D/g, ""); // Strip non-digits
+              if (currentValue.length === 10) {
+                // Use intl-tel-input's setNumber to format
+                const formattedNumber = phoneInput.getNumber(
+                  intlTelInputUtils.numberFormat.INTERNATIONAL
+                );
+                phoneInputField.value = formattedNumber; // Set formatted value
+              }
+            });
+
+            // Ensure only numeric values are allowed
+            function validatePhone(input) {
+              input.value = input.value.replace(/\D/g, "").slice(0, 10); // Limit to 10 digits
+            }
+
+            // Prevent invalid keys after 10 digits
+            function validatePhonesKeyDown(e) {
+              const value = e.target.value.replace(/\D/g, ""); // Remove non-digits
+              if (value.length >= 10 && !e.key.match(/[0-9]/)) {
+                e.preventDefault(); // Prevent non-numeric key
+              }
+            }
+          </script>
+
+    <button  class="hero_button" type="button" id="next-1">Next</button>
   </div>
   
   <!-- Step 2 -->
   <div id="step-2" class="form-step">
     <input type="text" placeholder="Enter your property name" id="property-name">
 
-    <input 
-    type="text" 
-    placeholder="Enter Pincode" 
-    id="pincode" 
-    maxlength="6" 
-    pattern="\d{6}" 
-    required
-    oninput="validatePincode(this)"
-    onkeydown="validatePincodeKeyDown(event)"
-  >
-  
-  <script>
-    function validatePincode(input) {
-      // Allow only digits, and limit to 6 digits
-      input.value = input.value.replace(/\D/g, '').slice(0, 6);
-    }
+          <input type="text" placeholder="Enter Pincode" id="pincode" maxlength="6" pattern="\d{6}" required
+            oninput="validatePincode(this)" onkeydown="validatePincodeKeyDown(event)">
 
-    function validatePincodeKeyDown(e) {
-      // Allow only numeric keys and limit to 6 digits
-      const value = e.target.value.replace(/\D/g, ''); // Remove non-digits
-      if (value.length >= 6 && !e.key.match(/[0-9]/)) {
-        e.preventDefault(); // Prevent non-numeric key
-      }
-    }
-  </script>
+          <script>
+            function validatePincode(input) {
+              // Allow only digits, and limit to 6 digits
+              input.value = input.value.replace(/\D/g, '').slice(0, 6);
+            }
+
+            function validatePincodeKeyDown(e) {
+              // Allow only numeric keys and limit to 6 digits
+              const value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+              if (value.length >= 6 && !e.key.match(/[0-9]/)) {
+                e.preventDefault(); // Prevent non-numeric key
+              }
+            }
+          </script>
 
     <select id="home-type" required>
       <option value="">Please Select Your Home Type</option>
@@ -207,16 +189,17 @@
       <option value="independent-house">Independent House</option>
     </select>
     <input type="text" placeholder="Enter your budget" id="budget">
-    <button  class="hero_button" type="submit">Submit</button>
+    <button class="hero_button" type="button" id="back-2">Back</button>
+    <button  class="hero_button" type="submit">Quote</button>
   </div>
   
   <p>By submitting this form, you agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a>.</p>
 </form>
 
     </section>
-    
-    
- 
+
+
+
     <!--<section class="about-us-section">
       <div class="about-us-container">
       
@@ -249,91 +232,97 @@
         </div>
       </div>
     </section>-->
-    
-    
-    <center><section id="services" class="services section">
 
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Our Services</h2>
-        <p>Transforming spaces into stunning works of art with thoughtful design solutions tailored to your needs.</p>
-      </div>
-    
-      <div class="container">
-    
-        <div class="row gy-4">
-    
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg"><img src="assets/img/contact1.jpg" alt="Residential Design"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h4 class="card-title">Residential Design</h4>
-                    <p>Creating comfortable, stylish living spaces that reflect your personality. From cozy apartments to spacious homes, we design functional and inviting interiors.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg"><img src="assets/img/contact1.jpg" alt="Commercial Design"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h4 class="card-title">Commercial Design</h4>
-                    <p>Innovative design solutions for offices, retail spaces, and restaurants. We create professional and functional environments that enhance your business image.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg"><img src="assets/img/contact1.jpg" alt="Renovations"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h4 class="card-title">Renovations & Remodeling</h4>
-                    <p>Revitalize your space with expert renovation services. Whether it's a full remodel or minor updates, we bring new life to your interiors.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg"><img src="assets/img/contact1.jpg" alt="Custom Furnishings"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h4 class="card-title">Custom Furnishings</h4>
-                    <p>Tailored furniture solutions designed to fit your unique space and style. We craft bespoke pieces that enhance the aesthetic and functionality of your interiors.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    
+
+    <center>
+      <section id="services" class="services section">
+
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Our Services</h2>
+          <p>Transforming spaces into stunning works of art with thoughtful design solutions tailored to your needs.</p>
         </div>
-    
-      </div>
-    
-    </section></center>
-    
 
-    
+        <div class="container">
+
+          <div class="row gy-4">
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-item">
+                <div class="row">
+                  <div class="col-xl-5">
+                    <div class="card-bg"><img src="assets/img/contact1.jpg" alt="Residential Design"></div>
+                  </div>
+                  <div class="col-xl-7 d-flex align-items-center">
+                    <div class="card-body">
+                      <h4 class="card-title">Residential Design</h4>
+                      <p>Creating comfortable, stylish living spaces that reflect your personality. From cozy apartments
+                        to spacious homes, we design functional and inviting interiors.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-item">
+                <div class="row">
+                  <div class="col-xl-5">
+                    <div class="card-bg"><img src="assets/img/contact1.jpg" alt="Commercial Design"></div>
+                  </div>
+                  <div class="col-xl-7 d-flex align-items-center">
+                    <div class="card-body">
+                      <h4 class="card-title">Commercial Design</h4>
+                      <p>Innovative design solutions for offices, retail spaces, and restaurants. We create professional
+                        and functional environments that enhance your business image.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-item">
+                <div class="row">
+                  <div class="col-xl-5">
+                    <div class="card-bg"><img src="assets/img/contact1.jpg" alt="Renovations"></div>
+                  </div>
+                  <div class="col-xl-7 d-flex align-items-center">
+                    <div class="card-body">
+                      <h4 class="card-title">Renovations & Remodeling</h4>
+                      <p>Revitalize your space with expert renovation services. Whether it's a full remodel or minor
+                        updates, we bring new life to your interiors.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="card-item">
+                <div class="row">
+                  <div class="col-xl-5">
+                    <div class="card-bg"><img src="assets/img/contact1.jpg" alt="Custom Furnishings"></div>
+                  </div>
+                  <div class="col-xl-7 d-flex align-items-center">
+                    <div class="card-body">
+                      <h4 class="card-title">Custom Furnishings</h4>
+                      <p>Tailored furniture solutions designed to fit your unique space and style. We craft bespoke
+                        pieces that enhance the aesthetic and functionality of your interiors.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+    </center>
+
+
+
     <section id="about" class="features-section bg-light pt-5 pb-5">
       <div class="container">
         <div class="row">
@@ -344,35 +333,40 @@
             <div class="feature-card">
               <span class="feature-icon feature-box-col-one"><i class="bi bi-calendar-check"></i></span>
               <h6>One-Year Maintenance</h6>
-              <p>We provide a full year of maintenance to ensure your designs are always up to date and functioning perfectly.</p>
+              <p>We provide a full year of maintenance to ensure your designs are always up to date and functioning
+                perfectly.</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 ">
             <div class="feature-card">
               <span class="feature-icon feature-box-col-two"><i class="bi bi-person-check"></i></span>
               <h6>500+ Happy Clients</h6>
-              <p>Our clients are our top priority, and we have successfully helped over 500 clients transform their spaces.</p>
+              <p>Our clients are our top priority, and we have successfully helped over 500 clients transform their
+                spaces.</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 ">
             <div class="feature-card">
               <span class="feature-icon feature-box-col-three"><i class="bi bi-clock"></i></span>
               <h6>6 Week Move-in Guarantee</h6>
-              <p>We guarantee that you can move into your newly designed space within 6 weeks of starting the project.</p>
+              <p>We guarantee that you can move into your newly designed space within 6 weeks of starting the project.
+              </p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 ">
             <div class="feature-card">
               <span class="feature-icon feature-box-col-four"><i class="bi bi-shield-lock"></i></span>
               <h6>Flat 10-Year Warranty</h6>
-              <p>We offer a solid 10-year warranty on all of our designs and installations to ensure your investment is protected.</p>
+              <p>We offer a solid 10-year warranty on all of our designs and installations to ensure your investment is
+                protected.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  
-    <center> <section id="projects" class="projects section">
+
+    <center>
+      <section id="projects" class="projects section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -384,14 +378,14 @@
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
     
           <!-- Portfolio Filters -->
-          <!--<ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-living-room">Living </li>
             <li data-filter=".filter-bedroom">Bedroom</li>
             <li data-filter=".filter-kitchen">Kitchen</li>
             <li data-filter=".filter-office">Office</li>
             <li data-filter=".filter-bathroom">Bathroom</li>
-          </ul>-->
+          </ul><!-- End Portfolio Filters -->
     
           <!-- Portfolio Items -->
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
@@ -444,45 +438,48 @@
                   <p>Ergonomic office design with vibrant decor elements.</p>
                   <a href="assets/img/contact1.jpg" title="Stylish Office" data-gallery="portfolio-gallery-office" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
 
+                  </div>
                 </div>
               </div>
-            </div>
-    
-            <!-- Item 5 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bathroom">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/contact1.jpg" class="img-fluid" alt="Luxury Bathroom">
-                <div class="portfolio-info">
-                  <h4>Luxury Bathroom</h4>
-                  <p>High-end bathroom with marble finishes and soft lighting.</p>
-                  <a href="assets/img/contact1.jpg" title="Luxury Bathroom" data-gallery="portfolio-gallery-bathroom" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
 
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bathroom">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/contact1.jpg" class="img-fluid" alt="Luxury Bathroom">
-                <div class="portfolio-info">
-                  <h4>Luxury Bathroom</h4>
-                  <p>High-end bathroom with marble finishes and soft lighting.</p>
-                  <a href="assets/img/contact1.jpg" title="Luxury Bathroom" data-gallery="portfolio-gallery-bathroom" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <!-- Item 5 -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bathroom">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/contact1.jpg" class="img-fluid" alt="Luxury Bathroom">
+                  <div class="portfolio-info">
+                    <h4>Outdoor Living</h4>
+                    <p>High-end bathroom with marble finishes and soft lighting.</p>
+                    <a href="assets/img/contact1.jpg" title="Luxury Bathroom" data-gallery="portfolio-gallery-bathroom"
+                      class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
 
+                  </div>
                 </div>
               </div>
-            </div>
-    
-    
-          </div><!-- End Portfolio Items -->
-    
+
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bathroom">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/contact1.jpg" class="img-fluid" alt="Luxury Bathroom">
+                  <div class="portfolio-info">
+                    <h4>Luxury Bathroom</h4>
+                    <p>High-end bathroom with marble finishes and soft lighting.</p>
+                    <a href="assets/img/contact1.jpg" title="Luxury Bathroom" data-gallery="portfolio-gallery-bathroom"
+                      class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div><!-- End Portfolio Items -->
+
+          </div>
         </div>
-      </div>
-    
-    </section></center>
-    
-    
-    
+
+      </section>
+    </center>
+
+
+
     <section id="review" class="review-section">
       <div class="container">
         <h3 class="section-subtitle">TESTIMONIALS</h3>
@@ -579,8 +576,8 @@
         </div>
       </div>
     </section>
-    
-    
+
+
   </main>
 
   <div class="position-fixed position-relative container-fluid  bottom-0 p-0 m-0  d-md-none d-block container-fluid">
@@ -591,7 +588,7 @@
     </div>
     <div
       class="container-fluid bg-white d-flex justify-content-between px-3 align-items-center shadow-lg  border-bottom border-top border-5 ">
-      <div>
+      <div class="p-2">
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40px" viewBox="0 0 500.000000 500.000000"
           preserveAspectRatio="xMidYMid meet">
 
@@ -636,9 +633,11 @@
           </g>
         </svg>
       </div>
-      <div>
-        <a href="https://wa.me/918449446389?text=Hello%20NAIMS%20INTERIOR%20Team%2C%20I%20need%20assistance%20regarding%20your%20services%20Ref%3A%20%23INQ-7845" target="_blank" class="">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="40px" viewBox="0 0 500.000000 500.000000" preserveAspectRatio="xMidYMid meet">
+      <div class="p-2">
+        <a href="https://wa.me/918449446389?text=Hello%20NAIMS%20INTERIOR%20Team%2C%20I%20need%20assistance%20regarding%20your%20services%20Ref%3A%20%23INQ-7845"
+          target="_blank" class="">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="40px" viewBox="0 0 500.000000 500.000000"
+            preserveAspectRatio="xMidYMid meet">
             <path
               d="M0 0 C1.80963226 -0.00855011 1.80963226 -0.00855011 3.65582275 -0.01727295 C6.2075514 -0.02669439 8.75929205 -0.03324554 11.31103516 -0.03710938 C15.14898993 -0.04673917 18.98639112 -0.07775948 22.82421875 -0.109375 C36.98760777 -0.17065108 50.54636719 0.45742841 64.453125 3.203125 C65.48743652 3.39664551 66.52174805 3.59016602 67.58740234 3.78955078 C69.99730291 4.26990411 72.37927989 4.80532915 74.765625 5.390625 C75.61697021 5.5978418 76.46831543 5.80505859 77.34545898 6.01855469 C103.12714754 12.55244685 126.74058133 23.54705948 149.453125 37.203125 C150.12069824 37.59999512 150.78827148 37.99686523 151.47607422 38.40576172 C167.42268342 47.9484486 181.13099283 60.34310429 194.453125 73.203125 C195.2678125 73.98816406 196.0825 74.77320312 196.921875 75.58203125 C210.17148385 88.60231995 220.63961561 103.51913245 230.453125 119.203125 C231.05471436 120.15058594 231.05471436 120.15058594 231.66845703 121.1171875 C253.00878416 154.78887444 266.49595114 195.216208 266.65625 235.21875 C266.66195007 236.35101013 266.66765015 237.48327026 266.67352295 238.64984131 C266.68292474 241.03998903 266.68948762 243.43014943 266.69335938 245.8203125 C266.70298565 249.40128524 266.73402357 252.98166344 266.765625 256.5625 C266.86540878 278.13633193 264.43524723 298.46596263 258.453125 319.203125 C258.24349121 319.9338623 258.03385742 320.66459961 257.81787109 321.41748047 C250.40277721 346.63108299 238.45996649 370.67667722 223.453125 392.203125 C222.72222656 393.28207031 221.99132812 394.36101562 221.23828125 395.47265625 C215.24689965 404.29861479 209.06664131 412.70840114 201.453125 420.203125 C200.21619232 421.44927578 198.98062583 422.69678346 197.74609375 423.9453125 C196.3776568 425.32296895 195.00916603 426.70057194 193.640625 428.078125 C192.96708984 428.76003906 192.29355469 429.44195312 191.59960938 430.14453125 C187.05363377 434.71225794 182.35488289 439.02104717 177.453125 443.203125 C176.89874756 443.68539551 176.34437012 444.16766602 175.77319336 444.66455078 C165.64818905 453.41159593 154.64844229 460.16423193 143.02294922 466.73828125 C140.77335669 468.02058746 138.5489025 469.33413641 136.33203125 470.671875 C105.84972058 488.85602812 68.43741128 500.27411268 32.90625 500.40625 C31.69982849 500.41195007 30.49340698 500.41765015 29.25042725 500.42352295 C26.6986986 500.43294439 24.14695795 500.43949554 21.59521484 500.44335938 C17.75726007 500.45298917 13.91985888 500.48400948 10.08203125 500.515625 C-4.07161393 500.57732429 -17.65562719 500.00213939 -31.546875 497.203125 C-32.67931641 496.97866699 -33.81175781 496.75420898 -34.97851562 496.52294922 C-37.8126115 495.91412634 -40.61539565 495.24039328 -43.421875 494.515625 C-44.4130835 494.26288818 -45.40429199 494.01015137 -46.42553711 493.74975586 C-67.84653098 488.09763066 -87.44076336 479.05990275 -106.94140625 468.73046875 C-107.66027008 468.35958633 -108.37913391 467.98870392 -109.11978149 467.60658264 C-111.546875 466.203125 -111.546875 466.203125 -113.60295105 464.48725891 C-117.50998452 461.42993777 -120.14086656 460.06193644 -125.17170715 460.56712341 C-129.5774445 461.61301203 -133.81736324 463.13866946 -138.078125 464.65625 C-139.67858971 465.19219428 -141.28030516 465.72441636 -142.88317871 466.25311279 C-147.09790612 467.65432696 -151.29393061 469.10495138 -155.48791504 470.56689453 C-159.69805709 472.02496977 -163.9236974 473.43646954 -168.1484375 474.8515625 C-174.39754977 476.95031999 -180.63740933 479.07384889 -186.86914062 481.22363281 C-189.01447792 481.96101721 -191.16010374 482.69755213 -193.30593872 483.43348694 C-194.86942637 483.97045875 -196.43235133 484.50907051 -197.99484253 485.04893494 C-200.46002502 485.89904386 -202.927909 486.74085637 -205.39648438 487.58105469 C-206.15359962 487.84389881 -206.91071487 488.10674294 -207.69077301 488.37755203 C-211.19127474 489.56094823 -213.81087244 490.203125 -217.546875 490.203125 C-216.98473 485.56974732 -216.09780914 481.38334981 -214.58496094 476.97094727 C-214.18073914 475.78183243 -213.77651733 474.59271759 -213.36004639 473.36756897 C-212.91717803 472.08486771 -212.47424417 470.80218906 -212.03125 469.51953125 C-211.57323301 468.17801509 -211.11582659 466.83629034 -210.65899658 465.49436951 C-209.45625989 461.96582712 -208.24650351 458.43973493 -207.03485107 454.91424561 C-205.11199327 449.31583661 -203.19898997 443.71404654 -201.28672791 438.11201096 C-200.82559942 436.76120099 -200.36422541 435.41047483 -199.90260315 434.05983353 C-196.9677026 425.46872521 -194.09983055 416.86564262 -191.45800781 408.17944336 C-190.546875 405.203125 -190.546875 405.203125 -189.36230469 402.17797852 C-188.16323243 397.8035188 -188.74046607 394.75463782 -190.81860352 390.75634766 C-191.34897217 389.9679248 -191.87934082 389.17950195 -192.42578125 388.3671875 C-193.01367432 387.47555908 -193.60156738 386.58393066 -194.20727539 385.6652832 C-194.83496826 384.729021 -195.46266113 383.79275879 -196.109375 382.828125 C-201.96280442 373.87412031 -207.06723457 364.90718715 -211.546875 355.203125 C-212.22943359 353.76839844 -212.22943359 353.76839844 -212.92578125 352.3046875 C-214.18035367 349.62249819 -215.37358933 346.92180636 -216.546875 344.203125 C-217.01738281 343.13578125 -217.48789063 342.0684375 -217.97265625 340.96875 C-228.00295725 317.22777915 -233.64961747 290.7943561 -233.75 265.03125 C-233.75570007 263.8730072 -233.76140015 262.7147644 -233.76727295 261.52142334 C-233.77668428 259.07402446 -233.78324147 256.62661313 -233.78710938 254.17919922 C-233.79673656 250.50594755 -233.82776553 246.8332751 -233.859375 243.16015625 C-233.95614006 221.74357714 -231.44468847 201.78814998 -225.546875 181.203125 C-225.33724121 180.4709375 -225.12760742 179.73875 -224.91162109 178.984375 C-217.4292496 153.54776799 -205.19795701 130.16118892 -190.546875 108.203125 C-190.14678223 107.59903809 -189.74668945 106.99495117 -189.33447266 106.37255859 C-183.95795439 98.28136942 -178.26489298 90.25132912 -171.546875 83.203125 C-170.886875 83.203125 -170.226875 83.203125 -169.546875 83.203125 C-169.28277832 82.61378174 -169.01868164 82.02443848 -168.74658203 81.41723633 C-167.50110448 79.11865351 -166.20135286 77.61372983 -164.3515625 75.77734375 C-163.7225 75.14932861 -163.0934375 74.52131348 -162.4453125 73.87426758 C-161.77757812 73.21966553 -161.10984375 72.56506348 -160.421875 71.890625 C-159.73609375 71.21346436 -159.0503125 70.53630371 -158.34375 69.83862305 C-153.8807879 65.45467489 -149.39087506 61.16639777 -144.546875 57.203125 C-143.78286377 56.56044678 -143.78286377 56.56044678 -143.00341797 55.90478516 C-134.59233168 48.8377749 -126.03658331 42.67691749 -116.46484375 37.28417969 C-114.50498749 36.17951529 -112.55680812 35.05608742 -110.609375 33.9296875 C-76.99827992 14.60454293 -39.21652966 0.14584288 0 0 Z M-106.47265625 126.87109375 C-114.06771297 135.41016882 -119.90066667 145.38927521 -123.546875 156.203125 C-124.13275391 157.80414063 -124.13275391 157.80414063 -124.73046875 159.4375 C-133.94218738 188.12451302 -123.80666091 215.49304688 -110.734375 240.953125 C-106.45564505 249.06446925 -101.40235236 256.35423874 -95.78710938 263.58642578 C-94.01793107 265.89262631 -92.3501454 268.2677763 -90.671875 270.640625 C-83.21381383 280.90120197 -75.08453735 290.72429967 -66.50390625 300.0625 C-64.74094994 301.99084343 -63.04733551 303.9594049 -61.359375 305.953125 C-52.61849464 315.95139418 -43.02551579 325.05601491 -32.546875 333.203125 C-31.17230146 334.30489804 -29.79867883 335.40785803 -28.42578125 336.51171875 C-19.53425297 343.60852921 -10.50764747 350.15980434 -0.70019531 355.93457031 C0.93232403 356.896313 2.55655328 357.87214516 4.17675781 358.85449219 C11.07469102 362.98427919 18.0376733 366.4794158 25.453125 369.578125 C26.56034912 370.0429126 27.66757324 370.5077002 28.80834961 370.98657227 C57.92073657 382.9452302 93.60207597 396.88123985 124.62207031 384.32519531 C129.37573521 382.20837949 133.94104384 379.790994 138.453125 377.203125 C139.33871094 376.69652344 140.22429687 376.18992187 141.13671875 375.66796875 C153.57656983 367.92809607 160.75734019 357.62651919 164.28759766 343.49658203 C167.34772823 331.03809996 167.34772823 331.03809996 165.44140625 318.69921875 C162.60263517 315.13541773 159.24114057 313.57843637 155.203125 311.578125 C154.37337158 311.15499023 153.54361816 310.73185547 152.6887207 310.29589844 C149.95306969 308.91148939 147.20565851 307.55363844 144.453125 306.203125 C143.49003418 305.7297168 142.52694336 305.25630859 141.53466797 304.76855469 C130.3138523 299.27936794 119.05498339 293.84701676 107.453125 289.203125 C106.59589844 288.85378906 105.73867188 288.50445312 104.85546875 288.14453125 C100.04580683 286.33789697 96.50135784 285.55097607 91.453125 287.203125 C82.19998036 292.75905246 76.03758443 303.78431079 69.88500977 312.39868164 C69.36994873 313.10758545 68.8548877 313.81648926 68.32421875 314.546875 C67.63477173 315.5069043 67.63477173 315.5069043 66.93139648 316.48632812 C63.86242082 320.05049606 60.13598705 321.84827752 55.50390625 322.4609375 C47.40409213 322.18322959 39.6214144 317.67093996 32.453125 314.203125 C31.82067871 313.89987305 31.18823242 313.59662109 30.53662109 313.28417969 C19.72808603 308.02658924 10.09468274 301.34145042 0.453125 294.203125 C-0.16401367 293.75114746 -0.78115234 293.29916992 -1.41699219 292.83349609 C-12.16345075 284.94036686 -20.94493345 276.24985434 -29.23681641 265.82519531 C-30.6850336 264.03206169 -32.16612304 262.26956089 -33.65234375 260.5078125 C-39.26197439 253.81918361 -44.60355802 247.03115091 -49.359375 239.703125 C-49.78597412 239.06930908 -50.21257324 238.43549316 -50.65209961 237.7824707 C-53.6113632 233.05348186 -54.27675998 229.77476608 -53.546875 224.203125 C-51.11987067 219.6396732 -47.70392834 216.0035118 -44.171875 212.265625 C-43.19467472 211.21283121 -42.21810758 210.15944937 -41.2421875 209.10546875 C-40.35273438 208.14769531 -39.46328125 207.18992187 -38.546875 206.203125 C-33.24163036 200.41849078 -29.14750824 195.69780053 -29.29638672 187.40112305 C-29.74519434 183.46290182 -31.38400953 180.1414603 -33.046875 176.578125 C-33.86733899 174.74993212 -34.68477767 172.92037999 -35.5 171.08984375 C-35.97115234 170.03716309 -36.44230469 168.98448242 -36.92773438 167.89990234 C-38.8652893 163.51581242 -40.6956383 159.08766022 -42.53125 154.66015625 C-42.88074707 153.81940552 -43.23024414 152.97865479 -43.59033203 152.11242676 C-45.01161734 148.69325102 -46.432845 145.27410042 -47.84350586 141.8505249 C-48.84742398 139.4170888 -49.86036845 136.98757881 -50.875 134.55859375 C-51.17065857 133.83525345 -51.46631714 133.11191315 -51.77093506 132.36665344 C-55.21166917 123.58609317 -55.21166917 123.58609317 -61.50128174 117.00822449 C-76.22543191 111.21313023 -95.25831313 116.4301536 -106.47265625 126.87109375 Z "
               fill="#960601" transform="translate(233.546875,-0.203125)" />
@@ -674,7 +673,7 @@
             <p>WeCare@Naimsinterior.com</p>
           </div>
         </div>
-        
+
       </div>
       <div class="footer-bottom">
         <p class="footer-copyright">
@@ -686,17 +685,18 @@
       </div>
     </div>
   </footer>
-  
-  
-  
+
+
+
   <a href="tel:+918449446389" target="_blank" class="icon mobile-icon d-flex align-items-center justify-content-center">
     <i class="bi bi-telephone-fill"></i>
   </a>
-  
-  <a href="https://wa.me/918449446389?text=Hello%20NAIMS%20INTERIOR%20Team%2C%20I%20need%20assistance%20regarding%20your%20services%20Ref%3A%20%23INQ-7845" target="_blank" id="whatsapp-icon" class="whatsapp-icon d-flex align-items-center justify-content-center">
+
+  <a href="https://wa.me/918449446389?text=Hello%20NAIMS%20INTERIOR%20Team%2C%20I%20need%20assistance%20regarding%20your%20services%20Ref%3A%20%23INQ-7845"
+    target="_blank" id="whatsapp-icon" class="whatsapp-icon d-flex align-items-center justify-content-center">
     <i class="bi bi-whatsapp"></i>
   </a>
-  
+
   </div>
   <!-- Preloader -->
   <!--<div id="preloader"></div>--->
@@ -713,25 +713,25 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  
+
   <script>
     const form = document.getElementById('contact-form');
-  
+
     form.addEventListener('submit', function (event) {
       event.preventDefault(); // Prevent form from submitting normally
-  
+
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
-  
+
       // Remove spaces from the phone number
       let phone = document.getElementById('phone').value;
       phone = phone.replace(/\s+/g, ""); // Remove all spaces
-  
+
       const propertyName = document.getElementById('property-name').value;
       const pincode = document.getElementById('pincode').value;
       const homeType = document.getElementById('home-type').value;
       const whatsappUpdates = document.getElementById('whatsapp-updates').checked;
-  
+
       // Prepare API data
       const apiData = {
         apiToken: '7428%7C2f1PQOaINhAiqFrRPnQQCx4gKLhT9cQUZvPpKZ2V',
@@ -739,12 +739,12 @@
         template_id: '130298',
         template_header_media_url: 'https://bot-data.s3.ap-southeast-1.wasabisys.com/upload/2025/1/flowbuilder/flowbuilder-65163-1737126333.pdf',
         template_quick_reply_button_values: [
-          'EXTERNAL_ECOMMERCE_CANCEL_ORDER', 
+          'EXTERNAL_ECOMMERCE_CANCEL_ORDER',
           'EXTERNAL_ECOMMERCE_CANCEL_ORDER'
         ],
         phone_number: phone,
       };
-  
+
       // API call to send WhatsApp message
       fetch('https://botsailor.com/api/v1/whatsapp/send/template', {
         method: 'POST',
@@ -766,27 +766,27 @@
         });
     });
   </script>
-  
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-  const step1 = document.getElementById("step-1");
-  const step2 = document.getElementById("step-2");
-  const next1 = document.getElementById("next-1");
-  const back2 = document.getElementById("back-2");
+      const step1 = document.getElementById("step-1");
+      const step2 = document.getElementById("step-2");
+      const next1 = document.getElementById("next-1");
+      const back2 = document.getElementById("back-2");
 
-  next1.addEventListener("click", () => {
-    step1.classList.remove("active");
-    step2.classList.add("active");
-  });
+      next1.addEventListener("click", () => {
+        step1.classList.remove("active");
+        step2.classList.add("active");
+      });
 
-  back2.addEventListener("click", () => {
-    step2.classList.remove("active");
-    step1.classList.add("active");
-  });
-});
+      back2.addEventListener("click", () => {
+        step2.classList.remove("active");
+        step1.classList.add("active");
+      });
+    });
 
   </script>
-  
+
 
 </body>
 
