@@ -1600,7 +1600,11 @@ section,
   }
 }
 
-
+@media (max-width: 772px) {
+  .associate-partners-section {
+    margin-bottom:100px;
+  }
+}
 
 .associate-partners-section {
   background-color: #ffffff;
@@ -1947,6 +1951,7 @@ section,
   justify-content: space-between;
   align-items: center;
   z-index: 999; /* Controls stacking order above the form */
+  margin-top: 150px;
 }
 
 /* Section for the SVG icon */
