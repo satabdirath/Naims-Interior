@@ -802,6 +802,7 @@ section,
   align-items: center;
   width: 100%;
   position: relative;
+  margin-top: -20px;
 
 }
 
@@ -891,7 +892,15 @@ section,
   #hero .info .btn-get-started {
     font-size: 0.9rem;
   }
-
+  .contact-form .form-step {
+    display: none;
+  }
+  
+  .contact-form .form-step.active {
+    display: block;
+  }
+  
+  
   
 }
 .contact-section {
@@ -1091,7 +1100,15 @@ section,
   display: block;
 }
 
+@media (max-width: 480px) {
+  .contact-form .form-step.active {
+    display: block; /* Forces the steps to show when active */
+  }
 
+  .contact-form {
+    z-index: 10; /* Make sure the form is visible */
+  }
+}
 
 
 .review-section {
@@ -1876,21 +1893,88 @@ section,
 }
 
 /* ------------------------mobile mode footer----------------- */
-
-.font-size {
-  /* font-size: calc(2.375rem + 4.5vw) !important; */
-  width: 40px;
+/* Container for positioning */
+/* Container for positioning */
+.position-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure this container stays above the form */
 }
-.logo-icon {
+
+.position-relative {
+  position: relative;
+}
+
+.container-fluid {
   width: 100%;
-  /* margin-left: 84px; */
-  margin-bottom: 23px;
-
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.patner-m {
-  margin-bottom: 6rem;
+/* Style for the logo container */
+.logo-icon {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
 }
+
+.logo-icon .w-50 {
+  width: 50%;
+}
+
+.logo-icon img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Main container style with background */
+.container-fluid.bg-white {
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid #ccc;
+  border-bottom: 5px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999; /* Controls stacking order above the form */
+}
+
+/* Section for the SVG icon */
+.container-fluid svg {
+  width: 40px;
+  height: 40px;
+  z-index: 2; /* Places it above background content */
+}
+
+/* Form styling (if necessary to lower its z-index) */
+form {
+  position: relative;
+  z-index: 1; /* Ensures the form stays below the fixed section */
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+/* Adjust the margins and paddings for different screen sizes */
+@media (max-width: 768px) {
+  .position-fixed {
+    padding: 0;
+  }
+
+  .container-fluid.bg-white {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 
 
 /*------------------------------Projects Section----------------------*/
