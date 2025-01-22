@@ -544,6 +544,9 @@ h6 {
   order: 2; /* Places copyright in the middle */
   flex: 1 100%; /* Forces it to span the full width */
 }
+.footer-form {
+  width: 51px;
+}
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
@@ -2141,7 +2144,10 @@ form {
     margin: 0 5px;
   }
 }
-
+.portfolio-content {
+  /* width: 356px; */
+  height: 234px;
+}
 .projects .portfolio-content {
   position: relative;
   overflow: hidden;
