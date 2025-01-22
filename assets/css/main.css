@@ -75,13 +75,50 @@ h6 {
 }
 
 
+
+ .secondline{
+  z-index: 2;
+  font-size: 20px;
+  padding-top:-10px ;
+  font-weight:400;
+  color: rgba(29, 18, 18, 0.8);
+  margin-bottom:15px;
+}
+.slash{
+  animation-name: animateslash;
+  animation-duration: .8s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+@keyframes animateslash{
+  0%{
+      opacity: 1;
+      z-index: 2;
+  }
+  100%{
+      opacity: 0;
+      z-index: 0;
+  }
+}
+@-webkit-keyframes animateslash{
+  0%{
+      opacity: 1;
+      z-index: 2;
+  }
+  100%{
+      opacity: 0;
+      z-index: 0;
+  }
+}
+
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
+/* Ensure white navbar from the start */
 .header {
-  --background-color: rgba(255, 255, 255, 0);
+  --background-color: rgba(255, 255, 255, 1); /* White background from the start */
   --default-color: #ffffff;
-  --heading-color: #ffffff;
+  --heading-color: #3c3c3c; /* Adjust heading color to a darker color for visibility */
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 20px 0;
@@ -89,6 +126,7 @@ h6 {
   z-index: 997;
 }
 
+/* Adjust logo size */
 .header .logo img {
   max-height: 55px;
   margin-right: 8px;
@@ -108,9 +146,15 @@ h6 {
   color: var(--color-primary);
 }
 
+/* Optional: Add shadow effect when scrolled (if needed) */
 .scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+  --background-color: rgba(255, 255, 255, 0.95); /* Slight transparency on scroll */
+  --heading-color: #3c3c3c;
+  --nav-color: #3c3c3c;
+  --nav-hover-color: #3c3c3c;
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1); /* Optional shadow effect when scrolling */
 }
+
 
 /* Header on Scroll
 ------------------------------*/
@@ -404,13 +448,37 @@ h6 {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
-/* Footer Styling */
-/* Footer Section */
 .footer {
-  background-color: #f8a89c; /* Soft pink background */
-  color: white;
+  background-color: #fae2e2; /* Soft pink background */
+  color: rgb(100, 12, 12);
   padding: 30px 20px;
+  position: relative; /* For positioning pseudo-elements */
 }
+
+.footer::before,
+.footer::after {
+  content: '';
+  position: absolute;
+  background-color: #fae2e2; /* Same color as the footer background */
+  z-index: -1; /* Behind the footer content */
+}
+
+.footer::before {
+  left: 20px; /* Reduce the left side of the U */
+  right: 20px; /* Reduce the right side of the U */
+  top: -40px; /* Moves the top portion upwards */
+  height: 40px; /* Height of the top part of the U */
+  border-radius: 50% 50% 0 0; /* Rounded corners at the top */
+}
+
+.footer::after {
+  left: 40px; /* Adds space from the sides to reduce the width further */
+  right: 40px; /* Adds space from the sides */
+  top: -20px; /* Creates the U shape by positioning the bottom section higher */
+  height: 40px; /* Height of the bottom part of the U */
+}
+
+
 
 .footer-container {
   max-width: 1200px;
@@ -425,7 +493,7 @@ h6 {
   font-size: 1.9rem;
   font-weight: bold;
   margin-bottom: 50px;
-  color: white;
+  color: rgb(124, 4, 4);
 }
 
 .footer-contact {
@@ -448,6 +516,12 @@ h6 {
   margin-bottom: 10px;
 }
 
+.footer-contact-item p {
+  font-size: 0.9rem; /* Icon size */
+  
+}
+
+
 .footer-contact-item ul {
   list-style: none;
   padding: 0;
@@ -456,7 +530,7 @@ h6 {
 }
 
 .footer-contact-item ul li {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin: 5px 0;
 }
 
@@ -476,7 +550,7 @@ h6 {
 }
 
 .footer-links a {
-  color: white;
+  color: rgb(110, 2, 2);
   text-decoration: none;
   margin: 0 5px;
 }
@@ -508,16 +582,16 @@ h6 {
   }
 
   .footer-contact-item i {
-    font-size: 2rem; /* Smaller icon size */
+    font-size: 2rem; 
   }
 
   .footer-contact-item ul {
     padding-left: 10px;
-    text-align: left; /* Align list to the left */
+    text-align: left; 
   }
 
   .footer-bottom {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column; 
     text-align: center;
   }
 
@@ -530,6 +604,19 @@ h6 {
   .footer {
     padding: 20px 15px; /* Reduce padding */
     text-align: center; /* Center-align content */
+    margin-bottom: 90px;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns layout */
+    gap: 10px; /* Add gap between columns */
+    align-items: start; /* Align items to the top */
+  }
+
+  .footer-contact,
+  .footer-policy {
+    text-align: left; /* Align text to the left */
   }
 
   .footer-title {
@@ -538,41 +625,36 @@ h6 {
   }
 
   .footer-contact {
+    display: flex;
     flex-direction: column; /* Stack items for small screens */
-    gap: 0; /* Reduced gap between contact items */
-    align-items: center; /* Center-align contact items */
+    gap:0; /* Reduced gap between contact items */
   }
 
   .footer-contact-item {
     display: flex; /* Align icon and text horizontally */
     flex-direction: row;
     align-items: center;
-    gap: 5px; /* Small gap between icon and text */
-    justify-content: center;
+    gap: 15px; /* Smaller gap between icon and text */
+    margin-bottom: -22px; /* Reduced bottom margin */
   }
 
   .footer-contact-item i {
-    font-size: 1.3rem; /* Reduce icon size */
-    margin-bottom: 10px; /* Remove bottom margin */
+    font-size: 1rem; /* Reduce icon size */
   }
 
-  .footer-contact-item ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px; /* Small gap between list items */
-    margin: 0; /* Remove list margin */
-    padding: 0; /* Remove list padding */
+  .footer-policy ul {
+    list-style: none; /* Remove list styling */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
   }
 
-  .footer-contact-item ul li {
+  .footer-policy ul li {
     font-size: 0.9rem; /* Adjust text size for small screens */
-    display: inline;
   }
 
   .footer-links {
-    font-size: 0.8rem; /* Smaller link text */
-    margin-top: -15px; /* Add top spacing */
+    font-size: 0.7rem; /* Smaller link text */
+    margin-top: 10px; /* Add top spacing */
   }
 
   .footer-links a {
@@ -580,13 +662,12 @@ h6 {
   }
 
   .footer-copyright {
-    font-size: 0.8rem;
-    margin-top: 10px; /* Adjust top margin */
+    font-size: 0.6rem;
+    margin-top: -10px; /* Adjust top margin */
     text-align: center;
+    grid-column: span 2; /* Center copyright across both columns */
   }
 }
-
-
 
 
 
@@ -745,9 +826,11 @@ section,
 --------------------------------------------------------------*/
 /* General Styles */
 
-/* Responsive adjustments */
+/* Hero Section */
+/* Hero Section */
 #hero {
   width: 100%;
+  margin-top:10px;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -755,6 +838,7 @@ section,
   position: relative;
   overflow: hidden;
   background: url('assets/img/hero-background.jpg') center/cover no-repeat;
+ 
 }
 
 /* Hero Text */
@@ -763,13 +847,15 @@ section,
   color: white;
   padding: 50px 0;
   width: 80%;
+  text-align: left; /* Ensure text is aligned to the left */
 }
 
 #hero .info h2 {
   font-size: 3rem;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  color: #d13438; /* Red heading text */
+  color: #b40000; /* Red heading text */
+  text-align: left; /* Align the heading to the left */
 }
 
 #hero .info p {
@@ -786,6 +872,20 @@ section,
   border: none;
   transition: 0.3s;
 }
+
+/* Adjust grid structure for left alignment */
+#hero .info .container {
+  width: 100%;
+}
+
+#hero .info .row {
+  justify-content: flex-start; /* Align content to the left */
+}
+
+#hero .info .col-lg-6 {
+  text-align: left; /* Ensure text is left-aligned within the column */
+}
+
 
 #hero .info .btn-get-started:hover {
   background-color: #b4292d; /* Darker red on hover */
@@ -821,7 +921,7 @@ section,
   z-index: 2;
   max-width: 400px;
   width: 100%;
-  color:#000;
+  color: #000;
 }
 
 .contact-form h2 {
@@ -837,7 +937,6 @@ section,
   width: 100%;
   margin-bottom: 10px;
 }
-
 
 .contact-form input {
   padding: 10px;
@@ -886,9 +985,6 @@ section,
   text-decoration: underline;
 }
 
-/* Responsive Design */
-
-
 /* Tel Input Styling */
 .tel-container {
   display: flex;
@@ -896,13 +992,12 @@ section,
   width: 100%;
   position: relative;
   margin-top: -20px;
-
 }
 
 .tel-container input {
   width: 134%;
-  padding-left: 50px; 
-  box-sizing: border-box; 
+  padding-left: 50px;
+  box-sizing: border-box;
 }
 
 .iti__flag-container {
@@ -915,7 +1010,7 @@ section,
 }
 
 .iti input {
-  padding-left: 50px; 
+  padding-left: 50px;
 }
 
 /* Responsive adjustments */
@@ -924,6 +1019,7 @@ section,
     font-size: 0.9rem;
   }
 }
+
 .contact-form .form-step {
   display: none;
 }
@@ -933,33 +1029,37 @@ section,
 }
 
 .hero_button {
-  background-color: #d13438; /* Red background color */
-  color: #fff; /* White text color */
-  border: none; /* Removes any default borders */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px 20px; /* Adjust padding as needed */
-  font-size: 1rem; /* Adjust font size as needed */
-  font-weight: bold; /* Optional: makes text bold */
-  cursor: pointer; /* Pointer cursor on hover */
+  background-color: #d13438; 
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 10px 20px; 
+  font-size: 1rem; 
+  font-weight: bold; 
+  cursor: pointer; 
   transition: background-color 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
   margin-top: 10px;
 }
 
 .hero_button:hover {
-  background-color: #b4292d; /* Darker red on hover */
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  background-color: #b4292d; 
+  transform: scale(1.05); 
 }
 
 .hero_button:active {
-  background-color: #992224; /* Even darker red when clicked */
-  transform: scale(1); /* Resets scale when clicking */
+  background-color: #992224; 
+  transform: scale(1); 
 }
 
 
-/* Responsive Design */
 @media (max-width: 768px) {
   #hero {
     flex-direction: column;
+    height: 80vh; 
+    min-height: 800px; 
+  }
+  .carousel-item{
+    min-height: 1200px;
   }
 
   .contact-form {
@@ -985,6 +1085,7 @@ section,
   #hero .info .btn-get-started {
     font-size: 0.9rem;
   }
+  
   .contact-form .form-step {
     display: none;
   }
@@ -992,10 +1093,9 @@ section,
   .contact-form .form-step.active {
     display: block;
   }
-  
-  
-  
 }
+
+
 .contact-section {
   display: flex;
   gap: 20px;
@@ -1005,14 +1105,14 @@ section,
 }
 
 .form-container {
-  flex: 0.5; 
+  flex: 0.5;
   min-width: 170px;
   padding: 35px;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-height: 610px;
-  margin-top:50px;
+  margin-top: 50px;
   max-width: 530px;
 }
 
@@ -1028,8 +1128,7 @@ section,
 }
 
 .form-container input,
-.form-container select
- {
+.form-container select {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -1044,8 +1143,6 @@ section,
   font-size: 1rem;
   max-width: 500px;
 }
-
-
 
 .form-container label {
   display: flex;
@@ -1084,14 +1181,12 @@ section,
   text-decoration: underline;
 }
 
-
-
 @media (min-width: 1635px) and (max-width: 2000px) {
   .image-container img {
     width: 100%;
     border-radius: 12px;
-    height:90%;
-    max-height:800px;
+    height: 90%;
+    max-height: 800px;
   }
 }
 
@@ -1099,9 +1194,9 @@ section,
   .image-container img {
     width: 100%;
     border-radius: 12px;
-    margin-right:20px;
-    height:90%;
-    max-height:800px;
+    margin-right: 20px;
+    height: 90%;
+    max-height: 800px;
   }
 }
 
@@ -1111,7 +1206,7 @@ section,
     align-items: center;
   }
 
-  .form-container, 
+  .form-container,
   .image-container {
     max-width: 100%;
     padding: 10px;
@@ -1127,7 +1222,6 @@ section,
   .form-container select,
   .form-container button {
     font-size: 0.8rem;
-    
   }
 
   .form-container h2 {
@@ -1135,11 +1229,11 @@ section,
   }
 
   .contact-section {
-   
     padding: 15px;
   }
-  .contact-form  {
-    z-index:-1;
+
+  .contact-form {
+    z-index: -1;
   }
 }
 
@@ -1150,14 +1244,12 @@ section,
   position: relative;
 }
 
-
 .tel-container input {
   width: 100%;
-  padding-left: 50px; 
-  box-sizing: border-box; 
-  margin-top:10px;
+  padding-left: 50px;
+  box-sizing: border-box;
+  margin-top: 10px;
 }
-
 
 .iti {
   width: 100%;
@@ -1173,17 +1265,14 @@ section,
 }
 
 .iti input {
-  padding-left: 50px; 
+  padding-left: 50px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 480px) {
   .tel-container input {
     font-size: 0.9rem;
   }
 }
-
-
 
 .contact-form .form-step {
   display: none;
@@ -1195,135 +1284,13 @@ section,
 
 @media (max-width: 480px) {
   .contact-form .form-step.active {
-    display: block; /* Forces the steps to show when active */
+    display: block;
   }
 
   .contact-form {
-    z-index: 10; /* Make sure the form is visible */
+    z-index: 10;
   }
 }
-
-
-.review-section {
-  background-color: #ffffff;
-  padding: 60px 20px;
-  text-align: center;
-  color: #ffffff;
-}
-
-
-.section-subtitle {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #7c0000;
-  letter-spacing: 2px;
-}
-
-.section-title {
-  font-size: 2rem;
-  margin: 10px 0;
-  font-weight: bold;
-}
-
-.section-description {
-  font-size: 1rem;
-  margin: 20px auto;
-  max-width: 600px;
-  color: #3e6eac;
-  margin-top:-20px;
-}
-/*--------------------------------------------------------------
-# Get Started Section
---------------------------------------------------------------*/
-.get-started .content {
-  padding: 30px 0;
-}
-
-.get-started .content h3 {
-  font-size: 36px;
-  font-weight: 600;
-  margin-bottom: 25px;
-  padding-bottom: 25px;
-  position: relative;
-}
-
-.get-started .content h3:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: var(--accent-color);
-  left: 0;
-  bottom: 0;
-}
-
-.get-started .content p {
-  font-size: 14px;
-}
-
-.get-started .php-email-form {
-  background: color-mix(in srgb, var(--default-color), transparent 97%);
-  padding: 30px;
-  height: 100%;
-}
-
-@media (max-width: 575px) {
-  .get-started .php-email-form {
-    padding: 20px;
-  }
-}
-
-.get-started .php-email-form h3 {
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.get-started .php-email-form p {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.get-started .php-email-form input[type=text],
-.get-started .php-email-form input[type=email],
-.get-started .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 20%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.get-started .php-email-form input[type=text]:focus,
-.get-started .php-email-form input[type=email]:focus,
-.get-started .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.get-started .php-email-form input[type=text]::placeholder,
-.get-started .php-email-form input[type=email]::placeholder,
-.get-started .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.get-started .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.get-started .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-
 
 
 /*--------------------------------------------------------------
@@ -1745,108 +1712,150 @@ section,
 
 
 
-/*--------------------------------- Review Cards ----------------------------------*/
-.reviews {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 35px;
-  margin-top: 40px;
+/*--------------------------------------------------------------
+# Testimonials Section
+--------------------------------------------------------------*/
+.testimonials .testimonial-wrap {
+  padding-left: 50px;
 }
 
-.review-card {
-  background-color: #ffffff;
-  border-radius: 15px;
-  max-width: 300px;
-  padding: 20px;
-  color: #000000;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.3s ease; 
-  margin-top:20px;
+.testimonials .testimonials-carousel,
+.testimonials .testimonials-slider {
+  overflow: hidden;
 }
 
-.review-card:hover {
-  transform: translateY(-30px); 
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+.testimonials .testimonial-item {
+  background-color: var(--surface-color);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: content-box;
+  padding: 30px 30px 30px 60px;
+  margin: 30px 15px;
+  min-height: 200px;
+  position: relative;
 }
 
-
-.review-header {
-  margin-top: -50px;
+.testimonials .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 10px;
+  border: 6px solid var(--background-color);
+  position: absolute;
+  left: 5px;
 }
 
-.user-image {
-  width: 60px;
-  height: 60px; 
-  border-radius: 50%; 
-  border: 3px solid rgb(126, 0, 0); 
-  object-fit: cover; 
-  display: block; 
-  margin: 0 auto; 
-}
-
-
-.review-author {
-  font-size: 1.2rem;
+.testimonials .testimonial-item h3 {
+  font-size: 18px;
   font-weight: bold;
-  margin: 10px 0 5px;
+  margin: 10px 0 5px 40px;
 }
 
-.review-role {
-  font-size: 0.9rem;
-  color: #777777;
-  margin-bottom: 15px;
+.testimonials .testimonial-item h4 {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 14px;
+  margin-left: 40px;
 }
 
-.quote-icon {
+.testimonials .testimonial-item .stars {
+  margin: 10px 0;
+  margin-left:40px;
+}
+
+.testimonials .testimonial-item .stars i {
+  color: #ffc107;
+  margin: 0 1px;
+}
+
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+  color: color-mix(in srgb, var(--accent-color), transparent 60%);
+  font-size: 26px;
+  line-height: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
   display: inline-block;
-  font-size: 2rem;
-  color: #940000;
-  margin-bottom: 15px;
+  left: -5px;
+  position: relative;
 }
 
-.review-text {
+.testimonials .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.testimonials .testimonial-item p {
   font-style: italic;
-  font-size: 0.9rem;
-  color: #555555;
-  margin: 15px 0;
+  margin: 15px auto 15px auto;
 }
 
-.review-rating {
-  margin-top: 10px;
+.testimonials .swiper-wrapper {
+  height: auto;
 }
 
-.review-rating .bi {
-  color: #f5c518;
-  font-size: 1rem;
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
 }
 
-.review-rating .bi-star {
-  color: #cccccc;
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: var(--background-color);
+  opacity: 1;
+  border: 1px solid var(--accent-color);
 }
 
-/* Responsive Design */
-@media (min-width: 400px) and (max-width: 700px) {
-  .reviews {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; 
-    justify-content: center; 
-    align-items: center; 
-    margin: 0 auto; 
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+@media (max-width: 767px) {
+  .testimonials .testimonial-item h3 {
+    
+    margin: 10px 0 5px 5px;
+  }
+  
+  .testimonials .testimonial-item h4 {
+  
+    margin-left: 5px;
+  }
+  
+  .testimonials .testimonial-item .stars {
+ 
+    margin-left:5px;
   }
 }
 
-  @media (max-width: 500px) {
-    .reviews {
-      
-      gap: 40px;
-    }
-    .review-card {
-      margin-top: 22px;
-    }
+
+@media (max-width: 500px) {
+  .testimonials .testimonial-wrap {
+    padding-left: 0;
+  }
+
+  .testimonials .testimonials-carousel,
+  .testimonials .testimonials-slider {
+    overflow: hidden;
+  }
+
+  .testimonials .testimonial-item {
+    padding: 30px;
+    margin: 15px;
+  }
+
+  .testimonials .testimonial-item .testimonial-img {
+    position: static;
+    left: auto;
+  }
 }
+
+
+
+
+
+
+
 
 
 
@@ -1988,16 +1997,54 @@ section,
     font-size: 14px; 
   }
 }
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.feature-card.slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+@media (max-width: 480px) {
+  .section-header h4 {
+    font-size: 24px; 
+  }
+
+  .feature-card {
+    padding: 15px; 
+  }
+
+  .feature-icon {
+    font-size: 30px; 
+    width: 45px;
+    height: 45px;
+  }
+
+  .feature-card h6 {
+    font-size: 16px; 
+  }
+
+  .feature-card p {
+    font-size: 14px; 
+  }
+}
 
 /* ------------------------mobile mode footer----------------- */
 /* Container for positioning */
-/* Container for positioning */
+
 .position-fixed {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1000; /* Ensure this container stays above the form */
+  z-index: 1000; 
 }
 
 .position-relative {
@@ -2010,7 +2057,7 @@ section,
   padding-right: 0;
 }
 
-/* Style for the logo container */
+
 .logo-icon {
   z-index: 1;
   position: absolute;
@@ -2033,7 +2080,7 @@ section,
   margin-bottom: 43px;
 }
 
-/* Main container style with background */
+
 .container-fluid.bg-white {
   background-color: white;
   padding: 10px;
@@ -2043,26 +2090,25 @@ section,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 999; /* Controls stacking order above the form */
+  z-index: 999; 
   margin-top: 150px;
 }
 
-/* Section for the SVG icon */
 .container-fluid svg {
   width: 40px;
   height: 40px;
-  z-index: 2; /* Places it above background content */
+  z-index: 2; /
 }
 
-/* Form styling (if necessary to lower its z-index) */
+
 form {
   position: relative;
-  z-index: 1; /* Ensures the form stays below the fixed section */
+  z-index: 1; 
   padding: 20px;
   background: #f9f9f9;
 }
 
-/* Adjust the margins and paddings for different screen sizes */
+
 @media (max-width: 768px) {
   .position-fixed {
     padding: 0;
@@ -2285,6 +2331,10 @@ form {
 @media (max-width: 768px) {
   .services .card-item {
     margin-bottom: 20px;
+  }
+
+  #services{
+    margin-top:-70px;
   }
 }
 
