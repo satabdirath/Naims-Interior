@@ -451,36 +451,11 @@ h6 {
 /* Footer Styling */
 /* Footer Section */
 .footer {
-  background-color: rgba(249, 25, 66, 0.15); /* Soft pink with opacity */
+  background-color: rgba(249, 25, 66, 0.15); 
   color: rgb(100, 12, 12);
   padding: 30px 20px;
-  position: relative; /* For positioning pseudo-elements */
+  
 }
-
-.footer::before,
-.footer::after {
-  content: '';
-  position: absolute;
-  background-color: rgba(249, 25, 66, 0.15); /* Same background color */
-  z-index: -1; /* Ensure pseudo-elements are behind the footer content */
-}
-
-.footer::before {
-  left: 0;
-  right: 0;
-  top: -30px; /* Adjust this for the top arc of the U */
-  height: 30px; /* Height of the top portion of the U */
-  border-radius: 50% 50% 0 0; /* Rounded corners at the top */
-}
-
-.footer::after {
-  left: 50px; /* Adds space on both sides */
-  right: 50px;
-  bottom: -30px; /* Creates the bottom of the U */
-  height: 30px; /* Height of the bottom portion of the U */
-  border-radius: 50% 50% 0 0; /* Rounded corners at the bottom */
-}
-
 
 .footer-container {
   max-width: 1200px;
