@@ -450,6 +450,12 @@ h6 {
 --------------------------------------------------------------*/
 /* Footer Styling */
 /* Footer Section */
+.form {
+  width: 100%;
+}
+.footer-form {
+  width: 55px;
+}
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -582,7 +588,7 @@ h6 {
     
   }
   .footer{
-    margin-bottom:35px;
+    margin-bottom:80px;
   }
   .footer-service{
     display: none;
