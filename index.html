@@ -193,9 +193,38 @@
       <option value="villa">Villa</option>
       <option value="independent-house">Independent House</option>
     </select>
-    <input type="text" placeholder="Enter your budget" id="budget">
-    <button class="hero_button" type="button" id="back-2">Back</button>
-    <button  class="hero_button" type="submit">Submit</button>
+    <!-- Budget Input -->
+<input type="text" placeholder="Enter your budget" id="budget" oninput="formatBudget(this)" />
+
+<script>
+  function formatBudget(input) {
+    // Remove non-numeric characters and whitespace
+    const value = input.value.replace(/\D/g, '');
+
+    if (value) {
+      // Append ' Lakh' to the numeric value
+      input.value = `${value} Lakh`;
+    } else {
+      // Clear the input if no value
+      input.value = '';
+    }
+  }
+
+  // Optional: Remove ' Lakh' on focus for editing
+  const budgetInput = document.getElementById('budget');
+  budgetInput.addEventListener('focus', () => {
+    budgetInput.value = budgetInput.value.replace(' Lakh', '');
+  });
+  budgetInput.addEventListener('blur', () => {
+    if (budgetInput.value) {
+      budgetInput.value = `${budgetInput.value.replace(/\D/g, '')} Lakh`;
+    }
+  });
+</script>
+
+    <!--<button class="hero_button" type="button" id="back-2">Back</button>-->
+    <button class="hero_button" type="submit" id="submit-btn">Submit</button>
+
   </div>
   
   <p>By submitting this form, you agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a>.</p>
@@ -370,6 +399,96 @@
       </div>
     </section>
 
+    <section class="intro">
+      <div class="container">
+        <h1>How we work ?</h1>
+      </div>
+    </section>
+    
+    <section class="timeline">
+      <ul>
+        <li>
+          <div>
+            <time><i class="fas fa-handshake"></i> Step 1</time>
+           <h6>NAIMS INTERIOR:</h6> 
+           <p>Your Journey to Dream Interiors Made Simple. Transforming spaces is easy with our transparent and customer-focused process.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <time><i class="fas fa-user-tie"></i> Step 2</time>
+            <h6> Meet with a Designer -</h6>
+            Start your journey with a free consultation. Discuss your ideas, needs, and preferences with our expert designers—no strings attached!
+          </div>
+        </li>
+        <li>
+          <div>
+            <time><i class="fas fa-wallet"></i> Step 3</time>
+            <h6> Kickstart Your Journey with Just 5% </h6>
+              Secure your booking and let us bring your vision to life.
+          </div>
+        </li>
+        <li>
+          <div>
+            <time><i class="fas fa-cogs"></i> Step 4</time>
+            <h6> Visualize Before You Commit – 3D Design Review (40%) </h6>
+              See your dream space come to life with a customized 3D design and approve it with confidence.
+          </div>
+        </li>
+        <li>
+          <div>
+            <time><i class="fas fa-hammer"></i> Step 5</time>
+            <h6> Bringing Your Vision to Life – Execution Phase (30%)  </h6>
+             Our skilled team ensures every detail is perfectly crafted during the execution phase.
+          </div>
+        </li>
+        <li>
+          <div>
+            <time><i class="fas fa-clipboard-check"></i> Step 6</time>
+            <h6> The Final Touch – Handover (25%) </h6>
+              Celebrate the completion of your project with confidence and satisfaction.
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+    
+    
+<script>
+  (function () {
+  "use strict";
+
+  // define variables
+  var items = document.querySelectorAll(".timeline li");
+
+  // check if an element is in viewport
+  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function callbackFunc() {
+    for (var i = 0; i < items.length; i++) {
+      if (isElementInViewport(items[i])) {
+        items[i].classList.add("in-view");
+      }
+    }
+  }
+
+  // listen for events
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("resize", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+})();
+
+</script>
     <center>
       <section id="projects" class="projects section">
 
@@ -642,42 +761,75 @@
 
   <footer class="footer">
     <div class="footer-container">
-      <div class="footer-top">
-        <h2 class="footer-title">Dedicated Support System</h2>
-        <div class="footer-contact">
-          <div class="footer-contact-item">
-            <i class="bi bi-telephone"></i>
-            <p>7251000103</p>
-          </div>
-          <div class="footer-contact-item">
-            <i class="bi bi-telephone-inbound"></i>
-            <p>1800-120-8230</p>
-          </div>
-          <div class="footer-contact-item">
-            <i class="bi bi-whatsapp"></i>
-            <p>+91 844 944 6389</p>
-          </div>
-          <div class="footer-contact-item">
-            <i class="bi bi-envelope"></i>
-            <p>WeCare@Naimsinterior.com</p>
-          </div>
+        <div class="footer-section">
+             <img src="assets/img/logo1.png" alt="">
+            <address>
+                Archiact VR, #20-555 W Hastings<br>
+                St, Vancouver, BC V6B, Earth<br>
+                <a href="mailto:WeCare@Naimsinterior.com">WeCare@Naimsinterior.com</a>
+            </address>
         </div>
 
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copyright">
-          &copy; <span class="footer-year"></span> NAIMS INTERIOR, All Rights Reserved.
-          <script>
-            document.querySelector('.footer-year').textContent = new Date().getFullYear();
-          </script>
-        </p>
-        
-        <p class="footer-links">
-          <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a> | <a href="#">Declaration</a>
-        </p>
-      </div>
+        <div class="footer-section">
+            <h3>Support System</h3>
+            <ul>
+              <li>
+                <a href="tel:7251000103">
+                  <i class="bi bi-telephone-inbound-fill"></i> &nbsp;7251000103
+                </a>
+              </li>
+              <li>
+                <a href="tel:18001208230">
+                  <i class="fa-solid fa-tty"></i>&nbsp;1800-120-8230
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/918449446389" target="_blank">
+                  <i class="bi bi-whatsapp"></i> &nbsp;+91 844 944 6389
+                </a>
+              </li>
+              <li>
+                <a href="mailto:WeCare@Naimsinterior.com">
+                  <i class="bi bi-envelope-check-fill"></i>&nbsp; WeCare@Naimsinterior.com
+                </a>
+              </li>
+              
+              
+            </ul>
+        </div>
+
+        <div class="footer-section footer-policy">
+            <h3>Policy</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Declaretion</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section footer-service">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Designing</a></li>
+                <li><a href="#">Remodelling</a></li>
+                <li><a href="#">Furnishing</a></li>
+            </ul>
+        </div>
+
+     
     </div>
-  </footer>
+
+    <div class="footer-bottom">
+      <p >
+        &copy; <span class="footer-year"></span> NAIMS INTERIOR, All Rights Reserved.
+        <script>
+          document.querySelector('.footer-year').textContent = new Date().getFullYear();
+        </script>
+      </p>
+
+    </div>
+</footer>
+
 
 
 
@@ -708,56 +860,85 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    const form = document.getElementById('contact-form');
+ 
+ const form = document.getElementById('contact-form');
+const submitButton = document.getElementById('submit-btn'); // Add reference to the submit button
 
-    form.addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent form from submitting normally
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form from submitting normally
+  
+  // Change button state to loading
+  submitButton.textContent = "Loading...";
+  submitButton.style.backgroundColor = "orange"; // Show loading state
 
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  let phone = document.getElementById('phone').value;
+  const propertyName = document.getElementById('property-name').value;
+  const pincode = document.getElementById('pincode').value;
+  const homeType = document.getElementById('home-type').value;
+  const budget = document.getElementById('budget').value;
+  const whatsappUpdates = document.getElementById('whatsapp-updates').checked;
 
-      // Remove spaces from the phone number
-      let phone = document.getElementById('phone').value;
-      phone = phone.replace(/\s+/g, ""); // Remove all spaces
+  // Format the phone number to +919876543210
+  phone = formatPhoneNumber(phone);
 
-      const propertyName = document.getElementById('property-name').value;
-      const pincode = document.getElementById('pincode').value;
-      const homeType = document.getElementById('home-type').value;
-      const whatsappUpdates = document.getElementById('whatsapp-updates').checked;
+  // Prepare API request data
+  const apiData = {
+    apiToken: '7428%7C2f1PQOaINhAiqFrRPnQQCx4gKLhT9cQUZvPpKZ2V',
+    phone_number_id: '339128885942421',
+    template_id: '130298',
+    template_header_media_url: 'https://bot-data.s3.ap-southeast-1.wasabisys.com/upload/2025/1/flowbuilder/flowbuilder-65163-1737126333.pdf',
+    template_quick_reply_button_values: ['EXTERNAL_ECOMMERCE_CANCEL_ORDER', 'EXTERNAL_ECOMMERCE_CANCEL_ORDER'],
+    phone_number: phone,
+  };
 
-      // Prepare API data
-      const apiData = {
-        apiToken: '7428%7C2f1PQOaINhAiqFrRPnQQCx4gKLhT9cQUZvPpKZ2V',
-        phone_number_id: '339128885942421',
-        template_id: '130298',
-        template_header_media_url: 'https://bot-data.s3.ap-southeast-1.wasabisys.com/upload/2025/1/flowbuilder/flowbuilder-65163-1737126333.pdf',
-        template_quick_reply_button_values: [
-          'EXTERNAL_ECOMMERCE_CANCEL_ORDER',
-          'EXTERNAL_ECOMMERCE_CANCEL_ORDER'
-        ],
-        phone_number: phone,
-      };
+  // Send the API request
+  fetch('https://botsailor.com/api/v1/whatsapp/send/template', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams(apiData),
+  })
+  .then(response => {
+    if (response.ok) {
+      // Success response
+      submitButton.textContent = "Submitted!";
+      submitButton.style.backgroundColor = "green";
+      setTimeout(() => {
+        location.reload(); // Refresh the page
+      }, 2000); // Wait for 2 seconds
+    } else {
+      // Handle error response
+      submitButton.textContent = "Submit";
+      submitButton.style.backgroundColor = ""; // Reset the button state
+    }
+  })
+  .catch((error) => {
+    // Handle network or other errors
+    submitButton.textContent = "Submit";
+    submitButton.style.backgroundColor = ""; // Reset the button state
+  });
+});
 
-      // API call to send WhatsApp message
-      fetch('https://botsailor.com/api/v1/whatsapp/send/template', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(apiData),
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            alert('Your quote request has been sent successfully!');
-          } else {
-            alert('Something went wrong. Please check your details and try again.');
-          }
-        })
-        .catch((error) => {
-          alert('An error occurred. Please try again later.');
-        });
-    });
+
+
+</script>
+
+<style>
+  .hero_button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+  .hero_button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+</style>
+
   </script>
 
   <script>
