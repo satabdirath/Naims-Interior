@@ -455,6 +455,7 @@ h6 {
 }
 .footer-form {
   width: 55px;
+  background-color: red;
 }
 .footer {
   color: var(--default-color);
