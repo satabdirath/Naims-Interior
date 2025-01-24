@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -99,56 +98,14 @@
                   href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
                <script
                   src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-               <script>
-
-                  const phoneInputField = document.querySelector("#phone");
-                  const phoneInput = window.intlTelInput(phoneInputField, {
-                     initialCountry: "in",
-                     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-                  });
-                  phoneInputField.addEventListener("input", () => {
-                     const currentValue = phoneInputField.value.replace(/\D/g, "");
-                     if (currentValue.length === 10) {
-
-                        const formattedNumber = phoneInput.getNumber(
-                           intlTelInputUtils.numberFormat.INTERNATIONAL
-                        );
-                        phoneInputField.value = formattedNumber;
-                     }
-                  });
-
-
-                  function validatePhone(input) {
-                     input.value = input.value.replace(/\D/g, "").slice(0, 10); // Limit to 10 digits
-                  }
-
-
-                  function validatePhonesKeyDown(e) {
-                     const value = e.target.value.replace(/\D/g, "");
-                     if (value.length >= 10 && !e.key.match(/[0-9]/)) {
-                        e.preventDefault();
-                     }
-                  }
-               </script>
                <button class="hero_button" type="button" id="next-1">Qoute</button>
+               <p id="error-message" style="color: red; display: none; font-size: 14px;"></p>
             </div>
             <!-- Step 2 -->
             <div id="step-2" class="form-step">
                <input type="text" placeholder="Enter your property name" id="property-name">
                <input type="text" placeholder="Enter Pincode" id="pincode" maxlength="6" pattern="\d{6}" required
                   oninput="validatePincode(this)" onkeydown="validatePincodeKeyDown(event)">
-               <script>
-                  function validatePincode(input) {
-                     input.value = input.value.replace(/\D/g, '').slice(0, 6);
-                  }
-
-                  function validatePincodeKeyDown(e) {
-                     const value = e.target.value.replace(/\D/g, '');
-                     if (value.length >= 6 && !e.key.match(/[0-9]/)) {
-                        e.preventDefault();
-                     }
-                  }
-               </script>
                <select id="home-type" required>
                   <option value="">Please Select Your Home Type</option>
                   <option value="apartment">Apartment</option>
@@ -157,67 +114,70 @@
                </select>
                <!-- Budget Input -->
                <input type="text" placeholder="Enter your budget" id="budget" oninput="formatBudget(this)" />
-               <script>
-                  function formatBudget(input) {
-                     const value = input.value.replace(/\D/g, '');
-
-                     if (value) {
-                        input.value = `${value} Lakh`;
-                     } else {
-                        input.value = '';
-                     }
-                  }
-
-                  // Optional: Remove ' Lakh' on focus for editing
-                  const budgetInput = document.getElementById('budget');
-                  budgetInput.addEventListener('focus', () => {
-                     budgetInput.value = budgetInput.value.replace(' Lakh', '');
-                  });
-                  budgetInput.addEventListener('blur', () => {
-                     if (budgetInput.value) {
-                        budgetInput.value = `${budgetInput.value.replace(/\D/g, '')} Lakh`;
-                     }
-                  });
-               </script>
                <!--<button class="hero_button" type="button" id="back-2">Back</button>-->
                <button class="hero_button" type="submit" id="submit-btn">Submit</button>
             </div>
             <p>By submitting this form, you agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of
                   Use</a>.</p>
          </form>
+
+        
+         
       </section>
-      <!--<section class="about-us-section">
-            <div class="about-us-container">
+      <div id="form-modal" class="modal">
+         <div class="modal-content">
+            <span id="close-modal-btn" class="close-btn">&times;</span>
             
-              <div class="about-us-images">
-                <div class="years-badge">15+<br><small>Years</small></div>
-                <img src="assets/img/contact1.jpg" alt="Living Room" class="main-image">
-              </div>
-            
-              <div class="about-us-content">
-                <p class="about-tagline">About Us</p>
-                <h2>Our passion for design, your vision realized</h2>
-                <p class="about-description">
-                  Our dedicated team of designers works closely with you to understand your vision and bring it to life with thoughtful attention to detail. Whether it's transforming a single room or an entire home.
-                </p>
-                <ul class="about-features">
-                  <li>✔ Creative expertise</li>
-                  <li>✔ Client-centered approach</li>
-                </ul>
-                <a href="#" class="read-more-button">Read More</a>
-                <div class="contact-info">
-                  <p>📞 +1 (235) 800 999</p>
-                  <div class="founder-info">
-                    <img src="founder.jpg" alt="Leslie Alexander" class="founder-image">
-                    <div>
-                      <p class="founder-name">Leslie Alexander</p>
-                      <small class="founder-title">Co-Founder</small>
-                    </div>
+            <form id="contact-form" class="contact-form-model">
+               <div class="secondline">
+                  Contact us for
+                  <span class="txt-rotate" style="color: red;" data-period="1200"
+                     data-rotate='[ " Designing.", "Remodelling.", " Furnishing." ]'></span>
+                  <span class="slash">|</span>
+               </div>
+               <div id="step-1" class="form-step active">
+                  <!-- Name Input -->
+                  <input type="text" placeholder="Enter your name" id="name" required />
+                  <input type="email" placeholder="Enter your email" id="email" required />
+                  <br>
+                  <!-- Telephone Input -->
+                  <div class="tel-container">
+                     <input id="phone" type="text" placeholder="Enter your phone number" name="phone" required
+                        maxlength="15" oninput="validatePhone(this)" onkeydown="validatePhonesKeyDown(event)" />
                   </div>
-                </div>
-              </div>
+                  <label class="whatsapp-label">
+                     <input type="checkbox" id="whatsapp-updates" name="whatsapp-updates" class="checkboxclass" checked />
+                     Send me updates on WhatsApp
+                  </label>
+                  <link rel="stylesheet"
+                     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+                  <script
+                     src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+                  <button class="hero_button" type="button" id="next-1">Qoute</button>
+                  <p id="error-message" style="color: red; display: none; font-size: 14px;"></p>
+               </div>
+               <!-- Step 2 -->
+               <div id="step-2" class="form-step">
+                  <input type="text" placeholder="Enter your property name" id="property-name">
+                  <input type="text" placeholder="Enter Pincode" id="pincode" maxlength="6" pattern="\d{6}" required
+                     oninput="validatePincode(this)" onkeydown="validatePincodeKeyDown(event)">
+                  <select id="home-type" required>
+                     <option value="">Please Select Your Home Type</option>
+                     <option value="apartment">Apartment</option>
+                     <option value="villa">Villa</option>
+                     <option value="independent-house">Independent House</option>
+                  </select>
+                  <!-- Budget Input -->
+                  <input type="text" placeholder="Enter your budget" id="budget" oninput="formatBudget(this)" />
+                  <!--<button class="hero_button" type="button" id="back-2">Back</button>-->
+                  <button class="hero_button" type="submit" id="submit-btn">Submit</button>
+               </div>
+               <p>By submitting this form, you agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of
+                     Use</a>.</p>
+            </form>
             </div>
-            </section>-->
+         </div>
+    </div>
       <center>
          <section id="services" class="services section">
             <div class="container section-title" data-aos="fade-up">
@@ -280,7 +240,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                  <center><div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
                      <div class="card-item">
                         <div class="row">
                            <div class="col-xl-5">
@@ -297,14 +257,14 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div></center>
                </div>
             </div>
          </section>
-         <button type="button" class="btn btn-lg">Book Free Consultation</button>
+         <button type="button" id="open-modal-btn" class="btn btn-lg">Book Free Consultation</button>
 
       </center>
-
+      <br>
       <section id="about" class="features-section bg-light pt-5 pb-5">
          <div class="container">
             <div class="row">
@@ -355,7 +315,7 @@
       </section>
       <section class="intro">
          <div class="container">
-            <h1>How we work ?</h1>
+           <center><h1>How we work ?</h1></center> 
          </div>
       </section>
       <section class="timeline">
@@ -469,9 +429,7 @@
                            <div class="portfolio-info">
                               <h4>Modern Living Room</h4>
                               <p>Contemporary style with clean lines and soft lighting.</p>
-                              <a href="assets/img/contact1.jpg" title="Modern Living Room"
-                                 data-gallery="portfolio-gallery-living-room" class="glightbox preview-link"><i
-                                    class="bi bi-zoom-in"></i></a>
+                              
                            </div>
                         </div>
                      </div>
@@ -482,9 +440,7 @@
                            <div class="portfolio-info">
                               <h4>Elegant Bedroom</h4>
                               <p>Minimalist bedroom design with a calming color palette.</p>
-                              <a href="assets/img/Bedroom-Design.png" title="Elegant Bedroom"
-                                 data-gallery="portfolio-gallery-bedroom" class="glightbox preview-link"><i
-                                    class="bi bi-zoom-in"></i></a>
+                            
                            </div>
                         </div>
                      </div>
@@ -495,9 +451,7 @@
                            <div class="portfolio-info">
                               <h4>Sleek Kitchen</h4>
                               <p>Modern kitchen with innovative storage solutions.</p>
-                              <a href="assets/img/Kitchen-desgin.png" title="Sleek Kitchen"
-                                 data-gallery="portfolio-gallery-kitchen" class="glightbox preview-link"><i
-                                    class="bi bi-zoom-in"></i></a>
+                            
                            </div>
                         </div>
                      </div>
@@ -508,9 +462,7 @@
                            <div class="portfolio-info">
                               <h4>Stylish Office</h4>
                               <p>Ergonomic office design with vibrant decor elements.</p>
-                              <a href="assets/img/contact1.jpg" title="Stylish Office"
-                                 data-gallery="portfolio-gallery-office" class="glightbox preview-link"><i
-                                    class="bi bi-zoom-in"></i></a>
+                            
                            </div>
                         </div>
                      </div>
@@ -521,9 +473,7 @@
                            <div class="portfolio-info">
                               <h4>Outdoor Living</h4>
                               <p>High-end bathroom with marble finishes and soft lighting.</p>
-                              <a href="assets/img/contact1.jpg" title="Luxury Bathroom"
-                                 data-gallery="portfolio-gallery-bathroom" class="glightbox preview-link"><i
-                                    class="bi bi-zoom-in"></i></a>
+                        
                            </div>
                         </div>
                      </div>
@@ -533,9 +483,6 @@
                            <div class="portfolio-info">
                               <h4>Luxury Bathroom</h4>
                               <p>High-end bathroom with marble finishes and soft lighting.</p>
-                              <a href="assets/img/contact1.jpg" title="Luxury Bathroom"
-                                 data-gallery="portfolio-gallery-bathroom" class="glightbox preview-link"><i
-                                    class="bi bi-zoom-in"></i></a>
                            </div>
                         </div>
                      </div>
@@ -544,7 +491,7 @@
                </div>
             </div>
          </section>
-         <button type="button" class="btn btn-lg">Talk to Designer</button>
+         <button type="button" class="btn btn-lg" id="open-modal-btn">Talk to Designer</button>
       </center>
       <section id="testimonials" class="testimonials section">
          <!-- Section Title -->
@@ -654,16 +601,16 @@
             <h4 class="section-title">Associate Partners</h4>
             <div class="partner-logos-wrapper">
                <div class="partner-logos">
-                  <img src="/Naims-Interior/assets/img/patner-img-1.jpg" alt="Partner 1" />
-                  <img src="/Naims-Interior/assets/img/patner-img-2.jpg" alt="Partner 2" />
-                  <img src="/Naims-Interior/assets/img/patner-img-3.jpg" alt="Partner 3" />
-                  <img src="/Naims-Interior/assets/img/patner-img-4.jpg" alt="Partner 4" />
-                  <img src="/Naims-Interior/assets/img/patner-img-5.jpg" alt="Partner 5" />
-                  <img src="/Naims-Interior/assets/img/patner-img-1.jpg" alt="Partner 6" />
-                  <img src="/Naims-Interior/assets/img/patner-img-2.jpg" alt="Partner 7" />
-                  <img src="/Naims-Interior/assets/img/patner-img-3.jpg" alt="Partner 8" />
-                  <img src="/Naims-Interior/assets/img/patner-img-4.jpg" alt="Partner 9" />
-                  <img src="/Naims-Interior/assets/img/patner-img-5.jpg" alt="Partner 10" />
+                  <img src="/assets/img/patner-img-1.jpg" alt="Partner 1" />
+                  <img src="/assets/img/patner-img-2.jpg" alt="Partner 2" />
+                  <img src="/assets/img/patner-img-3.jpg" alt="Partner 3" />
+                  <img src="/assets/img/patner-img-4.jpg" alt="Partner 4" />
+                  <img src="/assets/img/patner-img-5.jpg" alt="Partner 5" />
+                  <img src="/assets/img/patner-img-1.jpg" alt="Partner 6" />
+                  <img src="/assets/img/patner-img-2.jpg" alt="Partner 7" />
+                  <img src="/assets/img/patner-img-3.jpg" alt="Partner 8" />
+                  <img src="/assets/img/patner-img-4.jpg" alt="Partner 9" />
+                  <img src="/assets/img/patner-img-5.jpg" alt="Partner 10" />
                </div>
             </div>
          </div>
@@ -672,13 +619,13 @@
    <div class="position-fixed position-relative container-fluid  bottom-0 p-0 m-0  d-md-none d-block container-fluid">
       <div class="logo-icon z-1 position-absolute container bottom-0 d-flex justify-content-center">
          <div class="w-50">
-            <img src="/Naims-Interior/assets/img/update-logo2.png" class="w-100">
+            <img src="/assets/img/update-logo2.png" class="w-100">
          </div>
       </div>
       <div
          class="container-fluid bg-white d-flex justify-content-between px-3 align-items-center shadow-lg  border-bottom border-top border-5 ">
-         <div class="p-2 footer-form">
-            <img src="/Naims-Interior/assets/img/update-form-icon.png" alt="form" class="form class">
+         <div class="p-2 footer-form" id="open-modal-btn">
+            <img src="/assets/img/update-form-icon.png" alt="form"  class="form class">
          </div>
          <div class="p-2">
             <a href="https://wa.me/918449446389?text=Hello%20NAIMS%20INTERIOR%20Team%2C%20I%20need%20assistance%20regarding%20your%20services%20Ref%3A%20%23INQ-7845"
@@ -777,17 +724,84 @@
    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.1.0/dist/purecounter_vanilla.js"></script>
    <!-- Main JS File -->
    <script src="assets/js/main.js"></script>
+
+   <script>
+      const phoneInputField = document.querySelector("#phone");
+      const phoneInput = window.intlTelInput(phoneInputField, {
+         initialCountry: "in",
+         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      });
+      
+      phoneInputField.addEventListener("input", () => {
+         const currentValue = phoneInputField.value.replace(/\D/g, "");
+         if (currentValue.length === 10) {
+            const formattedNumber = phoneInput.getNumber(
+               intlTelInputUtils.numberFormat.INTERNATIONAL
+            );
+            phoneInputField.value = formattedNumber;
+         }
+      });
+   
+      function validatePhone(input) {
+         input.value = input.value.replace(/\D/g, "").slice(0, 10); // Limit to 10 digits
+      }
+   
+      function validatePhonesKeyDown(e) {
+         const value = e.target.value.replace(/\D/g, "");
+         if (value.length >= 10 && !e.key.match(/[0-9]/)) {
+            e.preventDefault();
+         }
+      }
+   
+      function validatePincode(input) {
+         input.value = input.value.replace(/\D/g, '').slice(0, 6);
+      }
+   
+      function validatePincodeKeyDown(e) {
+         const value = e.target.value.replace(/\D/g, '');
+         if (value.length >= 6 && !e.key.match(/[0-9]/)) {
+            e.preventDefault();
+         }
+      }
+   
+      function formatBudget(input) {
+         const value = input.value.replace(/\D/g, '');
+   
+         if (value) {
+            input.value = `${value} Lakh`;
+         } else {
+            input.value = '';
+         }
+      }
+   
+      // Optional: Remove ' Lakh' on focus for editing
+      const budgetInput = document.getElementById('budget');
+      budgetInput.addEventListener('focus', () => {
+         budgetInput.value = budgetInput.value.replace(' Lakh', '');
+      });
+      budgetInput.addEventListener('blur', () => {
+         if (budgetInput.value) {
+            budgetInput.value = `${budgetInput.value.replace(/\D/g, '')} Lakh`;
+         }
+      });
+   </script>
    <script>
       const form = document.getElementById('contact-form');
       const submitButton = document.getElementById('submit-btn'); // Add reference to the submit button
+   
+      function formatPhoneNumber(phone) {
+   // Remove spaces between numbers
+   return phone.replace(/\s+/g, '');
+}
 
+   
       form.addEventListener('submit', function (event) {
          event.preventDefault(); // Prevent form from submitting normally
-
+   
          // Change button state to loading
          submitButton.textContent = "Loading...";
          submitButton.style.backgroundColor = "orange"; // Show loading state
-
+   
          const name = document.getElementById('name').value;
          const email = document.getElementById('email').value;
          let phone = document.getElementById('phone').value;
@@ -796,10 +810,10 @@
          const homeType = document.getElementById('home-type').value;
          const budget = document.getElementById('budget').value;
          const whatsappUpdates = document.getElementById('whatsapp-updates').checked;
-
+   
          // Format the phone number to +919876543210
          phone = formatPhoneNumber(phone);
-
+   
          // Prepare API request data
          const apiData = {
             apiToken: '7428%7C2f1PQOaINhAiqFrRPnQQCx4gKLhT9cQUZvPpKZ2V',
@@ -809,7 +823,7 @@
             template_quick_reply_button_values: ['EXTERNAL_ECOMMERCE_CANCEL_ORDER', 'EXTERNAL_ECOMMERCE_CANCEL_ORDER'],
             phone_number: phone,
          };
-
+   
          // Send the API request
          fetch('https://botsailor.com/api/v1/whatsapp/send/template', {
             method: 'POST',
@@ -838,10 +852,8 @@
                submitButton.style.backgroundColor = ""; // Reset the button state
             });
       });
-
-
-
    </script>
+   
    <style>
       .hero_button {
          padding: 10px 20px;
@@ -862,19 +874,41 @@
          const step2 = document.getElementById("step-2");
          const next1 = document.getElementById("next-1");
          const back2 = document.getElementById("back-2");
-
+         const errorMessage = document.getElementById("error-message"); // Reference to error message container
+   
          next1.addEventListener("click", () => {
-            step1.classList.remove("active");
-            step2.classList.add("active");
+            // Get all input fields inside step1
+            const inputs = step1.querySelectorAll("input[required]");
+            let allFilled = true;
+   
+            // Check if all required fields are filled
+            inputs.forEach(input => {
+               if (!input.value.trim()) {
+                  allFilled = false;
+                  input.classList.add("error"); // Add error class for styling (optional)
+               } else {
+                  input.classList.remove("error"); // Remove error class if corrected
+               }
+            });
+   
+            // Show or hide error message
+            if (!allFilled) {
+               errorMessage.textContent = "Please fill all required fields before proceeding.";
+               errorMessage.style.display = "block";
+            } else {
+               errorMessage.style.display = "none";
+               step1.classList.remove("active");
+               step2.classList.add("active");
+            }
          });
-
+   
          back2.addEventListener("click", () => {
             step2.classList.remove("active");
             step1.classList.add("active");
          });
       });
-
    </script>
+   
    <script>
       // Function to check if element is in view
       function isInView(element) {
@@ -955,6 +989,34 @@
       };
 
    </script>
+      <script>
+     document.addEventListener("DOMContentLoaded", function() {
+  const modal = document.getElementById("form-modal");
+  const openModalBtn = document.getElementById("open-modal-btn");
+  const closeModalBtn = document.getElementById("close-modal-btn");
+
+  // Ensure modal is hidden when page loads
+  modal.style.display = "none";
+
+  // Open modal when button is clicked
+  openModalBtn.addEventListener("click", () => {
+    modal.style.display = "flex"; // Display the modal
+  });
+
+  // Close modal when close button is clicked
+  closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none"; // Hide the modal
+  });
+
+  // Close modal when clicking outside of the modal content
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+
+      </script>
 </body>
 
 </html>
