@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
    <title>Naims</title>
    <meta name="description" content="">
    <meta name="keywords" content="">
-   <!-- Favicons -->
    <link href="assets/img/favicon.png" rel="icon">
-   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-   <!-- Fonts -->
    <link href="https://fonts.googleapis.com" rel="preconnect">
    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
    <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet">
-   <!--  CSS Files -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -26,10 +23,25 @@
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css">
    <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+
    <link href="assets/css/main.css" rel="stylesheet">
+   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/46554589.js"></script>
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-NX3FV3BZ');</script>
+
 </head>
 
 <body class="index-page">
+
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX3FV3BZ" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+
    <header id="header" class="header d-flex align-items-center fixed-top">
       <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
          <a href="index.html" class="logo d-flex align-items-center">
@@ -59,7 +71,7 @@
             <div class="container">
                <div class="row justify-content-start" data-aos="fade-up" data-aos-delay="100">
                   <div class="col-lg-6 text-left">
-                     <h2>Handmade for your home</h2>
+                     <h2>Make your dream home a reality at affordable price with Naims Interior</h2>
                      <p>Consciously designed to fit your style and budget.</p>
                      <!-- <a href="#about" class="btn-get-started">Get Started</a> -->
                   </div>
@@ -77,15 +89,15 @@
             <div class="secondline">
                Contact us for
                <span class="txt-rotate" style="color: red;" data-period="1200"
-                  data-rotate='[ " Designing.", "Remodelling.", " Furnishing." ]'></span>
+                  data-rotate='[ "Modular Kitchen.", "Renovation.", "Full Home Interior." ]'></span>
                <span class="slash">|</span>
             </div>
             <div id="step-1" class="form-step active">
-               <!-- Name Input -->
+
                <input type="text" placeholder="Enter your name" id="name" required />
                <input type="email" placeholder="Enter your email" id="email" required />
                <br>
-               <!-- Telephone Input -->
+
                <div class="tel-container">
                   <input id="phone" type="text" placeholder="Enter your phone number" name="phone" required
                      maxlength="15" oninput="validatePhone(this)" onkeydown="validatePhonesKeyDown(event)" />
@@ -112,48 +124,57 @@
                   <option value="villa">Villa</option>
                   <option value="independent-house">Independent House</option>
                </select>
-               <!-- Budget Input -->
-               <input type="text" placeholder="Enter your budget" id="budget" oninput="formatBudget(this)" />
+
+               <label for="budget" class="block mb-2 text-sm font-medium text-gray-700">
+                  Kindly let us know your budget:
+               </label>
+
+               <div class="d-flex">
+                  <input type="text" placeholder="Enter your budget in lakhs" id="budget"
+                     oninput="formatBudget(this)" />
+                  <h5 style="color: black;">*lakhs</h5>
+               </div>
                <!--<button class="hero_button" type="button" id="back-2">Back</button>-->
                <button class="hero_button" type="submit" id="submit-btn">Submit</button>
             </div>
-            <p>By submitting this form, you agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of
+            <p>By submitting this form, you agree to the <a href="#" class="open-privacy-btn">Privacy Policy</a> and <a href="#" class="open-term-condition-btn">Terms of
                   Use</a>.</p>
          </form>
 
-        
-         
+
+
       </section>
       <div id="form-modal" class="modal">
          <div class="modal-content">
             <span id="close-modal-btn" class="close-btn">&times;</span>
-            
+
             <form id="contact-form" class="contact-form-model">
                <div class="secondline">
                   Contact us for
                   <span class="txt-rotate" style="color: red;" data-period="1200"
-                     data-rotate='[ " Designing.", "Remodelling.", " Furnishing." ]'></span>
+                     data-rotate='[ "Modular Kitchen.", "Renovation.", "Full Home Interior." ]'></span>
                   <span class="slash">|</span>
                </div>
                <div id="step-1" class="form-step active">
-                  <!-- Name Input -->
+
                   <input type="text" placeholder="Enter your name" id="name" required />
                   <input type="email" placeholder="Enter your email" id="email" required />
                   <br>
-                  <!-- Telephone Input -->
+
                   <div class="tel-container">
                      <input id="phone" type="text" placeholder="Enter your phone number" name="phone" required
                         maxlength="15" oninput="validatePhone(this)" onkeydown="validatePhonesKeyDown(event)" />
                   </div>
                   <label class="whatsapp-label">
-                     <input type="checkbox" id="whatsapp-updates" name="whatsapp-updates" class="checkboxclass" checked />
+                     <input type="checkbox" id="whatsapp-updates" name="whatsapp-updates" class="checkboxclass"
+                        checked />
                      Send me updates on WhatsApp
                   </label>
                   <link rel="stylesheet"
                      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
                   <script
                      src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-                  <button class="hero_button" type="button" id="next-1">Qoute</button>
+                  <button class="hero_button" type="button" id="next-1">Quote</button>
                   <p id="error-message" style="color: red; display: none; font-size: 14px;"></p>
                </div>
                <!-- Step 2 -->
@@ -168,16 +189,285 @@
                      <option value="independent-house">Independent House</option>
                   </select>
                   <!-- Budget Input -->
-                  <input type="text" placeholder="Enter your budget" id="budget" oninput="formatBudget(this)" />
+                  <div class="d-flex">
+                     <input type="text" placeholder="Enter your budget" id="budget" oninput="formatBudget(this)" />
+                     <h5 style="color: black;">*lakhs</h5>
+                  </div>
                   <!--<button class="hero_button" type="button" id="back-2">Back</button>-->
                   <button class="hero_button" type="submit" id="submit-btn">Submit</button>
                </div>
-               <p>By submitting this form, you agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of
+               <p>By submitting this form, you agree to the <a href="#" class="open-privacy-btn">Privacy Policy</a> and <a href="#" class="open-term-condition-btn">Terms of
                      Use</a>.</p>
             </form>
-            </div>
          </div>
-    </div>
+      </div>
+      <!-- Privacy section form -->
+      <div id="form-privacy" class="modal">
+         <div class="modal-content">
+            <span id="close-privacy-btn" class="close-btn">&times;</span>
+            <div class="privacy-form">
+               <h4>Privacy Policy</h4>
+               <h5>Who we are</h5>
+               <p>Suggested text: Our website address is: https://naimsinterior.com.</p>
+               <h5>Comments</h5>
+               <p>Suggested text: When visitors leave comments on the site we collect the data shown in the comments
+                  form, and also the visitor’s IP address and browser user agent string to help spam detection.</p>
+               <p>An anonymized string created from your email address (also called a hash) may be provided to the
+                  Gravatar service to see if you are using it. The Gravatar service privacy policy is available here:
+                  https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to
+                  the public in the context of your comment.</p>
+               <h4>Media</h4>
+               <p>Suggested text: If you upload images to the website, you should avoid uploading images with embedded
+                  location data (EXIF GPS) included. Visitors to the website can download and extract any location data
+                  from images on the website.</p>
+               <h4>Cookies</h4>
+               <p>Suggested text: If you leave a comment on our site you may opt-in to saving your name, email address
+                  and website in cookies. These are for your convenience so that you do not have to fill in your details
+                  again when you leave another comment. These cookies will last for one year.
+
+                  If you visit our login page, we will set a temporary cookie to determine if your browser accepts
+                  cookies. This cookie contains no personal data and is discarded when you close your browser.
+
+                  When you log in, we will also set up several cookies to save your login information and your screen
+                  display choices. Login cookies last for two days, and screen options cookies last for a year. If you
+                  select "Remember Me", your login will persist for two weeks. If you log out of your account, the login
+                  cookies will be removed.
+
+                  If you edit or publish an article, an additional cookie will be saved in your browser. This cookie
+                  includes no personal data and simply indicates the post ID of the article you just edited. It expires
+                  after 1 day.</p>
+               <h4>Embedded content from other websites</h4>
+               <p>Suggested text: Articles on this site may include embedded content (e.g. videos, images, articles,
+                  etc.). Embedded content from other websites behaves in the exact same way as if the visitor has
+                  visited the other website.
+
+                  These websites may collect data about you, use cookies, embed additional third-party tracking, and
+                  monitor your interaction with that embedded content, including tracking your interaction with the
+                  embedded content if you have an account and are logged in to that website.</p>
+               <h4>Who we share your data with</h4>
+               <p>Suggested text: If you request a password reset, your IP address will be included in the reset email.
+               </p>
+               <h4>How long we retain your data</h4>
+               <p>Suggested text: If you leave a comment, the comment and its metadata are retained indefinitely. This
+                  is so we can recognize and approve any follow-up comments automatically instead of holding them in a
+                  moderation queue.
+
+                  For users that register on our website (if any), we also store the personal information they provide
+                  in their user profile. All users can see, edit, or delete their personal information at any time
+                  (except they cannot change their username). Website administrators can also see and edit that
+                  information.</p>
+               <h4>What rights you have over your data</h4>
+               <p>Suggested text: If you have an account on this site, or have left comments, you can request to receive
+                  an exported file of the personal data we hold about you, including any data you have provided to us.
+                  You can also request that we erase any personal data we hold about you. This does not include any data
+                  we are obliged to keep for administrative, legal, or security purposes.</p>
+               <h4>Where your data is sent</h4>
+               <p>Suggested text: Visitor comments may be checked through an automated spam detection service.</p>
+
+               <p>Copyright © 2025 NAIMS INTERIOR | Powered by NAIMS Enterprises Private Limited</p>
+            </div>
+
+         </div>
+      </div>
+      <!------------------------------------------------- form for Term & conditions--------------------------------- -->
+      <div id="form-term-condition" class="modal">
+         <div class="modal-content">
+            <span id="close-term-condition-btn" class="close-btn">&times;</span>
+            <div class="privacy-form">
+               <h4>Terms and Conditions</h4>
+               <p>Welcome to NAIMS INTERIOR!</p>
+               <p>These terms and conditions outline the rules and regulations for the use of NAIMS ENTERPRISES PRIVATE
+                  LIMITED’s Website, located at www.naimsinterior.com.
+
+                  By accessing this website we assume you accept these terms and conditions. Do not continue to use
+                  NAIMS INTERIOR if you do not agree to take all of the terms and conditions stated on this page.
+
+                  The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer
+                  Notice and all Agreements: “Client”, “You” and “Your” refers to you, the person log on this website
+                  and compliant to the Company’s terms and conditions. “The Company”, “Ourselves”, “We”, “Our” and “Us”,
+                  refers to our Company. “Party”, “Parties”, or “Us”, refers to both the Client and ourselves. All terms
+                  refer to the offer, acceptance and consideration of payment necessary to undertake the process of our
+                  assistance to the Client in the most appropriate manner for the express purpose of meeting the
+                  Client’s needs in respect of provision of the Company’s stated services, in accordance with and
+                  subject to, prevailing law of in. Any use of the above terminology or other words in the singular,
+                  plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring
+                  to same.
+               </p>
+               <h4>Cookies</h4>
+               <p>We employ the use of cookies. By accessing NAIMS INTERIOR, you agreed to use cookies in agreement with
+                  the NAIMS ENTERPRISES PRIVATE LIMITED’s Privacy Policy.
+
+                  Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies
+                  are used by our website to enable the functionality of certain areas to make it easier for people
+                  visiting our website. Some of our affiliate/advertising partners may also use cookies.
+               </p>
+
+               <h4>Licence</h4>
+               <p>Unless otherwise stated, NAIMS ENTERPRISES PRIVATE LIMITED and/or its licensors own the intellectual
+                  property rights for all material on NAIMS INTERIOR. All intellectual property rights are reserved. You
+                  may access this from NAIMS INTERIOR for your own personal use subjected to restrictions set in these
+                  terms and conditions</p>
+               <p>You must not:</p>
+               <ul>
+                  <li>Republish material from NAIMS INTERIOR</li>
+                  <li>Sell, rent or sub-license material from NAIMS INTERIOR</li>
+                  <li>Reproduce, duplicate or copy material from NAIMS INTERIOR</li>
+                  <li>Redistribute content from NAIMS INTERIOR</li>
+               </ul>
+               <p>This Agreement shall begin on the date hereof. Our Terms and Conditions were created with the help of
+                  the Free Terms and Conditions Generator.
+
+                  Parts of this website offer an opportunity for users to post and exchange opinions and information in
+                  certain areas of the website. NAIMS ENTERPRISES PRIVATE LIMITED does not filter, edit, publish or
+                  review Comments prior to their presence on the website. Comments do not reflect the views and opinions
+                  of NAIMS ENTERPRISES PRIVATE LIMITED,its agents and/or affiliates. Comments reflect the views and
+                  opinions of the person who post their views and opinions. To the extent permitted by applicable laws,
+                  NAIMS ENTERPRISES PRIVATE LIMITED shall not be liable for the Comments or for any liability, damages
+                  or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of
+                  the Comments on this website.</p>
+               <p>Copyright © 2025 NAIMS INTERIOR | Powered by NAIMS Enterprises Private Limited</p>
+               <p>NAIMS ENTERPRISES PRIVATE LIMITED reserves the right to monitor all Comments and to remove any
+                  Comments which can be considered inappropriate, offensive or causes breach of these Terms and
+                  Conditions.
+               </p>
+               <p>
+                  You warrant and represent that:
+               </p>
+               <ul>
+                  <li>You are entitled to post the Comments on our website and have all necessary licenses and consents
+                     to do so;</li>
+                  <li>The Comments do not invade any intellectual property right, including without limitation
+                     copyright, patent or trademark of any third party;</li>
+                  <li>The Comments do not contain any defamatory, libelous, offensive, indecent or otherwise unlawful
+                     material which is an invasion of privacy</li>
+                  <li>The Comments will not be used to solicit or promote business or custom or present commercial
+                     activities or unlawful activity.</li>
+               </ul>
+               <p>You hereby grant NAIMS ENTERPRISES PRIVATE LIMITED a non-exclusive license to use, reproduce, edit and
+                  authorize others to use, reproduce and edit any of your Comments in any and all forms, formats or
+                  media.</p>
+               <h4>Hyperlinking to our Content</h4>
+               <p>The following organizations may link to our Website without prior written approval:</p>
+
+               <ul>
+                  <li>Government agencies;</li>
+                  <li>Search engines;</li>
+                  <li>News organizations;</li>
+                  <li>Online directory distributors may link to our Website in the same manner as they hyperlink to the
+                     Websites of other listed businesses; and</li>
+                  <li>System wide Accredited Businesses except soliciting non-profit organizations, charity shopping
+                     malls, and charity fundraising groups which may not hyperlink to our Web site.</li>
+               </ul>
+
+               <p>
+                  These organizations may link to our home page, to publications or to other Website information so long
+                  as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or
+                  approval of the linking party and its products and/or services; and (c) fits within the context of the
+                  linking party’s site.
+               </p>
+               <p>
+                  We may consider and approve other link requests from the following types of organizations:
+               </p>
+               <ul>
+                  <li>commonly-known consumer and/or business information sources;</li>
+                  <li>dot.com community sites;</li>
+                  <li>associations or other groups representing charities;</li>
+                  <li>online directory distributors;</li>
+                  <li>internet portals;</li>
+                  <li>accounting, law and consulting firms; and</li>
+                  <li>educational institutions and trade associations.</li>
+               </ul>
+               <p>
+                  We will approve link requests from these organizations if we decide that: (a) the link would not make
+                  us look unfavorably to ourselves or to our accredited businesses; (b) the organization does not have
+                  any negative records with us; (c) the benefit to us from the visibility of the hyperlink compensates
+                  the absence of NAIMS ENTERPRISES PRIVATE LIMITED; and (d) the link is in the context of general
+                  resource information.
+               </p>
+               <p>
+                  These organizations may link to our home page so long as the link: (a) is not in any way deceptive;
+                  (b) does not falsely imply sponsorship, endorsement or approval of the linking party and its products
+                  or services; and (c) fits within the context of the linking party’s site.
+               </p>
+               <p>
+                  If you are one of the organizations listed in paragraph 2 above and are interested in linking to our
+                  website, you must inform us by sending an e-mail to NAIMS ENTERPRISES PRIVATE LIMITED. Please include
+                  your name, your organization name, contact information as well as the URL of your site, a list of any
+                  URLs from which you intend to link to our Website, and a list of the URLs on our site to which you
+                  would like to link. Wait 2-3 weeks for a response.
+               </p>
+               <p>Approved organizations may hyperlink to our Website as follows:</p>
+               <ul>
+                  <li>By use of our corporate name; or</li>
+                  <li>By use of the uniform resource locator being linked to; or</li>
+                  <li>By use of any other description of our Website being linked to that makes sense within the context
+                     and format of content on the linking party’s site.</li>
+               </ul>
+               <p>No use of NAIMS ENTERPRISES PRIVATE LIMITED’s logo or other artwork will be allowed for linking absent
+                  a trademark license agreement.</p>
+               <h4>iFrames</h4>
+               <p>Without prior approval and written permission, you may not create frames around our Webpages that
+                  alter in any way the visual presentation or appearance of our Website.
+               </p>
+               <h4>Content Liability</h4>
+               <p>
+                  We shall not be hold responsible for any content that appears on your Website. You agree to protect
+                  and defend us against all claims that is rising on your Website. No link(s) should appear on any
+                  Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise
+                  violates, or advocates the infringement or other violation of, any third party rights.
+               </p>
+               <h4>Reservation of Rights</h4>
+               <p>
+                  We reserve the right to request that you remove all links or any particular link to our Website. You
+                  approve to immediately remove all links to our Website upon request. We also reserve the right to amen
+                  these terms and conditions and it’s linking policy at any time. By continuously linking to our
+                  Website, you agree to be bound to and follow these linking terms and conditions.
+               </p>
+               <h4>Removal of links from our website</h4>
+               <p>
+                  If you find any link on our Website that is offensive for any reason, you are free to contact and
+                  inform us any moment. We will consider requests to remove links but we are not obligated to or so or
+                  to respond to you directly.
+
+                  We do not ensure that the information on this website is correct, we do not warrant its completeness
+                  or accuracy; nor do we promise to ensure that the website remains available or that the material on
+                  the website is kept up to date.
+               </p>
+               <h4>Disclaimer</h4>
+               <p>To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website. Nothing in this disclaimer will:</p>
+               <ul>
+                  <li>limit or exclude our or your liability for death or personal injury;</li>
+                  <li>limit or exclude our or your liability for fraud or fraudulent misrepresentation;</li>
+                  <li>limit any of our or your liabilities in any way that is not permitted under applicable law; or</li>
+                  <li>exclude any of our or your liabilities that may not be excluded under applicable law.</li>
+               </ul>
+               <p>The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort and for breach of statutory duty.</p>
+               <p>
+                  As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.
+               </p>
+               <p>
+                  Copyright © 2025 NAIMS INTERIOR | Powered by NAIMS Enterprises Private Limited
+               </p>
+            </div>
+
+         </div>
+      </div>
+
+      <!------------------------------------------- content for declaretion--------------------------------- -->
+      <div id="form-declaretion" class="modal">
+         <div class="modal-content">
+            <span id="close-declaretion-btn" class="close-btn">&times;</span>
+            <div class="privacy-form">
+               <h4>Disclaimer</h4>
+               <p>“Your Future home Today” Tagline only Marketing purpose.</p>
+               <p>The images on our site are for reference only. Please contact us to discuss your specific needs and to
+                  tailor a unique design for you.</p>
+               <p>Copyright © 2025 NAIMS INTERIOR | Powered by NAIMS Enterprises Private Limited</p>
+            </div>
+
+         </div>
+      </div>
+   
       <center>
          <section id="services" class="services section">
             <div class="container section-title" data-aos="fade-up">
@@ -195,73 +485,139 @@
                            </div>
                            <div class="col-xl-7 d-flex align-items-center">
                               <div class="card-body">
-                                 <h4 class="card-title">Residential Design</h4>
-                                 <p>Creating comfortable, stylish living spaces that reflect your personality. From cozy
-                                    apartments
-                                    to spacious homes, we design functional and inviting interiors.
+                                 <h4 class="card-title">Residential Interior Design</h4>
+                                 <p>We at Naims interior, we provide complete residential interior designing services
+                                    which includes,
                                  </p>
+                                 <ul class="services-point">
+                                    <li>Living Room Design </li>
+                                    <li>Bedroom Interior Design</li>
+                                    <li>Dining Room Design</li>
+                                    <li>Kids’ Room Design</li>
+                                    <li>Home Office Design</li>
+                                 </ul>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
-                  <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card-item">
-                           <div class="row">
-                              <div class="col-xl-5">
-                                 <div class="card-bg"><img src="assets/img/contact1.jpg" alt="Commercial Design"></div>
-                              </div>
-                              <div class="col-xl-7 d-flex align-items-center">
-                                 <div class="card-body">
-                                    <h4 class="card-title">Commercial Design</h4>
-                                    <p>Innovative design solutions for offices, retail spaces, and restaurants. We create professional
-                                       and functional environments that enhance your business image.
-                                    </p>
-                                 </div>
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                     <div class="card-item">
+                        <div class="row">
+                           <div class="col-xl-5">
+                              <div class="card-bg"><img src="assets/img/contact1.jpg" alt="Commercial Design"></div>
+                           </div>
+                           <div class="col-xl-7 d-flex align-items-center">
+                              <div class="card-body">
+                                 <h4 class="card-title">Kitchen & Bathroom Interior</h4>
+                                 <p>We offers complete Kitchen and Bathroom interior services for your dream home in
+                                    custom size (any size whether it’s large or small - it doesn’t matter) which
+                                    includes,
+                                 </p>
+                                 <ul class="services-point">
+                                    <li>Modular Kitchen Design </li>
+                                    <li>Kitchen Remodeling</li>
+                                    <li>Bathroom Renovation</li>
+                                 </ul>
                               </div>
                            </div>
                         </div>
-                     </div> -->
+                     </div>
+                  </div>
                   <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                      <div class="card-item">
                         <div class="row">
                            <div class="col-xl-5">
-                              <div class="card-bg"><img src="assets/img/contact1.jpg" alt="Renovations"></div>
+                              <div class="card-bg"><img src="assets/img/renvations-design.png" alt="Renovations"></div>
                            </div>
                            <div class="col-xl-7 d-flex align-items-center">
                               <div class="card-body">
-                                 <h4 class="card-title">Renovations & Remodeling</h4>
-                                 <p>Revitalize your space with expert renovation services. Whether it's a full remodel
-                                    or minor
-                                    updates, we bring new life to your interiors.
+                                 <h4 class="card-title">Customized Furniture & Decor</h4>
+                                 <p>We offer high end customized furniture and decor services which includes
                                  </p>
+                                 <ul class="services-point">
+                                    <li>Custom Furniture (Custom-made sofas, beds, and storage units.) </li>
+                                    <li>Wall Treatments & Wallpapers (Wall painting and custom wallpapers)</li>
+                                    <li>Lighting Design (All types of lighting services includes false ceiling and many)
+                                    </li>
+                                    <li>Flooring Solutions (Wooden, marble, tile or any other flooring types)</li>
+                                 </ul>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
-                  <center><div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                      <div class="card-item">
                         <div class="row">
                            <div class="col-xl-5">
-                              <div class="card-bg"><img src="assets/img/contact1.jpg" alt="Custom Furnishings"></div>
+                              <div class="card-bg"><img src="assets/img/renvations-design.png" alt="Renovations"></div>
                            </div>
                            <div class="col-xl-7 d-flex align-items-center">
                               <div class="card-body">
-                                 <h4 class="card-title">Custom Furnishings</h4>
-                                 <p>Tailored furniture solutions designed to fit your unique space and style. We craft
-                                    bespoke
-                                    pieces that enhance the aesthetic and functionality of your interiors.
+                                 <h4 class="card-title">Space Planning & Optimization</h4>
+                                 <p>Our interior experts are here to help you to alter any given space into a usable
+                                    area which includes,
                                  </p>
+                                 <ul class="services-point">
+                                    <li>Smart Storage Solutions (Space-saving wardrobes and organizers.)</li>
+                                    <li>Compact Home Design (Small space makeovers for apartments)</li>
+                                    <li>Vastu/Feng Shui Interior Consulting (Harmonizing energy-efficient designs.)</li>
+                                 </ul>
                               </div>
                            </div>
                         </div>
                      </div>
-                  </div></center>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                     <div class="card-item">
+                        <div class="row">
+                           <div class="col-xl-5">
+                              <div class="card-bg"><img src="assets/img/renvations-design.png" alt="Renovations"></div>
+                           </div>
+                           <div class="col-xl-7 d-flex align-items-center">
+                              <div class="card-body">
+                                 <h4 class="card-title">Home Renovation & Makeovers</h4>
+                                 <p>We at Naims Interior, we undertake complete home renovation and makeovers which
+                                    includes,
+                                 </p>
+                                 <ul class="services-point">
+                                    <li>Full Home Makeover (Revamping interior with a fresh look.)</li>
+                                    <li>Themed Interior (Contemporary, minimalist, bohemian, or traditional styles.)
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                     <div class="card-item">
+                        <div class="row">
+                           <div class="col-xl-5">
+                              <div class="card-bg"><img src="assets/img/custome-Furniture.png" alt="Custom Furnishings">
+                              </div>
+                           </div>
+                           <div class="col-xl-7 d-flex align-items-center">
+                              <div class="card-body">
+                                 <h4 class="card-title">3D Visualization & Interior Consultation</h4>
+                                 <p>We also offers, all types of interior consultation and designing services which
+                                    includes,
+                                 </p>
+                                 <ul class="services-point">
+                                    <li>3D Interior Rendering (Realistic previews before execution.)</li>
+                                    <li>Virtual Interior Design Services (Online consultations and plans.)</li>
+                                    <li>Mood Board & Material Selection (Color schemes, fabrics, and accessories.)</li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
          </section>
-         <button type="button" id="open-modal-btn" class="btn btn-lg">Book Free Consultation</button>
+         <button type="button" class="open-modal-btn btn btn-lg">Book Free Consultation</button>
 
       </center>
       <br>
@@ -269,44 +625,61 @@
          <div class="container">
             <div class="row">
                <div class="section-header col-sm-12">
-                  <h4><span>Why Choose</span> Us?</h4>
+                  <h4><span>Why Choose Naims Interior over others?</span> Us !</h4>
                </div>
-               <div class="col-lg-3 col-sm-6">
+               <div class="col-lg-4 col-sm-6">
                   <div class="feature-card">
                      <span class="feature-icon feature-box-col-one"><i class="bi bi-calendar-check"></i></span>
-                     <h6>One-Year Maintenance</h6>
-                     <p>We provide a full year of maintenance to ensure your designs are always up to date and
-                        functioning
-                        perfectly.
+                     <h6>100% Customer Satisfaction</h6>
+                     <p>100% Customer satisfaction is the main motto of our company. We love to see the happy and
+                        satisfied customers by delivering outstanding interior designing services. Your experience
+                        really matters to us!
                      </p>
                   </div>
                </div>
-               <div class="col-lg-3 col-md-6 ">
+               <div class="col-lg-4 col-md-6 ">
                   <div class="feature-card">
                      <span class="feature-icon feature-box-col-two"><i class="bi bi-person-check"></i></span>
-                     <h6>500+ Happy Clients</h6>
-                     <p>Our clients are our top priority, and we have successfully helped over 500 clients transform
-                        their
-                        spaces.
+                     <h6>1000+ Happy Clients</h6>
+                     <p>Our 1000+ happy customers are the live example of our best-in-class interior designing services.
+                        We always aim to deliver high quality service within your budget.
                      </p>
                   </div>
                </div>
-               <div class="col-lg-3 col-md-6 ">
+               <div class="col-lg-4 col-md-6 ">
                   <div class="feature-card">
                      <span class="feature-icon feature-box-col-three"><i class="bi bi-clock"></i></span>
-                     <h6>6 Week Move-in Guarantee</h6>
-                     <p>We guarantee that you can move into your newly designed space within 6 weeks of starting the
-                        project.
+                     <h6>Economic Cost</h6>
+                     <p>
+                        We offer an affordable wide range of interior designing services for your dream home, yet no
+                        compromise in material quality to withstand the durability.
                      </p>
                   </div>
                </div>
-               <div class="col-lg-3 col-md-6 ">
+               <div class="col-lg-4 col-md-6 ">
                   <div class="feature-card">
                      <span class="feature-icon feature-box-col-four"><i class="bi bi-shield-lock"></i></span>
-                     <h6>Flat 10-Year Warranty</h6>
-                     <p>We offer a solid 10-year warranty on all of our designs and installations to ensure your
-                        investment is
-                        protected.
+                     <h6>High Quality Materials</h6>
+                     <p>We always use only high quality material supplies for all of our interior works that provide
+                        complete protection to your dream house in the long run. No compromise in Quality.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6 ">
+                  <div class="feature-card">
+                     <span class="feature-icon feature-box-col-four"><i class="bi bi-shield-lock"></i></span>
+                     <h6>No Hidden Charges</h6>
+                     <p>We believe that transparency is the core key in excellent customer service. So, we don't have
+                        any hidden charges. What you see is what you pay.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6 ">
+                  <div class="feature-card">
+                     <span class="feature-icon feature-box-col-four"><i class="bi bi-shield-lock"></i></span>
+                     <h6>Expert Interior Designers</h6>
+                     <p>Our experienced designers have decades of experience in interior designing. So you just handover
+                        everything to us and chill, we will take care of everything.
                      </p>
                   </div>
                </div>
@@ -315,7 +688,9 @@
       </section>
       <section class="intro">
          <div class="container">
-           <center><h1>How we work ?</h1></center> 
+            <center>
+               <h1>How we work ?</h1>
+            </center>
          </div>
       </section>
       <section class="timeline">
@@ -324,7 +699,7 @@
                <div>
                   <time><i class="fas fa-handshake"></i> Step 1</time>
                   <h6>NAIMS INTERIOR:</h6>
-                  <p>Your Journey to Dream Interiors Made Simple. Transforming spaces is easy with our transparent and
+                  <p>Your Journey to Dream Interior Made Simple. Transforming spaces is easy with our transparent and
                      customer-focused process.</p>
                </div>
             </li>
@@ -369,12 +744,7 @@
       <script>
          (function () {
             "use strict";
-
-            // define variables
             var items = document.querySelectorAll(".timeline li");
-
-            // check if an element is in viewport
-            // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
             function isElementInViewport(el) {
                var rect = el.getBoundingClientRect();
                return (
@@ -413,13 +783,13 @@
                <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
                   <!-- Portfolio Filters -->
                   <!-- <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-living-room">Living </li>
-                        <li data-filter=".filter-bedroom">Bedroom</li>
-                        <li data-filter=".filter-kitchen">Kitchen</li>
-                        <li data-filter=".filter-office">Office</li>
-                        <li data-filter=".filter-bathroom">Bathroom</li>
-                        </ul> -->
+                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter=".filter-living-room">Living </li>
+                    <li data-filter=".filter-bedroom">Bedroom</li>
+                    <li data-filter=".filter-kitchen">Kitchen</li>
+                    <li data-filter=".filter-office">Office</li>
+                    <li data-filter=".filter-bathroom">Bathroom</li>
+                    </ul> -->
                   <!-- Portfolio Items -->
                   <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
                      <!-- Item 1 -->
@@ -429,57 +799,59 @@
                            <div class="portfolio-info">
                               <h4>Modern Living Room</h4>
                               <p>Contemporary style with clean lines and soft lighting.</p>
-                              
+
                            </div>
                         </div>
                      </div>
                      <!-- Item 2 -->
                      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bedroom">
-                        <div class="portfolio-content h-100">
-                           <img src="assets/img/Bedroom-Design.png" class="img-fluid" alt="Elegant Bedroom">
+                        <div class="portfolio-content">
+                           <img src="assets/img/Bedroom-Design.png" style="width: 100%;" alt="Elegant Bedroom">
                            <div class="portfolio-info">
                               <h4>Elegant Bedroom</h4>
                               <p>Minimalist bedroom design with a calming color palette.</p>
-                            
+
                            </div>
                         </div>
                      </div>
                      <!-- Item 3 -->
                      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kitchen">
-                        <div class="portfolio-content h-100">
-                           <img src="assets/img/Kitchen-desgin.png" class="img-fluid" alt="Sleek Kitchen">
+                        <div class="portfolio-content">
+                           <img src="assets/img/Kitchen-desgin.png" style="width: 100%;" alt="Sleek Kitchen">
                            <div class="portfolio-info">
                               <h4>Sleek Kitchen</h4>
                               <p>Modern kitchen with innovative storage solutions.</p>
-                            
+
                            </div>
                         </div>
                      </div>
                      <!-- Item 4 -->
                      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-office">
-                        <div class="portfolio-content h-100">
-                           <img src="assets/img/contact1.jpg" class="img-fluid" alt="Stylish Office">
+                        <div class="portfolio-content">
+                           <img src="assets/img/office-area.jpg" style="width: 100%; height: 100%;"
+                              alt="Stylish Office">
                            <div class="portfolio-info">
                               <h4>Stylish Office</h4>
                               <p>Ergonomic office design with vibrant decor elements.</p>
-                            
+
                            </div>
                         </div>
                      </div>
                      <!-- Item 5 -->
                      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bathroom">
-                        <div class="portfolio-content h-100">
-                           <img src="assets/img/contact1.jpg" class="img-fluid" alt="Luxury Bathroom">
+                        <div class="portfolio-content">
+                           <img src="assets/img/dining.jpeg" style="width: 100%; height: 100%;" alt="Luxury Bathroom">
                            <div class="portfolio-info">
                               <h4>Outdoor Living</h4>
                               <p>High-end bathroom with marble finishes and soft lighting.</p>
-                        
+
                            </div>
                         </div>
                      </div>
                      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bathroom">
-                        <div class="portfolio-content h-100">
-                           <img src="assets/img/contact1.jpg" class="img-fluid" alt="Luxury Bathroom">
+                        <div class="portfolio-content">
+                           <img src="assets/img/bathroom (2).jpg" style="width: 100%; height: 100%;"
+                              alt="Luxury Bathroom">
                            <div class="portfolio-info">
                               <h4>Luxury Bathroom</h4>
                               <p>High-end bathroom with marble finishes and soft lighting.</p>
@@ -490,8 +862,11 @@
                   <!-- End Portfolio Items -->
                </div>
             </div>
+
+
          </section>
-         <button type="button" class="btn btn-lg" id="open-modal-btn">Talk to Designer</button>
+         <button type="button" id="open-modal-btn" class="open-modal-btn btn btn-lg">Talk to Designer</button>
+
       </center>
       <section id="testimonials" class="testimonials section">
          <!-- Section Title -->
@@ -552,9 +927,9 @@
                   <div class="swiper-slide">
                      <div class="testimonial-wrap">
                         <div class="testimonial-item">
-                           <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                           <h3>Daniel Kim</h3>
-                           <h4>Designer</h4>
+                           <img src="assets/img/testimonials/Ashfaq-Badsha-image.png" class="testimonial-img" alt="">
+                           <h3>Ashfaq Badsha</h3>
+                           <h4>Humming Gardens, Kelambakkam</h4>
                            <div class="stars">
                               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
@@ -562,8 +937,10 @@
                            </div>
                            <p>
                               <i class="bi bi-quote quote-icon-left"></i>
-                              <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                 Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
+                              <span>Naim’s interior was astonishing! From design to coordination everything was done
+                                 perfectly, the time was on, the budget too was managed well and the quality was great
+                                 too; not only this team was friendly, cooperative and highly professional. I would
+                                 definitely recommend them to anyone.</span>
                               <i class="bi bi-quote quote-icon-right"></i>
                            </p>
                         </div>
@@ -573,9 +950,9 @@
                   <div class="swiper-slide">
                      <div class="testimonial-wrap">
                         <div class="testimonial-item">
-                           <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                           <h3>Jane Smith</h3>
-                           <h4>Digital Marketer</h4>
+                           <img src="assets/img/testimonials/Ravi-Shankar-S-Image-.png" class="testimonial-img" alt="">
+                           <h3>Ravi Shankar S</h3>
+                           <h4>Pacifica Aurum Happiness, Padur</h4>
                            <div class="stars">
                               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
@@ -583,8 +960,9 @@
                            </div>
                            <p>
                               <i class="bi bi-quote quote-icon-left"></i>
-                              <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                 Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
+                              <span>“Imtiyaz and his team are skilled woodworkers. While their work is good, they could
+                                 improve on the final finishing. I’d recommend them for interior projects. [Attach photo
+                                 of TV stand]”</span>
                               <i class="bi bi-quote quote-icon-right"></i>
                            </p>
                         </div>
@@ -598,7 +976,9 @@
       </section>
       <section id="associate-partners" class="associate-partners-section patner-m">
          <div class="container text-center">
-            <h4 class="section-title">Associate Partners</h4>
+            <h4 class="section-title-heading">Best Materials, Sourced for You.</h4>
+            <p class="section-title-sub-heading">We collaborate with the best in the industry providing
+               exceptional quality.</p>
             <div class="partner-logos-wrapper">
                <div class="partner-logos">
                   <img src="assets/img/patner-img-1.jpg" alt="Partner 1" />
@@ -616,17 +996,17 @@
          </div>
       </section>
    </main>
-   <div class="position-fixed position-relative container-fluid  bottom-0 p-0 m-0  d-md-none d-block container-fluid">
-      <div class="logo-icon z-1 position-absolute container bottom-0 d-flex justify-content-center ">
-
-         <div class="w-50">
-            <img src="assets/img/update-logo2.png" class="w-100">
+   <div class="position-fixed position-relative  bottom-0 p-0 m-0  d-md-none d-block">
+      <div class="position-absolute container"
+         style="width: 170px; margin-left: 50%; transform: translateX(-50%); margin-top: -26px;">
+         <div class="w-100">
+            <img src="assets/img/footer-logo-mob-mod.png" class="w-100">
          </div>
       </div>
       <div
-         class="container-fluid bg-white d-flex justify-content-between px-3 align-items-center shadow-lg  border-bottom border-top border-5 ">
-         <div class="p-2 footer-form" id="open-modal-btn">
-            <img src="assets/img/update-form-icon.png" alt="form"  class="form class">
+         class="bg-white d-flex justify-content-between px-3 align-items-center shadow-lg  border-bottom border-top border-5 ">
+         <div class="p-2 footer-form open-modal-btn" style="z-index: 2;">
+            <img src="assets/img/update-form-icon.png" alt="form" class="form">
          </div>
          <div class="p-2">
             <a href="https://wa.me/918449446389?text=Hello%20NAIMS%20INTERIOR%20Team%2C%20I%20need%20assistance%20regarding%20your%20services%20Ref%3A%20%23INQ-7845"
@@ -649,8 +1029,8 @@
          <div class="footer-section">
             <img src="assets/img/logo1.png" alt="">
             <address>
-               Archiact VR, #20-555 W Hastings<br>
-               St, Vancouver, BC V6B, Earth<br>
+               Reg.Office H-77, Silai Bara Gaon, Milak <br>
+               Rampur, Uttar Pradesh (244701)<br>
                <a href="mailto:WeCare@Naimsinterior.com">WeCare@Naimsinterior.com</a>
             </address>
          </div>
@@ -682,9 +1062,9 @@
          <div class="footer-section footer-policy">
             <h3>Policy</h3>
             <ul>
-               <li><a href="#">Privacy Policy</a></li>
-               <li><a href="#">Terms & Conditions</a></li>
-               <li><a href="#">Declaretion</a></li>
+               <li><a class="open-privacy-btn" style="cursor: pointer;">Privacy Policy</a></li>
+               <li><a class="open-term-condition-btn" style="cursor: pointer;">Terms & Conditions</a></li>
+               <li><a class="open-declaretion-btn" style="cursor: pointer;">Declaretion</a></li>
             </ul>
          </div>
          <div class="footer-section footer-service">
@@ -725,136 +1105,108 @@
    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.1.0/dist/purecounter_vanilla.js"></script>
    <!-- Main JS File -->
    <script src="assets/js/main.js"></script>
-
    <script>
-      const phoneInputField = document.querySelector("#phone");
-      const phoneInput = window.intlTelInput(phoneInputField, {
-         initialCountry: "in",
-         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-      });
-      
-      phoneInputField.addEventListener("input", () => {
-         const currentValue = phoneInputField.value.replace(/\D/g, "");
-         if (currentValue.length === 10) {
-            const formattedNumber = phoneInput.getNumber(
-               intlTelInputUtils.numberFormat.INTERNATIONAL
-            );
-            phoneInputField.value = formattedNumber;
-         }
-      });
-   
-      function validatePhone(input) {
-         input.value = input.value.replace(/\D/g, "").slice(0, 10); // Limit to 10 digits
-      }
-   
-      function validatePhonesKeyDown(e) {
-         const value = e.target.value.replace(/\D/g, "");
-         if (value.length >= 10 && !e.key.match(/[0-9]/)) {
-            e.preventDefault();
-         }
-      }
-   
-      function validatePincode(input) {
-         input.value = input.value.replace(/\D/g, '').slice(0, 6);
-      }
-   
-      function validatePincodeKeyDown(e) {
-         const value = e.target.value.replace(/\D/g, '');
-         if (value.length >= 6 && !e.key.match(/[0-9]/)) {
-            e.preventDefault();
-         }
-      }
-   
-      function formatBudget(input) {
-         const value = input.value.replace(/\D/g, '');
-   
-         if (value) {
-            input.value = `${value} Lakh`;
-         } else {
-            input.value = '';
-         }
-      }
-   
-      // Optional: Remove ' Lakh' on focus for editing
-      const budgetInput = document.getElementById('budget');
-      budgetInput.addEventListener('focus', () => {
-         budgetInput.value = budgetInput.value.replace(' Lakh', '');
-      });
-      budgetInput.addEventListener('blur', () => {
-         if (budgetInput.value) {
-            budgetInput.value = `${budgetInput.value.replace(/\D/g, '')} Lakh`;
-         }
-      });
-   </script>
-   <script>
-      const form = document.getElementById('contact-form');
-      const submitButton = document.getElementById('submit-btn'); // Add reference to the submit button
-   
-      function formatPhoneNumber(phone) {
-   // Remove spaces between numbers
-   return phone.replace(/\s+/g, '');
-}
-
-   
-      form.addEventListener('submit', function (event) {
-         event.preventDefault(); // Prevent form from submitting normally
-   
-         // Change button state to loading
-         submitButton.textContent = "Loading...";
-         submitButton.style.backgroundColor = "orange"; // Show loading state
-   
-         const name = document.getElementById('name').value;
-         const email = document.getElementById('email').value;
-         let phone = document.getElementById('phone').value;
-         const propertyName = document.getElementById('property-name').value;
-         const pincode = document.getElementById('pincode').value;
-         const homeType = document.getElementById('home-type').value;
-         const budget = document.getElementById('budget').value;
-         const whatsappUpdates = document.getElementById('whatsapp-updates').checked;
-   
-         // Format the phone number to +919876543210
-         phone = formatPhoneNumber(phone);
-   
-         // Prepare API request data
-         const apiData = {
-            apiToken: '7428%7C2f1PQOaINhAiqFrRPnQQCx4gKLhT9cQUZvPpKZ2V',
-            phone_number_id: '339128885942421',
-            template_id: '130298',
-            template_header_media_url: 'https://bot-data.s3.ap-southeast-1.wasabisys.com/upload/2025/1/flowbuilder/flowbuilder-65163-1737126333.pdf',
-            template_quick_reply_button_values: ['EXTERNAL_ECOMMERCE_CANCEL_ORDER', 'EXTERNAL_ECOMMERCE_CANCEL_ORDER'],
-            phone_number: phone,
-         };
-   
-         // Send the API request
-         fetch('https://botsailor.com/api/v1/whatsapp/send/template', {
-            method: 'POST',
-            headers: {
-               'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams(apiData),
-         })
-            .then(response => {
-               if (response.ok) {
-                  // Success response
-                  submitButton.textContent = "Submitted!";
-                  submitButton.style.backgroundColor = "green";
-                  setTimeout(() => {
-                     location.reload(); // Refresh the page
-                  }, 2000); // Wait for 2 seconds
-               } else {
-                  // Handle error response
-                  submitButton.textContent = "Submit";
-                  submitButton.style.backgroundColor = ""; // Reset the button state
-               }
-            })
-            .catch((error) => {
-               // Handle network or other errors
-               submitButton.textContent = "Submit";
-               submitButton.style.backgroundColor = ""; // Reset the button state
+      document.addEventListener("DOMContentLoaded", function () {
+         function initializePhoneInput(phoneInputField) {
+            const phoneInput = window.intlTelInput(phoneInputField, {
+               initialCountry: "in",
+               utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
             });
+
+            phoneInputField.addEventListener("input", () => {
+               const currentValue = phoneInputField.value.replace(/\D/g, "");
+               if (currentValue.length === 10) {
+                  const formattedNumber = phoneInput.getNumber(intlTelInputUtils.numberFormat.INTERNATIONAL);
+                  phoneInputField.value = formattedNumber;
+               }
+            });
+         }
+
+         function initializeForm(form) {
+            const phoneInputField = form.querySelector("#phone");
+            const submitButton = form.querySelector("#submit-btn");
+            const budgetInput = form.querySelector("#budget");
+
+            initializePhoneInput(phoneInputField);
+
+            budgetInput.addEventListener("focus", () => {
+               budgetInput.value = budgetInput.value.replace(" Lakh", "");
+            });
+
+            budgetInput.addEventListener("blur", () => {
+               if (budgetInput.value) {
+                  budgetInput.value = `${budgetInput.value.replace(/\D/g, "")} Lakh`;
+               }
+            });
+
+            form.addEventListener("submit", function (event) {
+               event.preventDefault(); // Prevent default form submission
+
+               submitButton.textContent = "Submitting...";
+               submitButton.style.backgroundColor = "orange";
+               submitButton.disabled = true;
+
+               const name = form.querySelector("#name").value;
+               const email = form.querySelector("#email").value;
+               let phone = phoneInputField.value;
+               const propertyName = form.querySelector("#property-name").value;
+               const pincode = form.querySelector("#pincode").value;
+               const homeType = form.querySelector("#home-type").value;
+               const budget = form.querySelector("#budget").value;
+
+               phone = phone.replace(/\s+/g, "");
+
+               fetch("form.php", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: new URLSearchParams({
+                     name: name,
+                     email: email,
+                     phone: phone,
+                     propertyName: propertyName,
+                     pincode: pincode,
+                     homeType: homeType,
+                     budget: budget
+                  }),
+               })
+                  .then(response => response.json())
+                  .then(data => {
+                     if (data.status === "success") {
+                        submitButton.textContent = "Submitted!";
+                        submitButton.style.backgroundColor = "green";
+
+
+                        setTimeout(() => {
+                           location.reload();
+                        }, 1000);
+                     } else {
+                        submitButton.textContent = "Submit";
+                        submitButton.style.backgroundColor = "";
+                        alert("Submission failed. Please try again.");
+                     }
+                     submitButton.disabled = false;
+                  })
+                  .catch(error => {
+                     submitButton.textContent = "Submit";
+                     submitButton.style.backgroundColor = "";
+                     submitButton.disabled = false;
+                     alert("An error occurred. Please try again.");
+                  });
+            });
+         }
+
+         const mainForm = document.getElementById("contact-form");
+         const modalForm = document.querySelector(".contact-form-model");
+
+         if (mainForm) initializeForm(mainForm);
+         if (modalForm) initializeForm(modalForm);
       });
+
    </script>
-   
+
+
+
+
    <style>
       .hero_button {
          padding: 10px 20px;
@@ -869,59 +1221,15 @@
       }
    </style>
    </script>
+
    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-         const step1 = document.getElementById("step-1");
-         const step2 = document.getElementById("step-2");
-         const next1 = document.getElementById("next-1");
-         const back2 = document.getElementById("back-2");
-         const errorMessage = document.getElementById("error-message"); // Reference to error message container
-   
-         next1.addEventListener("click", () => {
-            // Get all input fields inside step1
-            const inputs = step1.querySelectorAll("input[required]");
-            let allFilled = true;
-   
-            // Check if all required fields are filled
-            inputs.forEach(input => {
-               if (!input.value.trim()) {
-                  allFilled = false;
-                  input.classList.add("error"); // Add error class for styling (optional)
-               } else {
-                  input.classList.remove("error"); // Remove error class if corrected
-               }
-            });
-   
-            // Show or hide error message
-            if (!allFilled) {
-               errorMessage.textContent = "Please fill all required fields before proceeding.";
-               errorMessage.style.display = "block";
-            } else {
-               errorMessage.style.display = "none";
-               step1.classList.remove("active");
-               step2.classList.add("active");
-            }
-         });
-   
-         back2.addEventListener("click", () => {
-            step2.classList.remove("active");
-            step1.classList.add("active");
-         });
-      });
-   </script>
-   
-   <script>
-      // Function to check if element is in view
+
       function isInView(element) {
          const rect = element.getBoundingClientRect();
          return rect.top >= 0 && rect.bottom <= window.innerHeight;
       }
-
-      // Function to add slide-up animation to feature cards
       function applySlideUpAnimation() {
          const cards = document.querySelectorAll('.feature-card');
-
-         // Apply animation only on mobile view
          if (window.innerWidth <= 480) {
             cards.forEach(card => {
                if (isInView(card)) {
@@ -930,8 +1238,6 @@
             });
          }
       }
-
-      // Run on page load and scroll events
       document.addEventListener('DOMContentLoaded', applySlideUpAnimation);
       window.addEventListener('scroll', applySlideUpAnimation);
 
@@ -990,34 +1296,211 @@
       };
 
    </script>
-      <script>
-     document.addEventListener("DOMContentLoaded", function() {
-  const modal = document.getElementById("form-modal");
-  const openModalBtn = document.getElementById("open-modal-btn");
-  const closeModalBtn = document.getElementById("close-modal-btn");
+   <!-- js for form section -->
+   <script>
+      document.addEventListener("DOMContentLoaded", function () {
+         const modal = document.getElementById("form-modal");
+         const openModalBtns = document.querySelectorAll(".open-modal-btn");
+         const closeModalBtn = document.getElementById("close-modal-btn");
+         modal.style.display = "none";
 
-  // Ensure modal is hidden when page loads
-  modal.style.display = "none";
 
-  // Open modal when button is clicked
-  openModalBtn.addEventListener("click", () => {
-    modal.style.display = "flex"; // Display the modal
-  });
+         openModalBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+               modal.style.display = "flex";
+            });
+         });
 
-  // Close modal when close button is clicked
-  closeModalBtn.addEventListener("click", () => {
-    modal.style.display = "none"; // Hide the modal
-  });
 
-  // Close modal when clicking outside of the modal content
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-});
+         closeModalBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+         });
 
-      </script>
+
+         window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+               modal.style.display = "none";
+            }
+         });
+      });
+
+
+   </script>
+
+   <!-- js for privacy section -->
+   <script>
+      document.addEventListener("DOMContentLoaded", function () {
+         const modal = document.getElementById("form-privacy");
+         const openModalBtns = document.querySelectorAll(".open-privacy-btn");
+         const closeModalBtn = document.getElementById("close-privacy-btn");
+         modal.style.display = "none";
+
+
+         openModalBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+               modal.style.display = "flex";
+            });
+         });
+
+
+         closeModalBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+         });
+
+
+         window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+               modal.style.display = "none";
+            }
+         });
+      });
+
+
+   </script>
+
+   <!-- js for term and conditins -->
+   <script>
+      document.addEventListener("DOMContentLoaded", function () {
+         const modal = document.getElementById("form-term-condition");
+         const openModalBtns = document.querySelectorAll(".open-term-condition-btn");
+         const closeModalBtn = document.getElementById("close-term-condition-btn");
+         modal.style.display = "none";
+
+
+         openModalBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+               modal.style.display = "flex";
+            });
+         });
+
+
+         closeModalBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+         });
+
+
+         window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+               modal.style.display = "none";
+            }
+         });
+      });
+
+
+   </script>
+
+   <!-- -------------------------js for declaretion-------- -->
+   <script>
+      document.addEventListener("DOMContentLoaded", function () {
+         const modal = document.getElementById("form-declaretion");
+         const openModalBtns = document.querySelectorAll(".open-declaretion-btn");
+         const closeModalBtn = document.getElementById("close-declaretion-btn");
+         modal.style.display = "none";
+
+
+         openModalBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+               modal.style.display = "flex";
+            });
+         });
+
+
+         closeModalBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+         });
+
+
+         window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+               modal.style.display = "none";
+            }
+         });
+      });
+
+
+   </script>
+
+   <script>
+      document.addEventListener("DOMContentLoaded", function () {
+         /**
+          * 
+          * @param {HTMLElement} step - 
+          * @returns {boolean} -
+          */
+         function validateStep(step) {
+            const inputs = step.querySelectorAll("input[required], select[required]");
+            let allFilled = true;
+
+            inputs.forEach(input => {
+               if (!input.value.trim()) {
+                  allFilled = false;
+                  input.classList.add("error");
+               } else {
+                  input.classList.remove("error");
+               }
+            });
+
+            return allFilled;
+         }
+
+         /**
+          * 
+          * @param {HTMLElement} currentStep - 
+          * @param {HTMLElement} nextStep - 
+          * @param {HTMLElement} errorMessage - 
+          */
+         function goToStep(currentStep, nextStep, errorMessage = null) {
+            if (errorMessage && !validateStep(currentStep)) {
+               errorMessage.textContent = "Please fill all required fields before proceeding.";
+               errorMessage.style.display = "block";
+            } else {
+               if (errorMessage) errorMessage.style.display = "none";
+               currentStep.classList.remove("active");
+               nextStep.classList.add("active");
+            }
+         }
+
+         /**
+          * 
+          * @param {HTMLFormElement} form - 
+          */
+         function initializeFormNavigation(form) {
+            const step1 = form.querySelector("#step-1");
+            const step2 = form.querySelector("#step-2");
+            const next1 = form.querySelector("#next-1");
+            const errorMessage = form.querySelector("#error-message");
+
+
+            if (next1) {
+               next1.addEventListener("click", () => goToStep(step1, step2, errorMessage));
+            }
+
+
+            const submitBtn = form.querySelector("#submit-btn");
+            if (submitBtn) {
+               submitBtn.addEventListener("click", function (event) {
+                  if (!validateStep(step2)) {
+                     event.preventDefault();
+                     errorMessage.textContent = "Please fill all required fields before submitting.";
+                     errorMessage.style.display = "block";
+                  } else {
+                     errorMessage.style.display = "none";
+                  }
+               });
+            }
+         }
+
+
+         const mainForm = document.getElementById("contact-form");
+         const modalForm = document.querySelector(".contact-form-model");
+
+         if (mainForm) initializeFormNavigation(mainForm);
+         if (modalForm) initializeFormNavigation(modalForm);
+      });
+   </script>
+
+
+
 </body>
 
 </html>
