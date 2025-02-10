@@ -1696,31 +1696,31 @@ section-title-sub-heading {
 .associate-partners-section {
   background-color: #ffffff;
   padding: 10px 0;
-  
+  overflow: hidden;
 }
 
 .associate-partners-section .section-title {
   font-size: 34px;
   font-weight: bold;
   color: #333;
- 
 }
 
 .partner-logos-wrapper {
   overflow: hidden;
   position: relative;
-  margin-bottom: 50px;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .partner-logos {
   display: flex;
   gap: 50px;
   animation: scroll-logos 15s linear infinite;
+  width: max-content;
 }
 
 .partner-logos img {
   height: 80px;
-  /* filter: grayscale(100%); */
   transition: filter 0.3s ease-in-out;
 }
 
@@ -1729,13 +1729,14 @@ section-title-sub-heading {
 }
 
 @keyframes scroll-logos {
-  0% {
-    transform: translateX(100%);
+  from {
+    transform: translateX(0);
   }
-  100% {
-    transform: translateX(-100%);
+  to {
+    transform: translateX(-50%);
   }
 }
+
 
 
 
@@ -2325,7 +2326,7 @@ form {
 }
 
 .projects .section-title p, .services .section-title p {
-  font-size: 16px; 
+  font-size: 14px; 
   color: #6c757d;  
   margin-top: 0;
 }
@@ -2393,12 +2394,15 @@ form {
   color: color-mix(in srgb, var(--default-color), transparent 50%);
   margin: 0;
   font-size: 16px;
+  text-align: start;
+
 }
 
 .services-point {
   color: color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
+  font-size: 14px;
   text-align: start;
+  margin-top:10px;
 }
 
 .services .card-item .card-body p {
