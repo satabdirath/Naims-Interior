@@ -2869,6 +2869,8 @@ time {
 }
 .thankyou h3 {
   color: #b4292d;
+  font-weight: bold;
+  font-size: 30px;
 }
 .thank-button {
   display: flex;
