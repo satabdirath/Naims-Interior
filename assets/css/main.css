@@ -2867,6 +2867,9 @@ time {
   align-items: center;
   text-align: center;
 }
+.thank-logo {
+  width: 20rem;
+}
 .thankyou h3 {
   color: #b4292d;
   font-weight: bold;
@@ -2997,15 +3000,15 @@ time {
 
 .thank-content ul li i {
   font-size: 24px;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .tank-contect h3 {
   color: #b4292d;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 .thank-main-content {
   padding-inline: 20px;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 .thank-main-content p {
   font-size: 17px;
